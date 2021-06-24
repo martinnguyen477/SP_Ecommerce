@@ -13,7 +13,7 @@ using Team27_BookshopWeb.Services;
 namespace Team27_BookshopWeb.Areas.admin.Controllers
 {
     [Area("admin")]
-    //[Authorize(AuthenticationSchemes = "admin")]
+    [Authorize(AuthenticationSchemes = "admin")]
     public class ThongKeController : Controller
     {
 

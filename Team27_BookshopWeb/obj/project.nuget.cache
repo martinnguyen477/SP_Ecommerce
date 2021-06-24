@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8TF0Shpib9vWDmtNk6ibKcKeeVhf2Ygav32DYcdyEJNIP3VWEFTXGiKGHI+vAwDg+g1fljaIeNDeY4GsJzBkpQ==",
+  "dgSpecHash": "f8KRttzBcYo22fwfCmE1ijPJLmh0wMYP+l2XtJKB2qyn43CMcggyuA6re/4rLw2TBqDvHCQ/uGpXixTKR6n6cA==",
   "success": true,
-  "projectFilePath": "G:\\Lưu Trữ\\File nộp (File responses)\\Team27_BookshopWeb\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
+  "projectFilePath": "C:\\Users\\Nguyen Quoc Cuong\\Desktop\\New folder (3)\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\bcrypt.net-next\\3.1.3\\bcrypt.net-next.3.1.3.nupkg.sha512",
     "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",

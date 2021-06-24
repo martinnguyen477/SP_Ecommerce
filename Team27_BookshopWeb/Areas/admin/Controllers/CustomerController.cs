@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace Team27_BookshopWeb.Areas.admin.Controllers
 {
     [Area("admin")]
-   // [Authorize(AuthenticationSchemes = "admin")]
+    [Authorize(AuthenticationSchemes = "admin")]
     public class CustomerController : Controller
     {
         private readonly MyDbContext _context;

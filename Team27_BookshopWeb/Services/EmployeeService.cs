@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 using Team27_BookshopWeb.Areas.admin.Models;
 using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Models;
@@ -85,7 +84,7 @@ namespace Team27_BookshopWeb.Services
             //Tìm khách hàng theo username
             Employee user = myDbContext.Employees.SingleOrDefault(u => u.Username == loginUser.Username);
             //Kiểm tra password
-            if (user == null || !BC.Verify(loginUser.Password, user.Password))
+            if (user == null || loginUser.Password != user.Password)
             {
                 return new MessagesViewModel(false, "Tài khoản hoặc mật khẩu không đúng");
             }
