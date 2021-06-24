@@ -1,0 +1,88 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    string pageUrl = Model;
+}
+
+<li class="has-sub @(pageUrl == "/admin" || pageUrl.Contains("Dashboard") ? "active" : string.Empty)">
+    <a class="js-arrow" href="/admin">
+        <i class="fas fa-tachometer-alt"></i>Dashboard
+    </a>
+</li>
+<li class="@(pageUrl.Contains("/admin/Employee") ? "active" : string.Empty)">
+    <a href="/admin/Employee">
+        <i class="fas fa-group"></i>Nhân viên
+    </a>
+</li>
+<li class="@(pageUrl.Contains("/admin/Customer") ? "active" : string.Empty)">
+    <a href="/admin/Customer">
+        <i class="fas fa-user"></i>Khách hàng
+    </a>
+</li>
+<li class="@(pageUrl.Contains("/admin/Order") ? "active" : string.Empty)">
+    <a href="/admin/Order">
+        <i class="fas fa-tag"></i>Đơn hàng
+    </a>
+</li>
+<li class="@(pageUrl.Contains("/admin/Book") ? "active" : string.Empty)">
+    <a href="/admin/Book">
+        <i class="fas fa-book"></i>Sách
+    </a>
+</li>
+<li class="@(pageUrl.Contains("/admin/Category") ? "active" : string.Empty)">
+    <a href="/admin/Category">
+        <i class="fas fa-bookmark"></i>Loại sách
+    </a>
+</li>
+<li class="@(pageUrl.Contains("/admin/AuthorTranslator") ? "active" : string.Empty)">
+    <a href="/admin/AuthorTranslator">
+        <i class="fas fa-pencil-square-o"></i>Tác giả - Dịch giả
+    </a>
+</li>
+<li class="@(pageUrl.Contains("/admin/Publisher") ? "active" : string.Empty)">
+    <a href="/admin/Publisher">
+        <i class="fas fa-check-square"></i>Nhà xuất bản
+    </a>
+</li>
+<li class="@(pageUrl.Contains("/admin/Comment") ? "active" : string.Empty)">
+    <a href="/admin/Comment">
+        <i class="fas fa-keyboard-o"></i>Nhận xét
+    </a>
+</li>
+<li class="@(pageUrl.Contains("/admin/Coupon") ? "active" : string.Empty)">
+    <a href="/admin/Coupon">
+        <i class="fas fa-barcode"></i>Mã khuyến mãi
+    </a>
+</li>
+<li class="@(pageUrl.Contains("/admin/PaymentMethod") ? "active" : string.Empty)">
+    <a href="/admin/PaymentMethod">
+        <i class="fas fa-credit-card"></i>Phương thức thanh toán
+    </a>
+</li>
+<li class="has-sub @(pageUrl.Contains("/admin/ThongKe") ? "active" : string.Empty)">
+    <a class="js-arrow" href="#">
+        <i class="fa fa-bar-chart-o"></i>Thống kê
+    </a>
+    <ul class="list-unstyled navbar__sub-list js-sub-list">
+        <li class="has-sub @(pageUrl.Contains("/admin/ThongKe/Sach") ? "active" : string.Empty)">
+            <a class="js-arrow" href="#">
+                <i class="fa fa-book"></i>Sách
+            </a>
+            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                <li class="@(pageUrl.Contains("/admin/ThongKe/SachViewNhieu") ? "active" : string.Empty)"><a href="/admin/ThongKe/SachViewNhieu">Xem nhiều nhất</a></li>
+                <li class="@(pageUrl.Contains("/admin/ThongKe/SachBanChay") ? "active" : string.Empty)"><a href="/admin/ThongKe/SachBanChay">Bán chạy nhất</a></li>
+            </ul>
+        </li>
+        <li class="@(pageUrl.Contains("/admin/ThongKe/DoanhThu") ? "active" : string.Empty)">
+            <a class="js-arrow" href="/admin/ThongKe/DoanhThuTG">
+                <i class="fa fa-usd"></i>Doanh thu
+            </a>
+        </li>
+        <li class="has-sub @(pageUrl.Contains("/admin/ThongKeCustomerStatistic") ? "active" : string.Empty)">
+            <a class="js-arrow" href="/admin/ThongKe/CustomerStatistic">
+                <i class="fa fa-users"></i>Khách hàng
+            </a>
+        </li>
+    </ul>
+</li>

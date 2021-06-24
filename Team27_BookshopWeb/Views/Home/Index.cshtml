@@ -1,0 +1,310 @@
+﻿@{
+    Layout = "~/Views/Shared/_Master.cshtml";
+    ViewData["Title"] = "Trang chủ";
+}
+
+@section style {
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/index.css" />
+}
+
+@model Team27_BookshopWeb.Models.IndexViewModel
+
+<section class="hero-area hero-slider-3">
+    <div class="sb-slick-slider" data-slick-setting='{
+                                                        "autoplay": true,
+                                                        "autoplaySpeed": 8000,
+                                                        "slidesToShow": 1,
+                                                        "dots":true
+                                                        }'>
+        <div class="single-slide bg-image  bg-overlay--dark" data-bg="Team27StaticFiles/images/banner/banner1.jpg">
+            <div class="container">
+                <div class="home-content text-center">
+                    <div class="row justify-content-end">
+                        <div class="col-lg-6">
+                            <h1>Beautifully Designed</h1>
+                            <h2>
+                                Cover up front of book and
+                                <br>leave summary
+                            </h2>
+                            <a href="/cua-hang" class="btn btn--yellow">
+                                Đến cửa hàng ngay!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-slide bg-image  bg-overlay--dark" data-bg="Team27StaticFiles/images/banner/banner2.jpg">
+            <div class="container">
+                <div class="home-content pl--30">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h1>I Love This Idea!</h1>
+                            <h2>
+                                Cover up front of book and
+                                <br>leave summary
+                            </h2>
+                            <a href="/cua-hang" class="btn btn--yellow">
+                                Đến cửa hàng ngay!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=================================
+    Home Category Gallery
+===================================== -->
+<section class="pt--30 section-margin">
+    <h2 class="sr-only">Category Gallery Section</h2>
+    <div class="container">
+        <div class="category-gallery-block">
+            <a href="/loai-sach/sach-thieu-nhi" class="single-block hr-large">
+                <img src="~/Team27StaticFiles/images/categories/stn-vc.jpg" style="width:100%; height:100%;" alt="Sách thiếu nhi">
+            </a>
+            <div class="single-block inner-block-wrapper">
+                <a href="/loai-sach/van-hoc-nuoc-ngoai" class="single-image small-image">
+                    <img src="~/Team27StaticFiles/images/categories/vhnn-hz.jpg" style="width:100%; height:185px;" alt="Sách văn học nước ngoài">
+                </a>
+                <a href="/loai-sach/van-hoc-viet-nam" class="single-image small-image">
+                    <img src="~/Team27StaticFiles/images/categories/vhvn-hz.jpg" style="width:100%; height:185px;" alt="Sách văn học Việt Nam">
+                </a>
+                <a href="/loai-sach/tu-duy-ky-nang-song" class="single-image small-image">
+                    <img src="~/Team27StaticFiles/images/categories/tdkns-hz.jpg" style="width:100%; height:185px;" alt="Sách tư duy và kỹ năng sống">
+                </a>
+                <a href="/loai-sach/khoa-hoc-cong-nghe" class="single-image small-image">
+                    <img src="~/Team27StaticFiles/images/categories/khcn-hz.jpg" style="width:100%; height:185px;" alt="Sách khoa học công nghệ">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=================================
+    ARTS & PHOTOGRAPHY BOOKS
+===================================== -->
+@{
+    int allCategories = Model.categories.Count();
+    //Nếu có hơn 3 loại sách thì lấy 3 loại còn lại lấy hết loại sách hiện có
+    Model.countCategories = (allCategories > 3) ? 3 : allCategories;
+
+}
+<!--Kiểm tra categories không rỗng-->
+@if (Model.countCategories > 0)
+{
+    @foreach (var category in Model.categories)
+    {
+        //Số lượng sách của loại sách
+        int allBooks = category.Books.Count();
+        if (allBooks > 0)
+        {
+            Model.countCategories--;
+            <section class="section-margin">
+                <div class="container">
+                    <div class="section-title section-title--bordered">
+                        <h2>@category.DisplayName</h2>
+                    </div>
+                    <div class="product-slider sb-slick-slider slider-border-single-row" data-slick-setting='{
+                        "autoplay": true,
+                        "autoplaySpeed": 8000,
+                        "slidesToShow": 5,
+                        "dots":true
+                    }' data-slick-responsive='[
+                        {"breakpoint":1200, "settings": {"slidesToShow": 4} },
+                        {"breakpoint":992, "settings": {"slidesToShow": 3} },
+                        {"breakpoint":768, "settings": {"slidesToShow": 2} },
+                        {"breakpoint":480, "settings": {"slidesToShow": 1} },
+                        {"breakpoint":320, "settings": {"slidesToShow": 1} }
+                    ]'>
+                        @{
+                            //Nếu có hơn 7 cuốn sách thì lấy 7 cuốn còn lại lấy hết các sách hiện có của loại sách
+                            Model.countBooks = (allBooks > 7) ? 7 : allBooks;
+                            int j = new Random().Next(0, allBooks);
+                        }
+                        @for (; Model.countBooks > 0 && j < allBooks; j++)
+                        {
+                            Model.countBooks--;
+                            var curBook = category.Books.ElementAt(j);
+                            <div class='single-slide'>
+                                <!--Gọi partial view hiển thị thông tin sách-->
+                                @{ Html.RenderPartial("_ProductCard", curBook); }
+                            </div>
+
+                            if (Model.countBooks > 0 && j == (allBooks - 1))
+                            {
+                                j = -1;
+                            }
+                        }
+                    </div>
+                </div>
+            </section>
+            }
+
+            if (Model.countCategories == 0)
+            {
+                break;
+            }
+        }
+}
+
+
+<!--=================================
+    Home Features Section
+===================================== -->
+<section class="mb--30 space-dt--30">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-md-6 mt--30">
+                <div class="feature-box h-100">
+                    <div class="icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <div class="text">
+                        <h5>Miễn phí vận chuyển</h5>
+                        <p> Đơn hàng trên 200 VND</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mt--30">
+                <div class="feature-box h-100">
+                    <div class="icon">
+                        <i class="fas fa-redo-alt"></i>
+                    </div>
+                    <div class="text">
+                        <h5>Dịch vụ hoàn tiền</h5>
+                        <p>100% hoàn tiền lại</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mt--30">
+                <div class="feature-box h-100">
+                    <div class="icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <div class="text">
+                        <h5>Thanh toán tiền mặt</h5>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mt--30">
+                <div class="feature-box h-100">
+                    <div class="icon">
+                        <i class="fas fa-life-ring"></i>
+                    </div>
+                    <div class="text">
+                        <h5>Giúp đỡ & Hỗ trợ</h5>
+                        <p>Liên hệ : + 0123.4567.89</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=================================
+    Promotion Section One
+===================================== -->
+<section class="section-margin">
+    <h1 class="sr-only">Promotion Section</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <a href="/shop" class="promo-image promo-overlay">
+                    <img src="~/Team27StaticFiles/images/banner/banner4.jpg" alt="Promotion">
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <a href="" class="promo-image promo-overlay">
+                    <img src="~/Team27StaticFiles/images/banner/banner5.jpg" style="height:180px;" alt="Promotion">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=================================
+    Home Two Column Section
+===================================== -->
+<section class="bg-gray section-padding-top section-padding-bottom section-margin">
+    <h1 class="sr-only">Promotion Section</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="home-right-block bg-white">
+                    <div class="sb-custom-tab   pt--30 pb--30">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="shop-tab" data-toggle="tab" href="#shop"
+                                   role="tab" aria-controls="shop" aria-selected="true">
+                                    SÁCH BÁN CHẠY NHẤT
+                                </a>
+                                <span class="arrow-icon"></span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="men-tab" data-toggle="tab" href="#men" role="tab"
+                                   aria-controls="men" aria-selected="true">
+                                    SÁCH MỚI XUẤT BẢN
+                                </a>
+                                <span class="arrow-icon"></span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="woman-tab" data-toggle="tab" href="#woman" role="tab"
+                                   aria-controls="woman" aria-selected="false">
+                                    SÁCH XEM NHIỀU NHẤT
+                                </a>
+                                <span class="arrow-icon"></span>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane active" id="shop" role="tabpanel" aria-labelledby="shop-tab">
+                                <!-- SÁCH BÁN CHẠY NHẤT THEO THÁNG -->
+                                @*Gọi partial view hiển thị thông tin sách mới xuất bản*@
+                                @{
+                                    if (Model.bestSellerBooks != null)
+                                    {
+                                        Html.RenderPartial("_BooksSliderMulti", Model.bestSellerBooks);
+                                    }
+                                    else
+                                    {
+                                        <div>Không có sách để hiển thị</div>
+                                    }
+                                }
+                            </div>
+                            <div class="tab-pane" id="men" role="tabpanel" aria-labelledby="men-tab">
+                                <!-- SÁCH MỚI -->
+                                @*Gọi partial view hiển thị thông tin sách mới xuất bản*@
+                                @{
+                                    if (Model.newlyPublishedBooks != null)
+                                    {
+                                        Html.RenderPartial("_BooksSliderMulti", Model.newlyPublishedBooks);
+                                    }
+                                    else
+                                    {
+                                        <div>Không có sách để hiển thị</div>
+                                    }
+                                }
+                            </div>
+
+                            <div class="tab-pane" id="woman" role="tabpanel" aria-labelledby="woman-tab">
+                                <!-- SÁCH XEM NHIỀU -->
+                                @*Gọi partial view hiển thị thông tin sách có lượt xem nhiều nhất*@
+                                @{
+                                    if (Model.topViewBooks != null)
+                                    {
+                                        Html.RenderPartial("_BooksSliderMulti", Model.topViewBooks);
+                                    }
+                                    else
+                                    {
+                                        <div>Không có sách để hiển thị</div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    

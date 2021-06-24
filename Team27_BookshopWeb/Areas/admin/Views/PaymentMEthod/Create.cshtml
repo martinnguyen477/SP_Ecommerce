@@ -1,0 +1,44 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.PaymentMethodEditModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+
+<div class="col">
+    <div class="card">
+        <div class="card-header">
+            <strong>Thông tin phương thức thanh toán</strong>
+        </div>
+        <div class="card-body card-block">
+            <form action="Create" method="POST" enctype="multipart/form-data" class="form-horizontal">
+
+                <div class="row form-group">
+                    <div class="col col-md-4">
+                        <label for="text-input" asp-for="Name" class="form-control-label">@Html.DisplayNameFor(model => Model.Name):</label>
+                    </div>
+                    <div class="col-1 col-md-3">
+                        <input type="text" id="text-input" asp-for="Name" placeholder="Nhập tên phương thức" class="form-control" value="">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="col col-md-1">
+                        <label for="text-input" asp-for="IsSupported" class=" form-control-label">@Html.DisplayNameFor(model => Model.IsSupported):</label>
+                    </div>
+                    <div class="col-1 col-md-3">
+                     
+                        <input type="checkbox" id="HT" name="IsSupported" value="1" @(Model.IsSupported == 1 ? "checked" : "")><span class="nu">Hỗ trợ</span>
+                        <span asp-validation-for="IsSupported" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Lưu
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,158 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.CustomerViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section style {
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/admin.css" />
+}
+
+
+<div class="card searchfield">
+
+    <form method="GET" enctype="multipart/form-data">
+        <div class="card-body searchbox">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="select" class=" form-control-label">Nhập tên khách hàng: </label>
+                </div>
+
+                <span class="col-sm-4">
+                    <input type="text" id="text-input" asp-for="search" placeholder="Nhập chuỗi cần tìm" class="form-control">
+                </span>
+
+                <span class="col-sm-4">
+                    <input type="submit" id="btnSearch" class="btn btn-lg btn-info" value="Tìm" name="function" />
+                </span>
+            </div>
+            <div>
+                <input type="submit" name="function" value="Danh sách đã xóa" class="au-btn au-btn-icon au-btn--green au-btn--small" />
+                <input type="hidden" name="hiddenFunc" value="@(Model.DeleteCustomer != ""? @Model.DeleteCustomer: "")" class="au-btn au-btn-icon au-btn--green au-btn--small" />
+            </div>
+        </div>
+
+
+    </form>
+</div>
+
+@{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- DATA TABLE -->
+        @if (Model.DeleteCustomer == "Danh sách đã xóa")
+        {
+            <h3 class="title-5 m-b-35 ds">Danh sách khách hàng tạm xóa</h3>
+        }
+        else
+        {
+            <h3 class="title-5 m-b-35 ds">Danh sách khách hàng</h3>
+            <div class="table-data__tool">
+
+                <div class="table-data__tool-right">
+                    <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                        <a asp-action="Create">
+                            <i class="zmdi zmdi-plus"></i>Thêm khách hàng
+                        </a>
+                    </button>
+                </div>
+
+            </div>
+        }
+
+        @if (Model.customers.Count() > 0)
+        {
+            <div class="table-responsive table-responsive-data3">
+                <table class="table table-data3">
+                    <thead>
+                        <tr>
+                            <th>Họ tên</th>
+                            <th>Giới tính</th>
+                            <th>Số điện thoại</th>
+                            <th>Địa chỉ</th>
+                            <th>Email</th>
+                            <th>Username</th>
+                            <th>Ngày đăng ký</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.customers)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+
+
+                                    @Html.DisplayFor(modelitem => item.DisplayGender)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Phone)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Address)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Username)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedAt)
+                                </td>
+
+                                <td>
+                                    <div class="table-data-feature">
+                                        @if (Model.DeleteCustomer == "Danh sách đã xóa")
+                                        {
+                                            <a class="item" asp-action="Restore" asp-route-id="@item.Id">
+                                                <i class="fa fa-undo"></i>
+                                            </a>
+                                            <button class="item xoa" onclick="confirmDelete('/admin/Customer/Delete?id=@item.Id', 'Bạn có muốn xóa không?')">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        }
+                                        else
+                                        {
+                                            <a class="item" asp-action="Edit" asp-route-id="@item.Id">
+                                                <i class="zmdi zmdi-edit"></i>
+                                            </a>
+                                            <button class="item xoa" onclick="confirmDelete('/admin/Customer/DeleteTmp?id=@item.Id', 'Bạn có muốn xóa không?')">
+                                                <i class="zmdi zmdi-delete"></i>
+                                            </button>
+                                        }
+
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        }
+        else
+        {
+            <div class="sufee-alert alert with-close alert-warning alert-dismissible fade show">
+                <span class="badge badge-pill badge-warning">Warning</span>
+                Không có khách hàng cần tìm
+            </div>
+        }
+        <!-- END DATA TABLE -->
+        <div class="row pt--30">
+            <div class="col-md-12">
+                <div class="pagination-block">
+                    <!--PHÂN TRANG-->
+                    <!--Gọi partial view hiển thị phân trang-->
+                    @{ Html.RenderPartial("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

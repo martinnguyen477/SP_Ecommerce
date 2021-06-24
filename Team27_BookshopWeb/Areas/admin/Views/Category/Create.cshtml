@@ -1,0 +1,98 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.CategoryEditModel
+
+@{
+    ViewData["Title"] = "Thêm loại sách mới";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col">
+    <div class="card">
+        <div class="card-header">
+            <strong>Thông tin loại sách</strong>
+        </div>
+        @{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+        <div class="card-body card-block">
+            <form action="Create" method="post" enctype="multipart/form-data" class="form-horizontal" id="createCategoryForm">
+                <div class="row form-group">
+                    <div class="col-md-3">
+                        <label asp-for="Id" class="control-label"></label>
+                    </div>
+                    <div class="col-md-5">
+                        <input asp-for="Id" class="form-control" />
+                    </div>
+                </div>
+                <span asp-validation-for="Id" class="text-danger"></span>
+
+                <div class="row form-group">
+                    <div class="col-md-3">
+                        <label asp-for="Name" class="control-label"></label>
+                    </div>
+
+                    <div class="col-md-8">
+                        <input asp-for="Name" class="form-control" />
+                    </div>
+                </div>
+                <span asp-validation-for="Name" class="text-danger"></span>
+
+                <div class="row form-group">
+                    <div class="col-md-3">
+                        <label asp-for="Slug" class="control-label"></label>
+                    </div>
+
+                    <div class="col-md-8">
+                        <input asp-for="Slug" class="form-control" readonly />
+                    </div>
+                </div>
+                <span asp-validation-for="Slug" class="text-danger"></span>
+
+                <div class=" row form-group">
+                    <div class="col-md-3">
+                        <label asp-for="HorizontalImage" class="control-label"></label>
+                    </div>
+                    <div class="col-md-6">
+                        <input asp-for="HorizontalImage" type="file" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-3">
+                        <label asp-for="VerticalImage" class="control-label"></label>
+                    </div>
+                    <div class="col-md-6">
+                        <input asp-for="VerticalImage" type="file" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <input type="submit" value="Thêm" class="btn btn-primary" />
+                    <div class="form-group">
+                        <a asp-action="Index">Quay về danh sách</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @section script {
+        <script>
+            checkSlug("Name", "/admin/Category/CheckSlug");
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#createCategoryForm").validate({
+                    rules: {
+                        HorizontalImage: { required: true },
+                        VerticalImage: { required: true },
+
+                    },
+                    messages: {
+                        HorizontalImage: { required: "Ảnh không được trống" },
+                        VerticalImage: { required: "Ảnh không được trống" },
+
+                    }
+                });
+            });
+        </script>
+    }

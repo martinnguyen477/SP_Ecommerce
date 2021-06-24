@@ -1,0 +1,146 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.BookViewModel
+@{
+    ViewData["Title"] = "Sách";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section style {
+    <link rel="stylesheet" type="text/css" href="~/Team27StaticFiles/mycss/admin-sach.css">
+    <link rel="stylesheet" type="text/css" href="~/Team27StaticFiles/mycss/admin-table.css">
+    <link rel="stylesheet" type="text/css" href="~/Team27StaticFiles/mycss/components.css">
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- DATA TABLE -->
+        <h3 class="title-5 m-b-35">Danh sách sách</h3>
+        <!-- ALERT -->
+    
+        @{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+
+        <!-- TÌM KIẾM -->
+        <form method="get" id="search-form">
+            <div class="card searchfield show">
+                <div class="card-header">Tìm kiếm</div>
+                <div class="card-body searchbox">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label for="select" class=" form-control-label">Tìm kiếm theo: </label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" id="text-input" asp-for="search" name="search" placeholder="Nhập tên sách cần tìm" class="form-control" value="@Model.search">
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" id="btnSearch" class="btn btn-lg btn-info">TÌM</button>
+                        <button type="button" id="btnSearchClose" class="btn btn-lg btn-secondary">HỦY</button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-data__tool">
+                <div class="table-data__tool-right">
+                    <a href="/admin/Book/Create" class="au-btn au-btn-icon au-btn--green au-btn--small">
+                        <i class="zmdi zmdi-plus"></i>Thêm sách
+                    </a>
+                    <div class="filter-area">
+                        <select asp-for="filtertype" name="filtertype" id="filtertype" class="form-control-lg form-control">
+                            <option value="Default">Mặc định</option>
+                            <option value="Author">Tác giả</option>
+                            <option value="Category">Loại sách</option>
+                            <option value="Publisher">Nhà xuất bản</option>
+                            <option value="Deleted">Đã xóa</option>
+                        </select>
+                        <div id="filter-option">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="table-responsive table-responsive-data3">
+            @if (Model.Books.Count() > 0)
+            {
+                <table class="table table-data3">
+                    <thead>
+                        <tr>
+                            <th width="5%">STT</th>
+                            <th width="5%">Mã sách</th>
+                            <th width="15%">Tên sách</th>
+                            <th width="15%">Giá bán</th>
+                            <th width="10%">Tác giả</th>
+                            <th width="15%">Nhà xuất bản</th>
+                            <th width="10%">Loại sách</th>
+                            <th width="30%">Hình</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            int count = 1;
+                        }
+                        @foreach (var book in Model.Books)
+                        {
+                            <tr class="tr-shadow">
+                                <td>@count</td>
+                                <td>
+                                    <span class="block-email bookId">@book.Id</span>
+                                </td>
+                                <td>@book.DisplayName</td>
+                                <td>@book.DisplayPrice</td>
+                                <td>@book.Author.DisplayName</td>
+                                <td>@book.Publisher.DisplayName</td>
+                                <td>@book.Category.DisplayName</td>
+                                <td>
+                                    <img src="~/Team27StaticFiles/images/books/@book.PrimaryImage" alt="@book.DisplayName" />
+                                </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        @if (Model.filtertype == "Deleted")
+                                        {
+                                            <button class="item btnRestore" data-action="Restore" data-toggle="tooltip" data-placement="top" title="Khôi phục">
+                                                <i class="fa fa-undo"></i>
+                                            </button>
+                                            <button class="item btnDeleteForever" data-action="Delete" data-toggle="tooltip" data-placement="top" title="Xóa vĩnh viễn">
+                                                <i style="color:red;" class="fa fa-trash"></i>
+                                            </button>
+                                        }
+                                        else
+                                        {
+                                            <a asp-action="Edit" asp-route-id="@book.Id" class="item" data-toggle="tooltip" data-placement="top" title="Sửa">
+                                                <i class="zmdi zmdi-edit"></i>
+                                            </a>
+                                            <button class="item xoa" data-action="SoftDelete" data-toggle="tooltip" data-placement="top" title="Xóa">
+                                                <i class="zmdi zmdi-delete"></i>
+                                            </button>
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                            count++;
+                        }
+
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div style="text-align: center;">Không có sách để hiển thị</div>
+            }
+        </div>
+        <!-- END DATA TABLE -->
+
+        <div class="row pt--30">
+            <div class="col-md-12">
+                <div class="pagination-block">
+                    <!--PHÂN TRANG-->
+                    <!--Gọi partial view hiển thị phân trang-->
+                    @{ Html.RenderPartial("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script {
+    <script src="~/Team27StaticFiles/myjs/admin-book.js"></script>
+}

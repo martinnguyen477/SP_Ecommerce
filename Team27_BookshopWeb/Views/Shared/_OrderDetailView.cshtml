@@ -1,0 +1,191 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.OrderDetailViewModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+    <div class="modal fade" id="modalOrderDetail" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="scrollmodalLabel">Chi tiết đơn hàng</h5>
+                    <button type="button" class="close" id="modal-close">
+                        <span aria-hidden="true">X</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="tab-content" id="bill-detail">
+                        <div class="tab-pane active" id="tab_1">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="portlet yellow-crusta box">
+                                        <div class="portlet-title">
+                                            <div class="caption">
+                                                <i class="fa fa-cogs"></i><b>Chi tiết hóa đơn</b>
+                                            </div>
+                                        </div>
+                                        <div class="portlet-body" id="bill">
+                                            <!-- PHẦN THÔNG TIN ĐƠN HÀNG -->
+                                            <div class="row static-info">
+                                                <div class="col-md-5 name">
+                                                    Hóa đơn:
+                                                </div>
+                                                <div class="col-md-7 value">
+                                                    @Model.Order.Id
+                                                </div>
+                                            </div>
+                                            <div class="row static-info">
+                                                <div class="col-md-5 name">
+                                                    Ngày lập hóa đơn:
+                                                </div>
+                                                <div class="col-md-7 value">
+                                                    @Model.Order.CreatedAt.ToString("dd/MM/yyyy - HH:mm:ss")
+                                                </div>
+                                            </div>
+                                            <div class="row static-info">
+                                                <div class="col-md-5 name">
+                                                    Trạng thái:
+                                                </div>
+                                                <div class="col-md-7 value">
+                                                    @Model.Order.OrderStatus.Name
+                                                </div>
+                                            </div>
+                                            <div class="row static-info">
+                                                <div class="col-md-5 name">
+                                                    Phương thức thanh toán:
+                                                </div>
+                                                <div class="col-md-7 value">
+                                                    @Model.Order.PaymentMethod.Name
+                                                </div>
+                                            </div>
+                                            <div class="row static-info">
+                                                <div class="col-md-5 name">
+                                                    Tình trạng thanh toán:
+                                                </div>
+                                                <div class="col-md-7 value">
+                                                    @Model.Order.DisplayPaymentStatus
+                                                </div>
+                                            </div>
+                                            @if (Model.Order.CouponId != null && Model.Order.CouponId != 0)
+                                            {
+                                                <div class="row static-info">
+                                                    <div class="col-md-5 name">
+                                                        Mã khuyến mãi:
+                                                    </div>
+                                                    <div class="col-md-7 value">
+                                                        @Model.Order.Coupon.Name
+                                                    </div>
+                                                </div>
+                                            }
+
+                                            <div class="row static-info">
+                                                <div class="col-md-5 name">
+                                                    Tổng tiền:
+                                                </div>
+                                                <div class="col-md-7 value">
+                                                    @Model.Order.DisplayTotal
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="portlet blue-hoki box">
+                                        <div class="portlet-title">
+                                            <div class="caption">
+                                                <i class="fa fa-cogs"></i><b>Thông tin khách hàng</b>
+                                            </div>
+                                        </div>
+                                        <div class="portlet-body" id="cus-info">
+                                            <!-- PHẦN THÔNG TIN KHÁCH HÀNG -->
+                                            <div class="row static-info">
+                                                <div class="col-md-5 name">
+                                                    Tên khách hàng:
+                                                </div>
+                                                <div class="col-md-7 value">
+                                                    @Model.Order.DisplayName
+                                                </div>
+                                            </div>
+                                            <div class="row static-info">
+                                                <div class="col-md-5 name">
+                                                    Địa chỉ:
+                                                </div>
+                                                <div class="col-md-7 value">
+                                                    @Model.Order.Address
+                                                </div>
+                                            </div>
+                                            <div class="row static-info">
+                                                <div class="col-md-5 name">
+                                                    Số điện thoại:
+                                                </div>
+                                                <div class="col-md-7 value">
+                                                    @Model.Order.Phone
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="portlet grey-cascade box">
+                                        <div class="portlet-title">
+                                            <div class="caption">
+                                                <i class="fa fa-cogs"></i>Các sản phẩm đã mua
+                                            </div>
+                                        </div>
+                                        <div class="portlet-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover table-bordered table-striped" id="table-details">
+                                                    <!-- PHẦN CHI TIẾT ĐƠN HÀNG -->
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Sản phẩm</th>
+                                                            <th>Giá</th>
+                                                            <th>Số lượng</th>
+                                                            <th>Tổng tiền</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (var orderDetail in Model.OrderDetails)
+                                                        {
+                                                            <tr>
+                                                                <td>
+                                                                    <a href="/sach/@orderDetail.Book.Slug">@orderDetail.Book.DisplayName</a>
+                                                                </td>
+                                                                <td>
+                                                                    @orderDetail.Book.DisplayPrice
+                                                                </td>
+                                                                <td>
+                                                                    @orderDetail.Quantity
+                                                                </td>
+                                                                <td>
+                                                                    @orderDetail.DisplayTotal
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                </div>
+                                <div class="col-md-6">
+                                    <button id="btn-back-modal" class="btn btn--primary w-100 blue-stripe blue-steel">Quay về</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // Đóng modal Chi tiết đơn hàng
+    $('#btn-back-modal, .close#modal-close').on('click', function () {
+        $("#modalOrderDetail").modal("hide");
+	});
+</script>

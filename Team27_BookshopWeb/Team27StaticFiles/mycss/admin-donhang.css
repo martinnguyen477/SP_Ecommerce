@@ -1,0 +1,47 @@
+/*Table Head*/
+.table.table-data3 th {
+    text-align: center !important;
+    padding-left: 9px;
+    padding-right: 10px;
+}
+
+/*Table Body*/
+.table-data3 tbody td {
+    padding-left: 30px !important;
+}
+
+.table.table-data3 td:nth-child(5), td:nth-child(6){
+	text-align: center!important;
+}
+
+/*Modal CTDH*/
+
+.modal-dialog.modal-lg {
+    top: 6em !important;
+    left: 10em !important;
+}
+
+.modal-backdrop {
+    z-index: -1 !important;
+}
+
+h5#scrollmodalLabel {
+	font-size: 20px !important;
+	color: red;
+	font-weight: bold;
+}
+/*alert*/
+.sufee-alert.alert.with-close.alert-dismissible {
+    display:none;
+}
+
+/*Search box*/
+
+.searchbox input#text-input {
+    display: none;
+}
+
+input#from-date-input, input#to-date-input, span#arrow {
+    width: 100% !important;
+    display: none;
+}

@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Team27_BookshopWeb.Models.CartViewModel
+
+<div class="cart-total">
+    <span class="text-number">@Model.Quantity</span>
+    <span class="text-item">
+        Giỏ hàng
+    </span>
+    <span class="price">
+        <span>@Model.DisplayTotal</span>
+        <i class="fas fa-chevron-down"></i>
+    </span>
+</div>
+<div class="cart-dropdown-block">
+    <div class="single-cart-block list">
+        @if (Model.CartItems.Count() > 0)
+        {
+            @foreach (var item in Model.CartItems)
+            {
+                <div class="cart-product" data-bookid="@item.BookId">
+                    <a href="/sach/@item.Book.Slug" class="image">
+                        <img src="~/Team27StaticFiles/images/books/@item.Book.PrimaryImage" alt="@item.Book.DisplayName">
+                    </a>
+                    <div class="content">
+                        <h3 class="title"><a href="/sach/@item.Book.Slug">@item.Book.DisplayName</a></h3>
+                        <p class="price"><span class="qty">@item.Quantity</span> × <span class="price">@item.Book.DisplayPrice</span></p>
+                        <button class="cross-btn remove-cart-item" data-bookid="@item.BookId"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+            }
+
+        }
+        else
+        {
+            <div class="cart-product">
+                <p class="empty-cart">Giỏ hàng trống</p>
+            </div>
+        }
+    </div>
+    <div class=" single-cart-block ">
+        <div class="btn-block">
+            <a href="/cart" class="btn">
+                Xem giỏ hàng <i class="fas fa-chevron-right"></i>
+            </a>
+            <a href="/thanh-toan" class="btn btn--primary">
+                Thanh toán <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Welcome to TwentySven bookshop admin">
+    <meta name="keywords" content="TwentySven Admin">
+    <meta name="google-site-verification" content="pvqzAvGGjipcmURn7TE8AW3SKnX56RLUnAI_8cWF37w" />
+
+    <meta name="author" content="Hau Nguyen">
+    <meta name="csrf-token" content="">
+    <link rel="canonical" href="">
+
+    <!-- Title Page-->
+    <title>TwentySven Admin - @ViewBag.title</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="~/Team27StaticFiles/images/banner/favicon.ico">
+
+    <!-- Fontfaces CSS-->
+    <link href="~/Team27StaticFiles/Admins/css/font-face.css" rel="stylesheet" media="all">
+    <link href="~/Team27StaticFiles/Admins/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="~/Team27StaticFiles/Admins/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="~/Team27StaticFiles/Admins/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="~/Team27StaticFiles/Admins/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="~/Team27StaticFiles/Admins/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="~/Team27StaticFiles/Admins/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="~/Team27StaticFiles/Admins/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="~/Team27StaticFiles/Admins/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="~/Team27StaticFiles/Admins/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="~/Team27StaticFiles/Admins/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="~/Team27StaticFiles/Admins/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="~/Team27StaticFiles/Admins/css/theme.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="~/Team27StaticFiles/myjs/sweetalert2-10.12.4/package/dist/sweetalert2.min.css">
+    <link href="~/Team27StaticFiles/mycss/admin.css" rel="stylesheet" media="all">
+    <link href="~/Team27StaticFiles/mycss/chung.css" rel="stylesheet" media="all">
+    <link href="~/Team27StaticFiles/mycss/pagination.css" rel="stylesheet" media="all">
+    <link href="~/Team27StaticFiles/mycss/alert.css" rel="stylesheet" media="all">
+    @RenderSection("style", false)
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="">
+                            <img src="~/Team27StaticFiles/Admins/images/icon/logo.png" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <!--Admin Sidebar Component-->
+                        @await Component.InvokeAsync("AdminSidebar")
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="/admin/index">
+                    <img src="~/Team27StaticFiles/Admins/images/icon/logo.png" alt="Cool Admin" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <!--Admin Sidebar Component-->
+                        @await Component.InvokeAsync("AdminSidebar")
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                         @await Component.InvokeAsync("AdminLoginUser")
+
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+
+                        <h3 class="page-title">
+                            @RenderSection("title", false)
+                        </h3>
+                        <div class="page-bar">
+                            <ul class="page-breadcrumb">
+                                <li>
+                                    <i class="fa fa-home"></i>
+                                    <a href="/admin/dashboard">Trang chủ</a>
+                                    <i class="fa fa-angle-right"></i>
+                                </li>
+                                <li>
+                                    <a href="">@RenderSection("title", false)</a>
+                                </li>
+                                <li>
+                                    <a href="">@RenderSection("subtitle", false)</a>
+                                </li>
+                            </ul>
+                        </div>
+                        @RenderBody()
+
+                    </div>
+                </div>
+            </div>
+            <!--Loading area-->
+            <div id="loading" style="display:none">
+                <img src="~/Team27StaticFiles/images/loading/loading.gif" alt="Loading..." />
+            </div>
+            <!-- END MAIN CONTENT-->
+            <!-- END PAGE CONTAINER-->
+        </div>
+
+    </div>
+
+
+    <!-- Jquery JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="~/Team27StaticFiles/Admins/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="~/Team27StaticFiles/Admins/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="~/Team27StaticFiles/Admins/vendor/slick/slick.min.js"></script>
+    <script src="~/Team27StaticFiles/Admins/vendor/wow/wow.min.js"></script>
+    <script src="~/Team27StaticFiles/Admins/vendor/animsition/animsition.min.js"></script>
+    <script src="~/Team27StaticFiles/Admins/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="~/Team27StaticFiles/Admins/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="~/Team27StaticFiles/Admins/vendor/counter-up/jquery.counterup.min.js"></script>
+    <script src="~/Team27StaticFiles/Admins/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="~/Team27StaticFiles/Admins/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="~/Team27StaticFiles/Admins/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="~/Team27StaticFiles/Admins/vendor/select2/select2.min.js"></script>
+
+    <!-- Main JS-->
+    <script src="~/Team27StaticFiles/Admins/js/main.js"></script>
+    <script src="~/Team27StaticFiles/myjs/load.js"></script>
+    <script src="~/Team27StaticFiles/myjs/alert.js"></script>
+   
+    <!-- Sweet alert -->
+    <script src="~/Team27StaticFiles/myjs/sweetalert2-10.12.4/package/dist/sweetalert2.min.js"></script>
+
+    <!-- Check Slug -->
+    <script src="~/Team27StaticFiles/myjs/checkSlug.js"></script>
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    @RenderSection("script", false)
+</body>
+
+</html>
+<!-- end document-->

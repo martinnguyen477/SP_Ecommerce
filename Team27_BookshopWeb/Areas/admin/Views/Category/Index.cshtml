@@ -1,0 +1,166 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.CategoryViewModel
+
+@{
+    ViewData["Title"] = "Danh sách các loại sách";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section style {
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/admin.css" />
+}
+
+<div class="card searchfield">
+    <div class="card-header">Tìm kiếm</div>
+    <form method="GET" enctype="multipart/form-data">
+        <div class="card-body searchbox">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="select" class=" form-control-label">Nhập tên loại sách: </label>
+                </div>
+                <span class="col-sm-5">
+                    <input type="text" id="text-input" name="name" placeholder="Nhập loại sách cần tìm" class="form-control" value="@Model.timKiem">
+                </span>
+
+            </div>
+            <div>
+                <button type="submit" id="btnSearchLoaiSach" class="btn btn-lg btn-info">TÌM</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- DATA TABLE -->
+        <h3 class="title-5 m-b-35">
+            @Html.DisplayFor(modelItem => Model.thongBao);
+        </h3>
+        <!-- ALERT -->
+
+        @{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+
+        <div class="table-data__tool">
+
+            <div class="table-data__tool-right">
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                    <a asp-action="Create">
+                        <i class="zmdi zmdi-plus"></i>Thêm loại sách
+                    </a>
+                </button>
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                    <a asp-action="ShowTmp">
+                        <i class="zmdi zmdi-plus"></i>Loại sách đã tạm xóa
+                    </a>
+                </button>
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                    <a asp-action="Index">
+                        <i class="zmdi zmdi-plus"></i>Loại sách
+                    </a>
+                </button>
+            </div>
+        </div>
+        @if (Model.categories.Count() > 0)
+        {
+            <div class="table-responsive table-responsive-data3">
+                <table class="table table-data3">
+                    <thead>
+                        <tr>
+                            <th>
+                                Tên loại sách
+                            </th>
+                            <th>
+                                Ngày tạo
+                            </th>
+                            <th>
+                                Ngày sửa
+                            </th>
+
+                            <th>
+                                Thao tác
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.categories)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedAt)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UpdatedAt)
+                                </td>
+
+                                <td>
+                                    <div class="table-data-feature">
+
+
+                                        @if (Model.thongBao != "Tìm kiếm trên danh sách loại sách đã bị tạm xóa" && Model.thongBao != "Danh sách loại sách đã tạm xóa")
+                                        {
+                                            <a class="item" asp-action="Edit" asp-route-id="@item.Id">
+                                                <i class="zmdi zmdi-edit"></i>
+                                            </a>
+                                            <button class="item xoa " onclick="confirmDelete('/admin/Category/Delete?id=@item.Id', 'Bạn có muốn xóa không?')">
+                                                <i class="zmdi zmdi-delete"></i>
+                                            </button>
+                                        }
+
+                                        @if (Model.thongBao == "Tìm kiếm trên danh sách loại sách đã bị tạm xóa" || Model.thongBao == "Danh sách loại sách đã tạm xóa")
+                                        {
+                                            <a class="item xoa" asp-action="Restore" asp-route-id="@item.Id">
+                                                <i class="fa fa-undo"></i>
+                                            </a>
+                                            <button class="item xoa" onclick="confirmDelete('/admin/Category/DeleteForever?id=@item.Id', 'Bạn có muốn xóa không?')">
+                                                <i class="zmdi zmdi-delete"></i>
+                                            </button>
+
+                                        }
+
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        }
+        else
+        {
+
+            <div>
+                Không có loại sách để hiển thị
+            </div>
+
+        }
+        <div class="row pt--30">
+            <div class="col-md-12">
+                <div class="pagination-block">
+                    <!--PHÂN TRANG-->
+                    <!--Gọi partial view hiển thị phân trang-->
+                    @{ Html.RenderPartial("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

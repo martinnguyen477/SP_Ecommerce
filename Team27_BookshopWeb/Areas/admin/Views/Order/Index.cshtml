@@ -1,0 +1,145 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.OrderViewModel
+@{
+    ViewData["Title"] = "Đơn hàng";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section style {
+    <link rel="stylesheet" type="text/css" href="~/Team27StaticFiles/mycss/admin-donhang.css">
+    <link rel="stylesheet" type="text/css" href="~/Team27StaticFiles/mycss/admin-table.css">
+    <link rel="stylesheet" type="text/css" href="~/Team27StaticFiles/mycss/components.css">
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- DATA TABLE -->
+        <h3 class="title-5 m-b-35">Danh sách đơn hàng</h3>
+        <!-- ALERT -->
+        @{ Html.RenderPartial("_AdminAlert", new MessagesViewModel()); }
+        <form method="get" id="search-form">
+            <div class="card searchfield show">
+                <div class="card-header">Tìm kiếm</div>
+                <div class="card-body searchbox">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label for="select" class=" form-control-label">Tìm kiếm theo: </label>
+                        </div>
+                        <div class="col-sm-4">
+                            <select asp-for="searchtype" name="searchtype" id="selectType" class="form-control">
+                                <option value="0">Chọn</option>
+                                <option value="1">Mã đơn hàng</option>
+                                <option value="2">Tên khách hàng</option>
+                                <option value="3">Ngày lập</option>
+                            </select>
+
+                        </div>
+                        <div class="col-sm-7">
+                            <input type="text" disabled id="text-input" asp-for="search" name="search" placeholder="Nhập chuỗi cần tìm" class="form-control" value="@Model.search">
+                            <div class="col-sm-5">
+                                <input type="date" disabled id="from-date-input" max="@DateTime.Now.Date.ToString("yyyy-MM-dd")" name="fromdate" placeholder="Nhập ngày bắt đầu" class="form-control" value="@(Model.fromdate.Year != 0001 ? Model.fromdate.Date.ToString("yyyy-MM-dd") : "")">
+                                <span id="arrow">
+                                    <i class="fa fa-arrow-right"></i>
+                                </span>
+                                <input type="date" disabled id="to-date-input" max="@DateTime.Now.Date.ToString("yyyy-MM-dd")" name="todate" placeholder="Nhập ngày kết thúc" class="form-control" value="@(Model.todate.Year != 0001 ? Model.todate.Date.ToString("yyyy-MM-dd") : "")">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" id="btnSearch" class="btn btn-lg btn-info">TÌM</button>
+                        <button type="button" id="btnSearchClose" class="btn btn-lg btn-secondary">HỦY</button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-data__tool">
+                <div class="table-data__tool-right">
+                    <div class="filter-area">
+                        <select asp-for="filtertype" name="filtertype" id="filtertype" class="form-control-lg form-control">
+                            <option value="Default">Mặc định</option>
+                            <option value="PaymentMethod">Phương thức thanh toán</option>
+                            <option value="OrderStatus">Tình trạng đơn hàng</option>
+                        </select>
+                        <div id="filter-option">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="table-responsive table-responsive-data3">
+            @if (Model.Orders.Count() > 0)
+            {
+                <table class="table table-data3">
+                    <thead>
+                        <tr>
+                            <th width="5%">Mã</th>
+                            <th width="23%">Tên khách hàng</th>
+                            <th width="15%">Ngày lập</th>
+                            <th width="20%">Trạng thái</th>
+                            <th width="10%">Tổng tiền</th>
+                            <th width="15%">Phương thức thanh toán</th>
+                            <th width="15%">Tình trạng thanh toán</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-bill">
+                        @foreach (var order in Model.Orders)
+                        {
+                            <tr class="tr-shadow">
+                                <td>
+                                    <span class="block-email">@order.Id</span>
+                                </td>
+                                <td>@order.DisplayName</td>
+                                <td>@order.CreatedAt.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                                <td>
+                                    @await Component.InvokeAsync("OrderStatusSelect", order)
+                                </td>
+                                <td>@order.DisplayTotal</td>
+                                <td>@order.PaymentMethod.Name</td>
+                                <td class="payment_status">@order.DisplayPaymentStatus</td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ctdh" data-proid="@order.Id" data-placement="top" title="Xem">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="spacer"></tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div style="text-align: center;">Không có đơn hàng để hiển thị</div>
+            }
+
+
+        </div>
+        <div class="row pt--30">
+            <div class="col-md-12">
+                <div class="pagination-block">
+                    <!--PHÂN TRANG-->
+                    <!--Gọi partial view hiển thị phân trang-->
+                    @{ Html.RenderPartial("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
+                </div>
+            </div>
+        </div>
+        <!-- MODAL SCROLL -->
+        <div id="modalCTDH">
+            <!-- MODAL XEM CHI TIẾT ĐƠN HÀNG (LOAD AJAX) -->
+        </div>
+        <!-- end modal scroll -->
+        <!-- END DATA TABLE -->
+
+    </div>
+</div>
+
+@section script {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="~/Team27StaticFiles/myjs/loadCTDH.js"></script>
+    <script src="~/Team27StaticFiles/myjs/adminDonhang.js"></script>
+    <script src="~/Team27StaticFiles/myjs/jQuery.print.js"></script>
+}
+

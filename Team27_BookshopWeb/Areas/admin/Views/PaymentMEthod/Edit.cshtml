@@ -1,0 +1,55 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.PaymentMethodEditModel
+
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+
+<div class="col">
+    <div class="card">
+        <div class="card-header">
+            <strong>Thông tin phương thức</strong>
+        </div>
+        <div class="card-body card-block">
+            <form asp-action="Edit" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                <div class="row form-group">
+                    @*<div class="col-1 col-md-2">
+                        <input type="hidden" id="text-input" name="Id" placeholder="Text" class="form-control" value="@Model.Id" readonly="">
+                        <span asp-validation-for="Id" class="text-danger"></span>
+                    </div>*@
+                    <div class="col col-md-4">
+                        <label for="text-input" class=" form-control-label">Tên phương thức thanh toán:</label>
+                    </div>
+                    <div class="col-1 col-md-5">
+                        <input type="text" id="text-input" name="Name" placeholder="Nhập họ tên" class="form-control" value="@Model.Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class=" row form-group">
+                    
+                    <div class="col col-md-4">
+                        <label for="text-input" class="form-control-label">Tình trạng: </label>
+                    </div>
+
+                    <div class="col-1 col-md-3">
+                        <input type="checkbox" id="HT" name="IsSupported" value="1" @(Model.IsSupported == 1 ? "checked" : "")><span class="nu">Hỗ trợ</span>
+                        <span asp-validation-for="IsSupported" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Submit
+                    </button>
+
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>

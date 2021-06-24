@@ -1,0 +1,29 @@
+﻿@model Team27_BookshopWeb.Models.MessagesViewModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@if (Model != null)
+{
+    string title = (Model.IsSuccess) ? "Thành công" : "Thất bại";
+    string addClass = (Model.IsSuccess) ? "success" : "danger";
+    string message = Model.Messages.Count > 0 ? Model.Messages.First().ToString() : "";
+
+    <div class="sufee-alert alert with-close alert-dismissible alert-@addClass">
+        <span class="badge badge-pill badge-@addClass">@title</span>
+        <span id="message-alert">@message cc</span>
+        <button type="button" class="close" id="alert-close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+else
+{
+    <div class="sufee-alert alert with-close alert-dismissible" style="display:none;">
+        <span class="badge badge-pill"></span>
+        <span id="message-alert"></span>
+        <button type="button" class="close" id="alert-close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+

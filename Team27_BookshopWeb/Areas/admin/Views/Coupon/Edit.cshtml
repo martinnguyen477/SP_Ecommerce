@@ -1,0 +1,207 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.CouponEditModel
+
+@{
+    ViewData["Title"] = "Chỉnh sửa mã khuyến mãi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <strong>Chỉnh sửa thông tin mã khuyến mãi</strong>
+            </div>
+            @{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+            <div class="card-body card-block">
+                <form asp-action="Edit" enctype="multipart/form-data" method="post" style="margin-left: 2em">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row form-group">
+                        <input type="hidden" asp-for="Id" />
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label asp-for="Code" class="control-label"></label>
+                        </div>
+                        <div class="col-2 col-md-4">
+                            <input asp-for="Code" class="form-control" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="Code" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label asp-for="Name" class="control-label"></label>
+                        </div>
+
+                        <div class="col-2 col-md-7">
+                            <input asp-for="Name" class="form-control" id="Name" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label asp-for="Slug" class="control-label"></label>
+                        </div>
+
+                        <div class="col-2 col-md-7">
+                            <input asp-for="Slug" class="form-control" id="Slug" readonly />
+                        </div>
+                    </div>
+                    <span asp-validation-for="Slug" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label asp-for="CreatedAt" class="control-label"></label>
+                        </div>
+
+                        <div class="col-2 col-md-4">
+                            <input asp-for="CreatedAt" type="date" class="form-control"readonly />
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label asp-for="Description" class="control-label"></label>
+                        </div>
+
+                        <div class="col-2 col-md-7">
+                            <textarea asp-for="Description" rows="9" class="form-control" id="Description"></textarea>
+                        </div>
+                    </div>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label asp-for="Uses" class="control-label"></label>
+                        </div>
+
+                        <div class="col-2 col-md-2">
+                            <input type="number" asp-for="Uses" class="form-control" id="Uses" readonly />
+                        </div>
+                    </div>
+                    <span asp-validation-for="Uses" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label asp-for="MaxUses" class="control-label"></label>
+                        </div>
+
+                        <div class="col-2 col-md-2">
+                            <input type="number" asp-for="MaxUses" class="form-control" id="MaxUses" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="MaxUses" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label asp-for="MaxUsesUser" class="control-label"></label>
+                        </div>
+
+                        <div class="col-2 col-md-2">
+                            <input type="number" asp-for="MaxUsesUser" class="form-control" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="MaxUsesUser" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label asp-for="Type" class="control-label"></label>
+                        </div>
+
+                        <div class="col-2 col-md-4">
+                            <select asp-for="Type" class="form-control">
+                                <option value="Coupon">Coupon</option>
+                                <option value="Voucher">Voucher</option>
+                            </select>
+                        </div>
+                    </div>
+                    <span asp-validation-for="Type" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label asp-for="DiscountAmount" class="control-label"></label>
+                        </div>
+
+                        <div class="col-2 col-md-4">
+                            <input type="number" asp-for="DiscountAmount" class="form-control"/>
+                        </div>
+                    </div>
+                    <span asp-validation-for="DiscountAmount" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label asp-for="MinPrice" class="control-label"></label>
+                        </div>
+
+                        <div class="col-2 col-md-4">
+                            <input asp-for="MinPrice" type="number" class="form-control"/>
+                        </div>
+                    </div>
+                    <span asp-validation-for="MinPrice" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label asp-for="IsFixed" class="form-check-label"></label>
+                        </div>
+
+                        <div class="col-md-8">
+                            <input name="IsFixed" type="checkbox" value="1" class="form-check-input" @(Model.IsFixed == 1 ? "checked" : "") style="width: 1.3em; height:1.3em; margin-left:0.5em"/>
+                        </div>
+                    </div>
+                    <span asp-validation-for="IsFixed" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label asp-for="StartsAt" class="control-label"></label>
+                        </div>
+
+                        <div class="col-2 col-md-4">
+                            <input asp-for="StartsAt" type="date" class="form-control" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="StartsAt" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label asp-for="ExpiresAt" class="control-label"></label>
+                        </div>
+
+                        <div class="col-2 col-md-4">
+                            <input asp-for="ExpiresAt" type="date" class="form-control" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="ExpiresAt" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label asp-for="Image" class="control-label"></label>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <input asp-for="Image" class="form-control hide" />
+                            <img src="~/Team27StaticFiles/images/coupon/@Model.Image" style="width:33em; height: 22em;" />
+                            <input name="ImageUpLoad" type="file" class="form-control" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="Image" class="text-danger"></span>
+
+                    <div class="card-footer">
+                        <input type="submit" value="Cập nhật" class="btn btn-primary" />
+
+                        <div class="row form-group">
+                            <a asp-action="Index">Trở về danh sách</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+@section script {
+    <script>
+        checkSlug("Name", "/admin/Coupon/CheckSlug");
+    </script>
+}
+

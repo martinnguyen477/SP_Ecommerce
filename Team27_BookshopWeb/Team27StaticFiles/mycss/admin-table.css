@@ -1,0 +1,102 @@
+﻿/*Table Head*/
+.table.table-data3 th {
+    text-align: center !important;
+    padding-left: 9px;
+    padding-right: 10px;
+}
+
+/*Table Body*/
+.table-data3 tbody td {
+    padding-left: 30px !important;
+}
+
+.table.table-data3 td:nth-child(5), td:nth-child(6) {
+    text-align: center !important;
+}
+
+/*Search box*/
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0.5rem !important;
+}
+
+.searchbox .row {
+    margin: 20px 20px !important;
+}
+
+.searchbox .col-5 {
+    margin-right: 15px;
+}
+
+.btn-block {
+    display: block;
+    width: 38% !important;
+    float: left !important;
+    margin-left: 305px !important;
+}
+
+.searchbox select#selectType {
+    margin-bottom: 1em;
+}
+
+.searchbox label.form-control-label {
+    vertical-align: middle;
+    margin: 10px 0px;
+    width: fit-content;
+}
+
+.searchbox input#text-input {
+    margin-bottom: 1em;
+}
+
+.searchbox .col-sm-7 {
+    margin-left: 14em;
+}
+
+input#from-date-input {
+    margin-left: 0px !important;
+    margin-right: 0em !important;
+}
+
+.col-sm-5 {
+    display: inline-flex;
+}
+
+span#arrow {
+    text-align: center;
+    margin-top: 9px !important;
+    margin-right: 4em !important;
+    margin-left: 4em !important;
+    font-size: 7px !important;
+}
+
+.searchbox button {
+    width: 20em;
+    margin: 0em 3em;
+    margin-left: 6em !important;
+}
+
+.card-header {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.card.searchfield {
+    display: none;
+}
+
+.card.searchfield.show {
+    display: block;
+}
+
+/*FILTER*/
+
+.filter-area, #filter-option {
+    display: inline-flex;
+}
+
+select#filter {
+    margin-left: 2em !important;
+    width: 17em !important;
+}

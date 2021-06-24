@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Mã khuyến mãi";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+@section style {
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/coupon-gallery.css" />
+}
+
+<section class="breadcrumb-section">
+    <h2 class="sr-only">Site Breadcrumb</h2>
+    <div class="container">
+        <div class="breadcrumb-contents">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Mã khuyến mãi</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+<section class="inner-page-sec-padding-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 mb--40 mb-lg--0">
+                @RenderBody()
+            </div>
+            <div class="col-lg-3">
+                <div class="inner-page-sidebar">
+                    <div class="single-block">
+                        <h2 class="sidebar-title mb--30">TÌM KIẾM MÃ KHUYẾN MÃI</h2>
+                        <div class="site-mini-search">
+                            <form asp-controller="CouponGallery" asp-action="Index" method="get">
+                                <input type="text" name="search" placeholder="Nhập tên mã khuyến mãi">
+                                <button><i class="fas fa-search"></i></button>
+                            </form>
+                            
+                        </div>
+                    </div>
+                    @try
+                    {
+                        @await Component.InvokeAsync("CouponSidebar")
+                    }
+                    catch (Exception)
+                    {
+                    }
+
+                    <!-- Promo Block -->
+                    <div class="single-block">
+                        <a href="" class="promo-image sidebar">
+                            <img src="image/others/home-side-promo.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

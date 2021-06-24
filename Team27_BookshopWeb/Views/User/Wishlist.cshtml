@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Team27_BookshopWeb.Entities.Wishlist>
+@{
+    ViewData["Title"] = "Danh sách yêu thích";
+    Layout = "~/Views/Shared/_MyAccountLayout.cshtml";
+}
+
+<h4>Danh sách yêu thích</h4>
+<div class="cart-table table-responsive wishlist">
+    @if (Model.Count() > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="pro-thumbnail">Hình ảnh</th>
+                    <th class="pro-title">Tên sách</th>
+                    <th class="pro-price">Giá</th>
+                    <th class="pro-remove"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var wishlist in Model)
+                {
+                    <tr>
+                        <td class="pro-thumbnail"><a href="/sach/@wishlist.Book.Slug"><img src="~/Team27StaticFiles/images/books/@wishlist.Book.PrimaryImage" alt="@wishlist.Book.DisplayName"></a></td>
+                        <td class="pro-title"><a href="/sach/@wishlist.Book.Slug">@wishlist.Book.DisplayName</a></td>
+                        <td class="pro-price"><span>@wishlist.Book.DisplayPrice</span></td>
+                        <td class="pro-remove">
+                            <button data-proid="@wishlist.Book.Id" class="yeuthich_remove"><i class="far fa-trash-alt"></i></button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    }
+    else
+    {
+        <p>Bạn chưa thêm sách yêu thích nào</p>
+    }
+
+</div>
+

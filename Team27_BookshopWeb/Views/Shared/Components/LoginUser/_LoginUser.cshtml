@@ -1,0 +1,16 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+    
+*@
+@if (User.Identity.IsAuthenticated)
+{
+    <a href="#">
+        <i class="icons-left fas fa-user"></i> @ViewBag.Name
+    </a><i class="fas fa-chevron-down dropdown-arrow"></i>
+    <ul class="dropdown-box sub-menu">
+        <li> <a href="/my-account/profile">Tài khoản của tôi</a></li>
+        <li> <a href="/my-account/history">Lịch sử đơn hàng</a></li>
+        <li> <a href="/my-account/wishlist">Danh sách yêu thích</a></li>
+        <li> <a href="/logout">Đăng xuất</a></li>
+    </ul>
+}

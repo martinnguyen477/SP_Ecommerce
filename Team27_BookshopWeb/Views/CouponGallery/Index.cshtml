@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewData["Title"] = "Mã khuyến mãi";
+    Layout = "~/Views/Shared/_CouponLayout.cshtml";
+}
+@model Team27_BookshopWeb.Models.CouponGalleryViewModel
+
+    <div class="blog-list-cards">
+        @if (Model.Coupons.Count() > 0)
+        {
+            @foreach (var coupon in Model.Coupons)
+            {
+                <div class="blog-card card-style-list">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <a href="/ma-khuyen-mai/@coupon.Slug" class="image d-block">
+                                <img src="~/Team27StaticFiles/images/coupon/@coupon.Image" alt="@coupon.Name">
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-content">
+                                <h3 class="title">
+                                    <a href="/ma-khuyen-mai/@coupon.Slug">
+                                        @coupon.Name
+                                    </a>
+                                </h3>
+                                <p class="post-meta"><span>@coupon.CreatedAt.ToString("dd/MM/yyyy - HH:mm:ss") </span></p>
+                                <article>
+                                    <h2 class="sr-only">
+                                        Coupon description
+                                    </h2>
+                                    <p>
+                                        @if (coupon.Description.Length >= 200)
+                                        {
+                                            @coupon.Description.Replace("<br>", Environment.NewLine).Substring(0, 200);
+                                        }
+                                        else
+                                        {
+                                            @coupon.Description.Replace("<br>", Environment.NewLine)
+                                        } ...
+                                    </p>
+                                    <a href="/ma-khuyen-mai/@coupon.Slug" class="blog-link"> Xem thêm</a>
+                                </article>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            }
+            <div class="col-md-12">
+                <div class="pagination-block">
+                    <!-- Phân trang link -->
+                    <!--Gọi partial view hiển thị phân trang-->
+                    @{ Html.RenderPartial("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
+                </div>
+            </div>
+        }
+        else
+        {
+            <div>Không có mã khuyến mãi nào</div>
+        }
+
+    </div>
+

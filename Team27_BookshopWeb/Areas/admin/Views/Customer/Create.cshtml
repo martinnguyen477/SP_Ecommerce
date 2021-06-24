@@ -1,0 +1,95 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.CustomerEditModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <strong>Thông tin khách hàng</strong>
+            </div>
+            <div class="card-body card-block">
+                <form action="Create" method="post" enctype="multipart/form-data" id="customer-create-form" class="form-horizontal">
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label asp-for="Name" class="control-label">@Html.DisplayNameFor(model => Model.Name):</label>
+                        </div>
+                        <div class="col-2 col-md-4">
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="col col-md-2">
+                            <label asp-for="Gender" class="control-label">@Html.DisplayNameFor(model => Model.Gender):</label>
+                        </div>
+
+                        <div class="col-2 col-md-3">
+                            <label><input type="radio" id="female" name="Gender" value="1"> Nữ</label>
+                            <label><input type="radio" id="male" name="Gender" value="0">Nam</label>
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class=" row form-group">
+                        <div class="col col-md-2">
+                            <label asp-for="Email" class="control-label">@Html.DisplayNameFor(model => Model.Email):</label>
+                        </div>
+                        <div class="col-2 col-md-4">
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="col col-md-2">
+                            <label asp-for="Phone" class="control-label">@Html.DisplayNameFor(model => Model.Phone):</label>
+                        </div>
+                        <div class="col-2 col-md-4">
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col col-md-2">
+                            <label asp-for="Address" class="control-label">@Html.DisplayNameFor(model => Model.Address):</label>
+                        </div>
+                        <div class="col-2 col-md-10">
+                            <input asp-for="Address" class="form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-2">
+                            <label asp-for="Username" class="control-label">Username:</label>
+                        </div>
+                        <div class="col-3 col-md-4">
+                            <input asp-for="Username" class="form-control" />
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                        </div>
+                        <div class="col col-md-2">
+                            <label asp-for="Password" class="control-label">Password:</label>
+                        </div>
+                        <div class="col-3 col-md-4">
+                            <input asp-for="Password" class="form-control" type="password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+
+        @section script {
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>
+            <script src="~/Team27StaticFiles/myjs/validation-form.js"></script>
+        }

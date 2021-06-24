@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Team27_BookshopWeb.Models.CouponSidebarViewModel
+@{
+    var url = Context.Request.Path.ToString();
+}
+
+<div class="single-block ">
+    <h2 class="sidebar-title mb--30">Tags</h2>
+    <ul class="sidebar-tag-list">
+        @if (Model.CouponTypes.Count() > 0)
+        {
+            @foreach (var type in Model.CouponTypes)
+            {
+                <li><a href="/ma-khuyen-mai/tags/@type.ToLower()" class="@(url.Contains(type.ToLower()) ? "active" : string.Empty)"> @type</a></li>
+            }
+        }
+        <li><a href="/ma-khuyen-mai" class="@(url=="/ma-khuyen-mai" ? "active" : string.Empty)"> Khuyến mãi</a></li>
+    </ul>
+</div>
+<div class="single-block ">
+    <h2 class="sidebar-title mb--30">KHUYỄN MÃI GẦN ĐÂY</h2>
+    <ul class="sidebar-list">
+        @if (Model.NewCoupons.Count() > 0)
+        {
+            @foreach (var coupon in Model.NewCoupons)
+            {
+                <li><a href="/ma-khuyen-mai/@coupon.Slug"> @coupon.Name</a></li>
+            }
+
+        }
+    </ul>
+</div>

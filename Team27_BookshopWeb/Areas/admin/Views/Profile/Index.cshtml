@@ -1,0 +1,202 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.EmployeeProfileEditModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@section style {
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/admin-profile.css" />
+}
+
+<!-- ALERT -->
+@{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card border border-success">
+            <div class="card-header">
+                <i class="fa fa-user-circle"></i>
+                <strong class="card-title">Chỉnh sửa hồ sơ</strong>
+            </div>
+            <div class="card-body">
+                <form id="profile-update" asp-action="EditAccount" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label asp-for="Name" class=" form-control-label">Họ tên</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <input type="text" asp-for="Name" placeholder="Họ tên" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label asp-for="Gender" class="form-control-label">Giới tính</label>
+                        </div>
+                        <div class="col col-md-9">
+                            <div class="form-check">
+                                <div class="radio">
+                                    <label for="genderMale" class="form-check-label ">
+                                        <input type="radio" id="genderMale" asp-for="Gender" value="0" class="form-check-input" required>Nam
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label for="genderFemale" class="form-check-label ">
+                                        <input type="radio" id="genderFemale" asp-for="Gender" value="1" class="form-check-input" required>Nữ
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label asp-for="Birthdate" class=" form-control-label">Ngày sinh</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <input type="date" id="Ngaysinh" asp-for="Birthdate" placeholder="Ngày sinh" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label asp-for="Phone" class=" form-control-label">Số điện thoại</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <input class="form-control" type="text" placeholder="Số điện thoại" asp-for="Phone" id="Sdt" pattern="^0{1}\d{9}$" required>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label asp-for="Address" class=" form-control-label">Địa chỉ</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <input type="text" id="Diachi" asp-for="Address" placeholder="Địa chỉ" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label asp-for="Email" class=" form-control-label">Email</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <input class="form-control" type="email" asp-for="Email" id="Email" pattern="^[\w]{1,}[\w.+-]{0,}@@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary btn-sm" id="btn-update-profile">
+                            <i class="fa fa-dot-circle-o"></i> Cập nhật
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-user"></i>
+                <strong class="card-title pl-2">Profile</strong>
+            </div>
+            <div class="card-body">
+                <div class="mx-auto d-block">
+                    <img class="rounded-circle mx-auto d-block" src="~/Team27StaticFiles/Admins/images/icon/@(Model.Gender==1 ? "female.png" : "male.png")" alt="@Model.Name">
+                    <h5 class="text-sm-center mt-2 mb-1" id="Profile-Hoten">@Model.Name</h5>
+
+                    <div class="location text-sm-center">
+                        <i class="fas fa-briefcase"></i> @Model.Position
+                    </div>
+
+                    <div class="location text-sm-center" id="Profile-Diachi">
+                        <i class="fas fa-map-marker-alt"></i> @Model.Address
+                    </div>
+
+                    <div class="card-text text-sm-center">
+                        <a href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                    <hr>
+
+                    <div class="col col-md-5">
+                        <label class=" form-control-label"><strong>Mã nhân viên</strong></label>
+                    </div>
+                    <div class="col col-md-5">
+                        <label class=" form-control-label">@Model.Id</label>
+                    </div>
+                    <hr>
+
+                    <div class="col col-md-5">
+                        <label class=" form-control-label"><strong>Username</strong></label>
+                    </div>
+                    <div class="col col-md-5">
+                        <label class=" form-control-label">@Model.Username</label>
+                    </div>
+
+                    <hr>
+                    <div class="col col-md-5">
+                        <label class=" form-control-label"><strong>Ngày tham gia</strong></label>
+                    </div>
+                    <div class="col col-md-9">
+                        <label class=" form-control-label">@Model.CreatedAt.ToString("dd/MM/yyyy lúc HH:mm:ss")</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="card border border-success">
+            <div class="card-header">
+                <i class="fa fa-lock"></i>
+                <strong class="card-title">Thay đổi mật khẩu</strong>
+            </div>
+            <div class="card-body">
+                <form id="change-password" method="post" data-id="@Model.Id">
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label for="CurrentPassword" class=" form-control-label">Mật khẩu hiện tại</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <input type="password" id="CurrentPassword" name="CurrentPassword" placeholder="Mật khẩu hiện tại" class="form-control" value="" required>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label for="NewPassword" class=" form-control-label">Mật khẩu mới</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <input type="password" id="NewPassword" name="NewPassword" placeholder="Mật khẩu mới" class="form-control" value="" required>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label for="PasswordConfirmation" class=" form-control-label">Xác nhận mật khẩu</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <input type="password" id="PasswordConfirmation" name="PasswordConfirmation" placeholder="Xác nhận mật khẩu" class="form-control" value="" required>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary btn-sm btnUpdatePw">
+                            <i class="fa fa-dot-circle-o"></i> Cập nhật
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section script {
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>
+    <script src="~/Team27StaticFiles/myjs/admin-profile.js"></script>
+}

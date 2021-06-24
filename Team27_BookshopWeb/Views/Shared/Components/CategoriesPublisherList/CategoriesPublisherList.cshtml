@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model dynamic
+@{
+    var type = this.TempData["type"];
+    //Nếu là loại sách thì lấy ra danh sách các loại sách, ngược lại lấy danh sách nhà xuất bản
+    var list = (type == "loai-sach") ? Model.categories : Model.publishers;
+    var path = (type == "loai-sach") ? "loai-sach" : "nha-xuat-ban";
+
+    //Lấy url hiện tại
+    string pageUrl = Context.Request.Path.ToString();
+}
+@*Kiểm tra list có giá trị*@
+@if (list.Count > 0)
+{
+    foreach (var item in list)
+    {
+        <li class="cat-item @(pageUrl.Contains(item.Slug) ? "active" : string.Empty)">
+            <a href="/@path/@item.Slug">
+                @item.DisplayName
+                <span>(@item.Books.Count)</span>
+            </a>
+        </li>
+    }
+}
+else
+{
+    <div>Không có dữ liệu</div>
+}

@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Team27_BookshopWeb.Entities.Publisher>
+@if (Model.Count() > 0)
+{
+    <section class="section-margin brand-slider">
+        <h2 class="sr-only">Publishers Slider</h2>
+        <div class="container">
+            <div class="brand-slider sb-slick-slider border-top border-bottom" data-slick-setting='{
+                                            "autoplay": true,
+                                            "autoplaySpeed": 2000,
+                                            "slidesToShow": 6
+                                            }' data-slick-responsive='[
+                {"breakpoint":992, "settings": {"slidesToShow": 4} },
+                {"breakpoint":768, "settings": {"slidesToShow": 3} },
+                {"breakpoint":575, "settings": {"slidesToShow": 3} },
+                {"breakpoint":480, "settings": {"slidesToShow": 2} },
+                {"breakpoint":320, "settings": {"slidesToShow": 1} }
+            ]'>
+                @foreach (var publisher in Model)
+                {
+                    <div class="single-slide">
+                        <img src="~/Team27StaticFiles/images/publishers/@publisher.Image" style="width:50px; height:40px" alt="@publisher.DisplayName">
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}
+

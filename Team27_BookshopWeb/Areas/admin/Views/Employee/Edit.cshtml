@@ -1,0 +1,125 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.EmployeeEditModel
+
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+
+<div class="col">
+    <div class="card">
+        <div class="card-header">
+            <strong>Thông tin nhân viên</strong>
+        </div>
+        <div class="card-body card-block">
+            <form asp-action="Edit" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                <div class="row form-group">
+                    <div class="col col-md-2">
+                        <label for="text-input" class=" form-control-label">Mã nhân viên</label>
+                    </div>
+                    <div class="col-1 col-md-2">
+                        <input type="text" id="text-input" name="Id" placeholder="Text" class="form-control" value="@Model.Id" readonly="">
+                        <span asp-validation-for="Id" class="text-danger"></span>
+                    </div>
+
+                    <div class="col col-md-1">
+                        <label for="text-input" class=" form-control-label">Họ tên</label>
+                    </div>
+                    <div class="col-2 col-md-7">
+                        <input type="text" id="text-input" name="Name" placeholder="Nhập họ tên" class="form-control" value="@Model.Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class=" row form-group">
+                    <div class="col col-md-2">
+                        <label for="text-input" class="form-control-label">Giới tính: </label>
+                    </div>
+
+                    <div class="col-1 col-md-2">
+                        <input type="radio" id="male" name="Gender" value="0" @(Model.Gender == 0 ? "checked" : "")><span class="nam">Nam</span>
+                        <input type="radio" id="female" name="Gender" value="1" @(Model.Gender == 1 ? "checked" : "")><span class="nu">Nữ</span>
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                    <div class="col col-md-2">
+                        <label for="text-input" class=" form-control-label">Ngày sinh:</label>
+                    </div>
+                    <div class="col-2 col-md-6">
+                        <input type="date" id="text-input" name="Birthdate" placeholder="Nhập ngày sinh" class="form-control" value="@Model.Birthdate.ToString("yyyy-MM-dd")">
+                        <span asp-validation-for="Birthdate" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-2">
+                        <label for="text-input" class=" form-control-label">Số điện thoại:</label>
+                    </div>
+                    <div class="col-1 col-md-2">
+                        <input type="text" id="text-input" name="Phone" placeholder="Nhập số điện thoại" class="form-control" value="@Model.Phone">
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+
+                    <div class="col col-md-2">
+                        <label for="text-input" class=" form-control-label">Ngày tham gia:</label>
+                    </div>
+                    <div class="col-3 col-md-6">
+                        <input type="datetime" id="text-input" name="CreatedAt" placeholder="Nhập ngày" class="form-control" value="@Model.CreatedAt" readonly="">
+                        <span asp-validation-for="CreatedAt" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-2">
+                        <label for="text-input" class=" form-control-label">Email</label>
+                    </div>
+                    <div class="col-12 col-md-10">
+                        <input type="text" id="text-input" asp-for="Email" placeholder="Nhập email" class="form-control" value="@Model.Email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-2">
+                        <label for="text-input" class=" form-control-label">Địa chỉ:</label>
+                    </div>
+                    <div class="col-12 col-md-10">
+                        <input type="text" id="text-input" name="Address" placeholder="Nhập địa chỉ" class="form-control" value="@Model.Address">
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-2">
+                        <label for="text-input" class=" form-control-label">Username:</label>
+                    </div>
+                    <div class="col-1 col-md-2">
+                        <input type="text" id="text-input" name="Username" placeholder="Text" class="form-control" value="@Model.Username">
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+
+                    <div class="col col-md-2">
+                        <label for="text-input" class=" form-control-label">Chức vụ:</label>
+                    </div>
+                    <div class="col-3 col-md-6">
+                        <input type="text" id="text-input" name="Position" placeholder="Text" class="form-control" value="@Model.Position" readonly="">
+                        <span asp-validation-for="Position" class="text-danger"></span>
+                    </div>
+                    <div class="col-3 col-md-6">
+                        <input type="hidden" id="text-input" name="Password" placeholder="Text" class="form-control" value="@Model.Password" readonly="">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Submit
+                    </button>
+
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,189 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.BookEditModel
+
+@{
+    ViewData["Title"] = "Thêm sách";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section style {
+    <link rel="stylesheet" type="text/css" href="~/Team27StaticFiles/mycss/admin-sach.css">
+}
+
+<div class="col">
+    <div class="card">
+        <div class="card-header">
+            <strong>Thêm Sách</strong>
+        </div>
+        <!-- ALERT -->
+        @{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+
+        <div class="card-body card-block">
+            <form asp-action="Create" id="bookform" method="post" enctype="multipart/form-data" class="form-horizontal">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="Name" class=" form-control-label">Tên sách</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input asp-for="Name" type="text" placeholder="Tên sách" class="form-control">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="Slug" class=" form-control-label">Slug</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="text" asp-for="Slug" placeholder="Slug" class="form-control" readonly>
+                        <span asp-validation-for="Slug" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="Price" class=" form-control-label">Giá bán</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="number" asp-for="Price" min="0" placeholder="Giá bán" class="form-control" required>
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="Pages" class=" form-control-label">Số trang</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="number" min="1" placeholder="Số trang" class="form-control" asp-for="Pages">
+                        <span asp-validation-for="Pages" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="PublicationMonth" class=" form-control-label">Ngày xuất bản</label>
+                    </div>
+                    <div class="col-12 col-md-9 publication-date-area">
+                        <select asp-for="PublicationMonth" class="form-control">
+                            <option value="0">Tháng</option>
+                            @for (int i = 1; i <= 12; i++)
+                            {
+                                <option value="@i">Tháng @i</option>
+                            }
+                        </select>
+
+                        <input type="number" min="0001" max="@DateTime.Now.Year" asp-for="PublicationYear" placeholder="Năm" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="Description" class=" form-control-label">Nội dung</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <textarea asp-for="Description" rows="9" placeholder="Nội dung" class="form-control"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="CategoryId" class=" form-control-label">Loại sách</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <select asp-for="CategoryId" class="form-control" required>
+                            @foreach (var category in Model.Categories)
+                            {
+                                <option value="@category.Id">@category.Name</option>
+                            }
+                        </select>
+                        <span asp-validation-for="CategoryId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="PublisherId" class=" form-control-label">Nhà xuất bản</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <select asp-for="PublisherId" class="form-control" required>
+                            @foreach (var publisher in Model.Publishers)
+                            {
+                                <option value="@publisher.Id">@publisher.Name</option>
+                            }
+                        </select>
+                        <span asp-validation-for="PublisherId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="AuthorId" class=" form-control-label">Tác giả</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <select asp-for="AuthorId" class="form-control" required>
+                            @foreach (var author in Model.Authors)
+                            {
+                                <option value="@author.Id">@author.Name</option>
+                            }
+                        </select>
+                        <span asp-validation-for="AuthorId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="TranslatorId" class=" form-control-label">Dịch giả</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <select asp-for="TranslatorId" class="form-control">
+                            <option value="">Chọn</option>
+                            @foreach (var translator in Model.Translators)
+                            {
+                                <option value="@translator.Id">@translator.Name</option>
+                            }
+                        </select>
+                        <span asp-validation-for="TranslatorId" class="text-danger"></span>
+                    </div>
+                </div>
+                
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="PrimaryImage" class=" form-control-label">Ảnh đại diện</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input name="PrimaryImage" type="file" id="PrimaryImage" required>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="Images" class=" form-control-label">Ảnh khác</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="file" id="Images" name="Images" multiple="multiple" class="form-control-file">
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-sm" value="" style="background-color: red">
+                        Thêm
+                    </button>
+                    <a asp-action="Index" class="btn btn-primary btn-sm" style="color:white;">Quay về</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+@section script {
+    <script>
+        checkSlug('Name', '/admin/Book/CheckSlug');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>
+    <script src="~/Team27StaticFiles/myjs/admin-book.js"></script>
+}

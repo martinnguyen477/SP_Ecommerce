@@ -1,0 +1,81 @@
+input[type=checkbox] {
+    width: 22px;
+    height: 33px;
+    opacity: 100 !important;
+}
+
+.table.table-data3 tr,.table.table-data3 td {
+	text-align: center;
+}
+
+input.Name, input.Slug {
+    border: 1px solid grey;
+    padding: 2px 1em;
+    margin: 10px 0px;
+}
+
+.table-data__info.ID h6 {
+    font-size: 17px !important;
+    padding: 14% 0px;
+}
+
+ul.pagination {
+    margin: 1em 1em;
+}
+
+/*SEARCH BOX*/
+
+.card.searchfield {
+    margin-bottom: 0px !important;
+}
+
+.searchbox .col-sm-2 {
+    margin-left: 1.5em !important;
+}
+
+.searchbox button#btnSearch {
+    width: 6em !important;
+    height: 37px !important;
+    font-size: 18px !important;
+    padding: 5px 0px !important;
+    margin: 0px 1em !important;
+}
+
+.searchbox button#btnReset {
+    width: 4em !important;
+    height: 37px !important;
+    font-size: 18px !important;
+    padding: 5px 0px !important;
+    background: indianred;
+    border: none;
+}
+
+button#btnReset:hover {
+    background: #d81616;
+}
+
+.searchbox label.form-control-label {
+    padding: 0.4em 0em !important;
+    font-size: 17px !important;
+}
+
+/*FILTER BOX*/
+
+.table-data__tool {
+    margin: 1% 81% !important;
+}
+
+.filterbox label.form-control-label {
+    width: 10em !important;
+    font-size: 18px !important;
+    margin: 5px 0em !important;
+}
+
+.filterbox .col-sm-2 {
+    width: 16em !important;
+}
+
+select#selectLg {
+    margin: 0em 1em !important;
+    width: 10em !important;
+}

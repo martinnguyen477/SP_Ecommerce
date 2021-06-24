@@ -1,0 +1,70 @@
+/*PROFILE*/
+div#gender-field {
+    /* height: 10em !important; */
+    margin-top: 2em !important;
+    vertical-align: middle;
+}
+
+.account-details-form h4 {
+    margin-top: 3em !important;
+}
+
+label {
+    margin: 0em -1em !important;
+}
+
+input#female, input#male {
+    width: 8em !important;
+    height: 1.5em !important;
+    display: inline-flex;
+    margin-right: -2em !important;
+}
+
+input#male {
+    margin-left: 3em !important;
+}
+
+.tab-content > .tab-pane {
+     display: block !important; 
+}
+
+/*Modal order detail*/
+/*header*/
+h5#scrollmodalLabel {
+    font-size: 24px !important;
+    font-weight: 500;
+}
+
+.portlet.box.yellow-crusta > .portlet-title {
+    background-color: #f3c200;
+}
+
+.portlet.box > .portlet-title {
+    border-bottom: 0;
+    padding: 0 10px;
+    margin-bottom: 0;
+    color: #fff;
+}
+
+.portlet.box > .portlet-title > .caption {
+    padding: 11px 0 9px 0;
+}
+
+#table-details {
+	text-align: center;
+}
+
+#table-details th{
+	font-weight: bolder;
+	font-size: 15px;
+}
+
+#table-details td:nth-child(1){
+	font-weight: bolder;
+	text-align: left;
+}
+
+a.btn.huydh.btn-danger:hover {
+    color: white !important;
+}
+

@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{ var books = Model;}
+    <div class="product-slider product-list-slider multiple-row slider-border-multiple-row  sb-slick-slider"
+         data-slick-setting='{
+                           	"autoplay": true,
+                            "autoplaySpeed": 8000,
+                            "slidesToShow": 3,
+                            "rows":3,
+                            "dots":true
+                        }' data-slick-responsive='[
+                            {"breakpoint":992, "settings": {"slidesToShow": 2,"rows": 3} },
+
+                            {"breakpoint":768, "settings": {"slidesToShow": 1} }
+                        ]'>
+
+
+        @foreach (var book in books)
+        {
+            <div class="single-slide">
+                <div class="product-card card-style-list">
+                    <div class="card-image">
+                        <img src="~/Team27StaticFiles/images/books/@book.PrimaryImage" style="width:100px; height:120px" alt="@book.DisplayName">
+                    </div>
+                    <div class="product-card--body">
+                        <div class="product-header">
+                            <a href="/tac-gia/@book.Author.Slug" class="author">
+                                @book.Author.DisplayName
+                            </a>
+                            <h3><a href="/sach/@book.Slug">@book.DisplayName</a></h3>
+                        </div>
+                        <div class="price-block">
+                            <span class="price">@book.DisplayPrice</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>

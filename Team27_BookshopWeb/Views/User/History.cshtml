@@ -1,0 +1,64 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.OrderViewModel
+@{
+    ViewData["Title"] = "Lịch sử đơn hàng";
+    Layout = "~/Views/Shared/_MyAccountLayout.cshtml";
+}
+
+@{
+    int count = 1;
+}
+
+<!-- ALERT -->
+@{ Html.RenderPartial("_AdminAlert", (MessagesViewModel)ViewBag.MessagesView); }
+<h3>Đơn hàng</h3>
+<div class="myaccount-table table-responsive text-center">
+    @if (Model.Orders.Count() > 0)
+    {
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>STT</th>
+                    <th>Mã ĐH</th>
+                    <th>Tên khách hàng</th>
+                    <th>Ngày</th>
+                    <th>Tình trạng</th>
+                    <th>Số lượng</th>
+                    <th>Tổng tiền</th>
+                    <th colspan="2">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model.Orders)
+                {
+                    <tr>
+                        <td>@count</td>
+                        <td>@order.Id</td>
+                        <td>@order.Customer.DisplayName</td>
+                        <td>@order.CreatedAt.ToString("dd/MM/yyyy - HH:mm:ss")</td>
+                        <td class="status">@order.OrderStatus.Name</td>
+                        <td>@order.OrderDetails.Sum(od => od.Quantity)</td>
+                        <td>@order.DisplayTotal</td>
+                        <td>
+                            <button class="btn ctdh btn-info" data-proid="@order.Id">Xem</button>
+                            @if (order.StatusId == 1 || order.StatusId == 2)
+                            {
+                                <button class="btn huydh btn-danger" data-proid="@order.Id">Hủy đơn hàng</button>
+                            }
+                        </td>
+                    </tr>
+                    count++;
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div style="text-align:center;">Bạn chưa có đơn hàng nào</div>
+    }
+</div>
+
+<div id="modalCTDH">
+    <!-- MODAL XEM CHI TIẾT ĐƠN HÀNG (LOAD AJAX) -->
+</div>
+
+

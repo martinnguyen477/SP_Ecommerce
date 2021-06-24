@@ -1,0 +1,130 @@
+﻿@model Team27_BookshopWeb.Models.CartViewModel
+@{
+    ViewBag.title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+@section style
+{
+    <link rel="stylesheet" type="text/css" href="~/Team27StaticFiles/mycss/cart.css">
+}
+
+<section class="breadcrumb-section">
+    <h2 class="sr-only">Site Breadcrumb</h2>
+    <div class="container">
+        <div class="breadcrumb-contents">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Giỏ hàng</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+<!-- Cart Page Start -->
+<main class="cart-page-main-block inner-page-sec-padding-bottom">
+    <div class="cart_area cart-area-padding  ">
+        <div class="container">
+            <div class="page-section-title">
+                <h1>Giỏ hàng</h1>
+            </div>
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- Cart Table -->
+                    <div class="cart-table table-responsive mb--40">
+                        @if (Model.CartItems.Count() > 0)
+                        {
+                            <table class='table'>
+                                <thead>
+                                    <tr>
+                                        <th class="pro-select"></th>
+                                        <th class="pro-thumbnail">Hình ảnh</th>
+                                        <th class="pro-title">Tên sách</th>
+                                        <th class="pro-price">Đơn giá</th>
+                                        <th class="pro-quantity">Số lượng</th>
+                                        <th class="pro-subtotal">Tổng tiền</th>
+                                        <th class="pro-remove"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.CartItems)
+                                    {
+                                        <tr id="@item.BookId">
+                                            <td class="pro-select">
+                                                <input title="Chọn sản phẩm để thanh toán" type="checkbox" class="cart-checkbox" name="select" @(item.IsSelected == 1 ? "checked" : string.Empty)>
+                                            </td>
+                                            <td class="pro-thumbnail"><a href="/sach/@item.Book.Slug"><img src="~/Team27StaticFiles/images/books/@item.Book.PrimaryImage" alt="@item.Book.DisplayName"></a></td>
+                                            <td class="pro-title"><a href="/sach/@item.Book.Slug">@item.Book.DisplayName</a></td>
+                                            <td class="pro-price"><span>@item.Book.DisplayPrice</span></td>
+                                            <td class="pro-quantity">
+                                                <div class="pro-qty">
+                                                    <button class="cart quantity up" type="button" data-proid="@item.BookId"><i class="fa fa-angle-up"></i></button>
+                                                    <input type="number" class="form-control text-center"
+                                                           value="@item.Quantity" readonly>
+                                                    <button class="cart quantity down" type="button" data-proid="@item.BookId"><i class="fa fa-angle-down"></i></button>
+                                                </div>
+                                            </td>
+                                            <td class="pro-subtotal"><span>@item.DisplayTotal</span></td>
+                                            <td class="pro-remove">
+                                                <button data-bookid="@item.BookId" class="cart_remove"><i class="far fa-trash-alt"></i></button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <div>Giỏ hàng trống</div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cart-section-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-12 mb--30 mb-lg--0">
+                    <!-- slide Block 5 / Normal Slider -->
+                    <div class="cart-block-title">
+                        <h2>BẠN ĐỌC THƯỜNG MUA...</h2>
+                    </div>
+                    <div class="product-slider sb-slick-slider considered-books" data-slick-setting='{
+							          "autoplay": true,
+							          "autoplaySpeed": 3000,
+							          "slidesToShow": 2
+									  }' data-slick-responsive='[
+                {"breakpoint":992, "settings": {"slidesToShow": 2} },
+                {"breakpoint":768, "settings": {"slidesToShow": 3} },
+                {"breakpoint":575, "settings": {"slidesToShow": 2} },
+                {"breakpoint":480, "settings": {"slidesToShow": 1} },
+                {"breakpoint":320, "settings": {"slidesToShow": 1} }
+            ]'>
+                        <!--Sách được nhiều khách hàng mua-->
+                        @foreach (var book in Model.ConsideredBooks.Take(7))
+                        {
+                            <!--Gọi partial view hiển thị thông tin sách-->
+                            Html.RenderPartial("_ProductCard", book);
+                        }
+                    </div>
+                </div>
+                <!-- Cart Summary -->
+                <div class="col-lg-6 col-12 d-flex">
+                    <div class="cart-summary">
+                        <div class="cart-summary-wrap">
+                            <h4><span>Cart Summary</span></h4>
+                            <p>Tạm tính <span class="text-primary" id="subtotal">@Model.DisplayTotal</span></p>
+                        </div>
+                        <div class="cart-summary-button">
+                            <a href="/thanh-toan" class="checkout-btn c-btn btn--primary">Thanh toán</a>
+                            <a asp-action="Index" asp-controller="Shop" class="checkout-btn c-btn btn--primary continue">Tiếp tục mua hàng</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,86 @@
+﻿@model Team27_BookshopWeb.Entities.Comment
+
+@{
+    ViewData["Title"] = "Xem chi tiết";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col">
+    <div class="card">
+        <div class="card-header">
+            <strong>Xem chi tiết nhận xét</strong>
+        </div>
+        <div class="card-body card-block">
+            <div class="row form-group">
+                <input type="hidden" asp-for="Id" />
+            </div>
+
+            @if (!string.IsNullOrEmpty(Model.CustomerId))
+            {
+                <div class="row form-group">
+                    <div class="col-md-3">
+                        <label asp-for="CustomerId" class="control-label">Mã khách hàng</label>
+                    </div>
+
+                    <div class="col-md-5">
+                        <input asp-for="CustomerId" class="form-control" readonly />
+                    </div>
+                </div>
+            }
+            <div class="row form-group">
+                <div class="col-md-3">
+                    <label asp-for="Name" class="control-label">Tên khách hàng</label>
+                </div>
+
+                <div class="col-md-8">
+                    <input asp-for="Name" class="form-control" id="Name" readonly />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-3">
+                    <label asp-for="Email" class="control-label">Email</label>
+                </div>
+
+                <div class="col-md-8">
+                    <input asp-for="Email" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-3">
+                    <label asp-for="Content" class="control-label">Nhận xét</label>
+                </div>
+
+                <div class="col-md-8">
+                    <textarea asp-for="Content" rows="9" class="form-control" id="Description" readonly></textarea>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-3">
+                    <label for="BookName" class="control-label">Tên sách</label>
+                </div>
+
+                <div class="col-md-8">
+                    <input name="BookName" id="BookName" value="@Model.Book.DisplayName" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-3">
+                    <label asp-for="Vote" class="control-label">Đánh giá</label>
+                </div>
+
+                <div class="col-md-8">
+                    <input asp-for="Vote" class="form-control" readonly />
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div>
+                    <a asp-action="Index">Quay về danh sách</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+

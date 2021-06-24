@@ -1,0 +1,540 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="pvqzAvGGjipcmURn7TE8AW3SKnX56RLUnAI_8cWF37w" />
+
+    <!-- Use Minified Plugins Vesrsion For Fast Page Load -->
+
+
+    <link rel="canonical" href="">
+
+    <!-- Robotst tag -->
+    <meta name="robots" content="index">
+    <meta name="googlebot" content="index">
+    <meta name="robots" content="follow">
+
+    <!-- HTML Meta Tags -->
+    <title>TwentySven - @ViewBag.title</title>
+    @RenderSection("head", false)
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:type" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:url" content="">
+
+
+    <!-- Use Minified Plugins Version For Fast Page Load -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/css/plugins.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/css/main.css" />
+    <link rel="stylesheet" href="~/Team27StaticFiles/myjs/sweetalert2-10.12.4/package/dist/sweetalert2.min.css">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/chung.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/pagination.css" />
+    @RenderSection("style", false)
+
+    <link rel="shortcut icon" type="image/x-icon" href="~/Team27StaticFiles/images/banner/favicon.ico">
+    @RenderSection("bonushead", false)
+    <!--Schema.org -->
+
+
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0" nonce="5P593UmB"></script>
+    @* Phần facebook plugin *@
+    <div class="site-wrapper" id="top">
+        <div class="site-header header-3  d-none d-lg-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <ul class="header-top-list">
+                            <li class="dropdown-trigger currency-dropdown">
+                                <a href="">£ GBP </a><i class="fas fa-chevron-down dropdown-arrow"></i>
+                                <ul class="dropdown-box">
+                                    <li><a href="#">€ Euro</a></li>
+                                    <li><a href="#">£ Pound Sterling</a></li>
+                                    <li><a href="#">$ US Dollar</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-trigger language-dropdown">
+                                <a href="">
+                                    <span class="flag-img">
+                                        <img src="~/Team27StaticFiles/images/image/icon/eng-flag.png" alt="Eng Flag">
+                                    </span>en-gb
+                                </a><i class="fas fa-chevron-down dropdown-arrow"></i>
+                                <ul class="dropdown-box">
+                                    <li>
+                                        <a href="">
+                                            <span class="flag-img">
+                                                <img src="~/Team27StaticFiles/images/image/icon/eng-flag.png"
+                                                     alt="English Flag">
+                                            </span>English
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <span class="flag-img">
+                                                <img src="~/Team27StaticFiles/images/image/icon/germany-flag.png"
+                                                     alt="Germany Flag">
+                                            </span>Germany
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-8 flex-lg-right">
+                        <ul class="header-top-list">
+                            <li class="dropdown-trigger language-dropdown">
+                                @await Component.InvokeAsync("LoginUser")
+                            </li>
+                            <li>
+                                <a href="/lien-he"><i class="icons-left fas fa-phone"></i> Liên hệ</a>
+                            </li>
+                            <li>
+                                <a href="/thanh-toan"><i class="icons-left fas fa-share"></i> Thanh toán</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header-middle pt--10 pb--10">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3">
+                            <a href="/" class="site-brand">
+                                <img src="~/Team27StaticFiles/images/banner/logo27.png" alt="TwentySven" height="80" width="180">
+                            </a>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="header-search-block">
+                                <form method="get" action="/tim-kiem">
+                                    <input type="text" name="name" id="search" placeholder="Nhập tên sách cần tìm" required>
+                                    <button type="submit">Tìm kiếm</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="main-navigation flex-lg-right">
+                                <div class="cart-widget">
+                                    <div class="login-block">
+                                        @if (!User.Identity.IsAuthenticated)
+                                        {
+                                            <a href="/login-register" class="font-weight-bold">Đăng nhập</a> <br>
+                                            <span>hoặc</span><a href="/login-register">Đăng ký</a>
+                                        }
+                                    </div>
+                                    <div class="cart-block">
+                                        @await Component.InvokeAsync("CartBlock")
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom bg-primary">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3">
+                            <nav class="category-nav white-nav  ">
+                                <div>
+                                    <a href="javascript:void(0)" class="category-trigger">
+                                        <i class="fa fa-bars"></i>DANH MỤC
+                                    </a>
+                                    <ul class="category-menu">
+                                        @await Component.InvokeAsync("CategoriesPublisherList", "loai-sach")
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="header-phone color-white">
+                                <div class="icon">
+                                    <i class="fas fa-headphones-alt"></i>
+                                </div>
+                                <div class="text">
+                                    <p>Hỗ trợ miễn phí 24/7</p>
+                                    <p class="font-weight-bold number">+01-202-555-0181</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="main-navigation flex-lg-right">
+                                <ul class="main-menu menu-right main-menu--white li-last-0">
+                                    <li class="menu-item">
+                                        <a href="/">TRANG CHỦ</a>
+                                    </li>
+
+                                    <li class="menu-item">
+                                        <a href="/cua-hang">CỬA HÀNG</a>
+                                    </li>
+
+                                    <li class="menu-item">
+                                        <a href="/ma-khuyen-mai">MÃ KHUYẾN MÃI</a>
+                                    </li>
+
+                                    <li class="menu-item">
+                                        <a href="/lien-he">LIÊN HỆ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-mobile-menu">
+            <header class="mobile-header d-block d-lg-none pt--10 pb-md--10">
+                <div class="container">
+                    <div class="row align-items-sm-end align-items-center">
+                        <div class="col-md-4 col-7">
+                            <a href="/" class="site-brand">
+                                <img src="~/Team27StaticFiles/images/banner/logo27.png" alt="TwentySven Logo">
+                            </a>
+                        </div>
+                        <div class="col-md-5 order-3 order-md-2">
+                            <nav class="category-nav   ">
+                                <div>
+                                    <button class="category-trigger">
+                                        <i class="fa fa-bars"></i>DANH MỤC
+                                    </button>
+                                    <ul class="category-menu">
+                                        @await Component.InvokeAsync("CategoriesPublisherList", "loai-sach")
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="col-md-3 col-5  order-md-3 text-right">
+                            <div class="mobile-header-btns header-top-widget">
+                                <ul class="header-links">
+                                    <li class="sin-link">
+                                        <a href="/cart" class="cart-link link-icon"><i class="ion-bag"></i></a>
+                                    </li>
+                                    <li class="sin-link">
+                                        <a href="javascript:" class="link-icon hamburgur-icon off-canvas-btn">
+                                            <i class="ion-navicon"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--Off Canvas Navigation Start-->
+            <aside class="off-canvas-wrapper">
+                <div class="btn-close-off-canvas">
+                    <i class="ion-android-close"></i>
+                </div>
+                <div class="off-canvas-inner">
+                    <!-- search box start -->
+                    <div class="search-box offcanvas">
+                        <form method="get" action="/tim-kiem">
+                            <input type="text" name="name" id="search-mobile" placeholder="Nhập tên sách cần tìm" required>
+                            <button type="submit"><i class="ion-ios-search-strong"></i></button>
+                        </form>
+                    </div>
+                    <!-- search box end -->
+                    <!-- mobile menu start -->
+                    <div class="mobile-navigation">
+                        <!-- mobile menu navigation start -->
+                        <nav class="off-canvas-nav">
+                            <ul class="mobile-menu main-mobile-menu">
+                                <li class="menu-item-has-children">
+                                    <a href="/">TRANG CHỦ</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="/cua-hang">CỬA HÀNG</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="/ma-khuyen-mai">MÃ KHUYẾN MÃI</a>
+                                </li>
+                                <li><a href="/lien-he">LIÊN HỆ</a></li>
+                            </ul>
+                        </nav>
+                        <!-- mobile menu navigation end -->
+                    </div>
+                    <!-- mobile menu end -->
+                    <nav class="off-canvas-nav">
+                        <ul class="mobile-menu menu-block-2">
+                            <li class="menu-item-has-children">
+                                <a href="#">Tiền tệ - VND $ <i class="fas fa-angle-down"></i></a>
+                                <ul class="sub-menu">
+                                    <li> <a href="">USD $</a></li>
+                                    <li> <a href="">EUR €</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">Ngôn ngữ - Vi<i class="fas fa-angle-down"></i></a>
+                                <ul class="sub-menu">
+                                    <li>Eng</li>
+                                    <li>Ban</li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                @await Component.InvokeAsync("LoginUser")
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="off-canvas-bottom">
+                        <div class="contact-list mb--10">
+                            <a href="" class="sin-contact"><i class="fas fa-mobile-alt"></i>(12345) 78790220</a>
+                            <a href="" class="sin-contact"><i class="fas fa-envelope"></i>examle@handart.com</a>
+                        </div>
+                        <div class="off-canvas-social">
+                            <a href="#" class="single-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="single-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="single-icon"><i class="fas fa-rss"></i></a>
+                            <a href="#" class="single-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="single-icon"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#" class="single-icon"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!--Off Canvas Navigation End-->
+        </div>
+        <div class="sticky-init fixed-header common-sticky">
+            <div class="container d-none d-lg-block">
+                <div class="row align-items-center">
+                    <div class="col-lg-4">
+                        <a href="/" class="site-brand">
+                            <img src="~/Team27StaticFiles/images/banner/logo27.png" alt="TwentySven">
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="main-navigation flex-lg-right">
+                            <ul class="main-menu menu-right ">
+                                <li class="menu-item">
+                                    <a href="/">TRANG CHỦ</a>
+                                </li>
+                                <!-- Shop -->
+                                <li class="menu-item">
+                                    <a href="/cua-hang">CỬA HÀNG</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/ma-khuyen-mai">MÃ KHUYẾN MÃI</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/lien-he">LIÊN HỆ</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="cart-block">
+                            @await Component.InvokeAsync("CartBlock")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @RenderBody()
+        <!-- Modal -->
+        <section id="qv-modal-area">
+        </section>
+        <!--Loading area-->
+        <div id="loading" style="display:none">
+            <img src="~/Team27StaticFiles/images/loading/loading.gif" alt="Loading..." />
+        </div>
+        <!--=================================
+            Footer
+        ===================================== -->
+    </div>
+
+    <!--COVID-19 WIDGET-->
+    <div id="covid-map">
+        <iframe src="https://ourworldindata.org/coronavirus-data-explorer?tab=map&zoomToSelection=true&country=~OWID_WRL&region=World&casesMetric=true&interval=total&hideControls=true&smoothing=0&pickerMetric=location&pickerSort=asc"
+                loading="lazy"
+                style="width: 100%; height: 600px; border: 0px none;">
+        </iframe>
+    </div>
+
+
+    <!--=================================
+      Publishers Slider
+    ===================================== -->
+    @await Component.InvokeAsync("PublisherSlider")
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5f9920ac0ac0d3179f0e1d55/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+    <!--=================================
+        Footer Area
+    ===================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row justify-content-between  section-padding">
+                <div class=" col-xl-3 col-lg-4 col-sm-6">
+                    <div class="single-footer pb--40">
+                        <div class="brand-footer footer-title">
+                            <img src="~/Team27StaticFiles/images/banner/logo27.png" alt="TwentySven">
+                        </div>
+                        <div class="footer-contact">
+                            <p><span class="label">Địa chỉ:</span><span class="text">280 An Dương Vương, Q.5 TPHCM</span></p>
+                            <p><span class="label">Điện thoại:</span><span class="text">+18088 234 5678</span></p>
+                            <p><span class="label">Email:</span><span class="text">suport@hastech.com</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-xl-3 col-lg-2 col-sm-6">
+                    <div class="single-footer pb--40">
+                        <div class="footer-title">
+                            <h3>Thông tin</h3>
+                        </div>
+                        <ul class="footer-list normal-list">
+                            <li><a href="/">Giới thiệu</a></li>
+                            <li><a href="/">Sản phẩm mới</a></li>
+                            <li><a href="/">Sản phẩm bán chạy</a></li>
+                            <li><a href="/lien-he">Liên hệ</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class=" col-xl-3 col-lg-2 col-sm-6">
+                    <div class="single-footer pb--40">
+                        <div class="footer-title">
+                            <h3>Lượt truy cập</h3>
+                        </div>
+                        <ul class="footer-list normal-list">
+                            <li>
+                                <a href='https://free-hit-counters.net/'>Free Hit Counters</a>
+                                <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=db4353f2f24785abd38c551517c932853dad745a'></script>
+                                <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/779138/t/6"></script>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class=" col-xl-3 col-lg-4 col-sm-6">
+                    <div class="footer-title">
+                        <h3>Đăng ký nhận tin</h3>
+                    </div>
+                    <div class="newsletter-form mb--30">
+                        <!-- Begin Mailchimp Signup Form -->
+                        <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+                        <style type="text/css">
+                            #mc_embed_signup {
+                                background: #fff;
+                                clear: left;
+                                font: 14px Helvetica,Arial,sans-serif;
+                                width: 100%;
+                            }
+                            /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                               We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                        </style>
+                        <div id="mc_embed_signup">
+                            <form action="https://gmail.us2.list-manage.com/subscribe/post?u=f8aa8eaa8f90319065589a611&amp;id=9b0a40118d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                <div id="mc_embed_signup_scroll">
+
+                                    <input type="email" value="" name="EMAIL" class="email form-control" id="mce-EMAIL" placeholder="Nhập email tại đây..." required>
+                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f8aa8eaa8f90319065589a611_9b0a40118d" tabindex="-1" value=""></div>
+                                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn btn--primary w-100"></div>
+                                </div>
+                            </form>
+                        </div>
+                        <a href="https://gmail.us2.list-manage.com/unsubscribe?u=f8aa8eaa8f90319065589a611&id=9b0a40118d" class="unsubscribe">Unsubscribe</a>
+                    </div>
+                    <div class="social-block">
+                        <h3 class="title">MẠNG XÃ HỘI</h3>
+                        <ul class="social-list list-inline">
+                            <li class="single-social facebook">
+                                <a href="https://www.facebook.com/Linhttk27"><i class="ion ion-social-facebook"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright-heading">
+                    Suspendisse in auctor augue. Cras fermentum est ac fermentum tempor. Etiam
+                    vel magna volutpat, posuere eros
+                </p>
+                <a href="#" class="payment-block">
+                    <img src="~/Team27StaticFiles/images/image/icon/payment.png" alt="Payment">
+                </a>
+                <p class="copyright-text">
+                    Copyright © 2019 <a href="#" class="author">TwentySven</a>. All Right Reserved.
+                    <br>
+                    Design By Pustok
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Use Minified Plugins Version For Fast Page Load -->
+    @*<script src="~/Team27StaticFiles/js/jquery-3.5.1.js"></script>*@
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>*@
+    <script src="~/Team27StaticFiles/js/plugins.js"></script>
+    <script src="~/Team27StaticFiles/js/ajax-mail.js"></script>
+    <script src="~/Team27StaticFiles/js/custom.js"></script>
+    <script src="~/Team27StaticFiles/js/jquery-validation/jquery.validate.js"></script>
+    <script src="~/Team27StaticFiles/js/jquery-validation/additional-methods.js"></script>
+
+    <!-- Sweet alert -->
+    <script src="~/Team27StaticFiles/myjs/sweetalert2-10.12.4/package/dist/sweetalert2.min.js"></script>
+
+    <!-- Alert -->
+    <script src="~/Team27StaticFiles/myjs/alert.js"></script>
+
+    <!-- LoadAjax -->
+    <script src="~/Team27StaticFiles/myjs/load.js"></script>
+
+    <!-- Load quick view -->
+    <script src="~/Team27StaticFiles/myjs/LoadQuickView.js"></script>
+
+    <!-- Giỏ hàng -->
+    <script src="~/Team27StaticFiles/myjs/cart.js"></script>
+
+    <!--Wishlist-->
+    <script src="~/Team27StaticFiles/myjs/Wishlist.js"></script>
+
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    @RenderSection("script", false)
+</body>
+
+</html>

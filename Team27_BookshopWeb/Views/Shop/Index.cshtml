@@ -1,0 +1,184 @@
+﻿
+@{
+    ViewData["Title"] = "Cửa hàng";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+@section style {
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/shop.css" />
+}
+
+@model Team27_BookshopWeb.Models.ShopViewModel
+
+<section class="breadcrumb-section">
+    <h2 class="sr-only">Site Breadcrumb</h2>
+    <div class="container">
+        <div class="breadcrumb-contents">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="/@Model.Type/@Model.DisplayPath/">
+                    @Model.DisplayBreadcrumb
+                    </a></li>
+                    <!-- breadcrumb -->
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+<main class="inner-page-sec-padding-bottom">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-9 order-lg-2">
+                <!-- Hiển thị kết quả tìm kiếm cho -->
+                <h3 id="shop-page-description">@Model.Description: <span id="book-count">@Model.Books.Count() / @Model.Count kết quả</span></h3>
+                <div class="shop-toolbar with-sidebar mb--30">
+
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-2 col-md-2 col-sm-6">
+                            <!-- Product View Mode -->
+                            <div class="product-view-mode">
+                                <a href="#" class="sorting-btn active" data-target="grid">
+                                    <i class="fas fa-th"></i>
+                                </a>
+                                <a href="#" class="sorting-btn" data-target="grid-four">
+                                    <span class="grid-four-icon">
+                                        <i class="fas fa-grip-vertical"></i><i class="fas fa-grip-vertical"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 mt--10 mt-md--0 ">
+                            <div class="sorting-selection">
+                                <span>Sắp xếp:</span>
+                                <form method="get">
+                                    @if (Model.search != null)
+                                    {
+                                        <input type="hidden" name="name" value="@Model.search" />
+                                    }
+                                    else
+                                    {
+                                        <input type="hidden" name="name" value="@Model.search" disabled/>
+                                    }
+
+                                    <select asp-for="sort" class="form-control nice-select sort-select mr-0" name="sort" onchange="this.form.submit();">
+                                        <option value="default" selected="selected">Mặc định</option>
+                                        <option value="nameasc">
+                                            Tên: (A - Z)
+                                        </option>
+                                        <option value="namedesc">
+                                            Tên: (Z - A)
+                                        </option>
+                                        <option value="priceasc">
+                                            Giá: (Thấp &gt; cao)
+                                        </option>
+                                        <option value="pricedesc">
+                                            Giá: (Cao &gt; Thấp)
+                                        </option>
+                                        <option value="viewdesc">
+                                            Lượt xem: (Cao nhất)
+                                        </option>
+                                        <option value="viewasc">
+                                            Lượt xem: (Thấp nhất)
+                                        </option>
+                                    </select>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shop-toolbar d-none">
+                    <div class="row align-items-center">
+                        <div class="col-lg-2 col-md-2 col-sm-6">
+                            <!-- Product View Mode -->
+                            <div class="product-view-mode">
+                                <a href="#" class="sorting-btn active" data-target="grid">
+                                    <i class="fas fa-th"></i>
+                                </a>
+                                <a href="#" class="sorting-btn" data-target="grid-four">
+                                    <span class="grid-four-icon">
+                                        <i class="fas fa-grip-vertical"></i><i class="fas fa-grip-vertical"></i>
+                                    </span>
+                                </a>
+                                <a href="#" class="sorting-btn" data-target="list ">
+                                    <i class="fas fa-list"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shop-product-wrap grid with-pagination row space-db--30 shop-border">
+                    <!-- Hiển thị sách -->
+                    @foreach (var book in Model.Books)
+                    {
+                        <div class="col-lg-4 col-sm-6">
+                            <!--Gọi partial view hiển thị thông tin sách-->
+                            @{ Html.RenderPartial("_ProductCard", book);}
+                        </div>
+                    }
+                </div>
+                <!-- Pagination Block -->
+                <div class="row pt--30">
+                    <div class="col-md-12">
+                        <div class="pagination-block">
+                            <!-- Phân trang link -->
+                            <!--Gọi partial view hiển thị phân trang-->
+                            @{ Html.RenderPartial("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3  mt--40 mt-lg--0">
+                <div class="inner-page-sidebar">
+                    <!-- Accordion -->
+                    <div class="single-block">
+                        <h3 class="sidebar-title">Loại sách</h3>
+                        <ul class="sidebar-menu--shop">
+                            <!-- Danh sách loại sách -->
+                            @await Component.InvokeAsync("CategoriesPublisherList", "loai-sach")
+                        </ul>
+                    </div>
+
+                    <div class="single-block">
+                        <h3 class="sidebar-title">Nhà xuất bản</h3>
+                        <ul class="sidebar-menu--shop menu-type-2">
+                            <!-- Danh sách nhà xuất bản -->
+                            @await Component.InvokeAsync("CategoriesPublisherList", "nha-xuat-ban")
+                        </ul>
+                    </div>
+
+                    <!-- Box Facebook page like -->
+                    <div class="single-block">
+                        <div class="fb-page" 
+                             data-href="https://www.facebook.com/Linhttk27" 
+                             data-tabs="timeline" 
+                             data-width="" 
+                             data-height="" 
+                             data-small-header="true" 
+                             data-adapt-container-width="true" 
+                             data-hide-cover="false" 
+                             data-show-facepile="true">
+                        <blockquote cite="https://www.facebook.com/Linhttk27" class="fb-xfbml-parse-ignore">
+                            <a href="https://www.facebook.com/Linhttk27">TwentySven - Ở đây có bán Sách</a>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <!-- RSS Feeds Area -->
+                    @try
+                    {
+                        @await Component.InvokeAsync("RssFeed")
+                    }
+                    catch (Exception)
+                    {
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+	</div>

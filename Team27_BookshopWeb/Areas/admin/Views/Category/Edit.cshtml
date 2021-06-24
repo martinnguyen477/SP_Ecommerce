@@ -1,0 +1,92 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.CategoryEditModel
+
+@{
+    ViewData["Title"] = "Chỉnh sửa thông tin loại sách";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <strong>Chỉnh sửa thông tin loại sách</strong>
+            </div>
+            @{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+            <div class="card-body card-block">
+                <form asp-action="Edit" enctype="multipart/form-data" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="row form-group">
+                        <div class="col-md-3">
+                            <label asp-for="Name" class="control-label"></label>
+                        </div>
+
+                        <div class="col-md-8">
+                            <input asp-for="Name" class="form-control" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-3">
+                            <label asp-for="Slug" class="control-label"></label>
+                        </div>
+
+                        <div class="col-md-8">
+                            <input asp-for="Slug" class="form-control" readonly />
+                        </div>
+                    </div>
+                    <span asp-validation-for="Slug" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-3">
+                            <label asp-for="CreatedAt" class="control-label"></label>
+                        </div>
+
+                        <div class="col-md-4">
+                            <input asp-for="CreatedAt" type="date" class="form-control" readonly />
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-3">
+                            <label asp-for="VerticalImage" class="control-label"></label>
+                        </div>
+                        <div class="col-md-6">
+                            <input asp-for="VerticalImage" class="form-control hide" />
+                            <img src="~/Team27StaticFiles/images/categories/@Model.VerticalImage" />
+                            <input name="VerticalImageUpLoad" type="file" class="form-control" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="VerticalImage" class="text-danger"></span>
+
+                    <div class="row form-group">
+                        <div class="col-md-3">
+                            <label asp-for="HorizontalImage" class="control-label"></label>
+                        </div>
+                        <div class="col-md-6">
+                            <input asp-for="HorizontalImage" class="form-control hide" />
+                            <img src="~/Team27StaticFiles/images/categories/@Model.HorizontalImage" style="width:30em; height: 11em;"/>
+                            <input name="HorizontalImageUpLoad" type="file" class="form-control" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="HorizontalImage" class="text-danger"></span>
+
+                    <div class="card-footer">
+                        <input type="submit" value="Cập nhật" class="btn btn-primary" />
+
+                        <div class="row form-group">
+                            <a asp-action="Index">Trở về danh sách</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+@section script {
+    <script>
+            checkSlug("Name", "/admin/Category/CheckSlug");
+    </script>
+}
+

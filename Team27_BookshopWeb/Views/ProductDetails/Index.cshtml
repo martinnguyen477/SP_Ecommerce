@@ -1,0 +1,302 @@
+﻿@model Team27_BookshopWeb.Models.ProductDetailsViewModel
+
+@{
+    ViewData["Title"] = Model.book.DisplayName;
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+@section style {
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/product-details.css" />
+}
+
+<section class="breadcrumb-section">
+    <h2 class="sr-only">Site Breadcrumb</h2>
+    <div class="container">
+        <div class="breadcrumb-contents">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="/cua-hang">Cửa hàng</a></li>
+                    <li class="breadcrumb-item"><a href="/loai-sach/@Model.book.Category.Slug">@Model.book.Category.DisplayName</a></li>
+                    <li class="breadcrumb-item active"><a href="/sach/@Model.book.Slug">@Model.book.DisplayName</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+<main class="inner-page-sec-padding-bottom">
+    <div itemscope="" itemtype="http://schema.org/Product" class="container h-product">
+        <div class="row  mb--60">
+            <div class="col-lg-5 mb--30">
+                <!-- Product Details Slider Big Image-->
+                <div class="product-details-slider sb-slick-slider arrow-type-two">
+                    data-slick-setting='{
+                    "slidesToShow": 1,
+                    "arrows": false,
+                    "fade": true,
+                    "draggable": false,
+                    "swipe": false,
+                    "asNavFor": ".product-slider-nav"
+                    }'>
+                    @if (Model.book.BookImages.Count() > 0)
+                    {
+                        <div class="single-slide">
+                            <img itemprop="image" class="u-photo" src="~/Team27StaticFiles/images/books/@Model.book.PrimaryImage" alt="@Model.book.DisplayName" style="width:600px; height:530px;">
+                        </div>
+
+                        foreach (var image in Model.book.BookImages)
+                        {
+                            if (image.Primary != 1)
+                            {
+                                <div class="single-slide">
+                                    <img itemprop="image" class="u-photo" src="~/Team27StaticFiles/images/books/@image.Image" alt="@Model.book.DisplayName" style="width:600px; height:530px;">
+                                </div>
+
+                            }
+                        }
+                    }
+                </div>
+                <div class="mt--30 product-slider-nav sb-slick-slider arrow-type-two" data-slick-setting='{
+            "infinite":true,
+              "autoplay": true,
+              "autoplaySpeed": 8000,
+              "slidesToShow": 4,
+              "arrows": true,
+              "prevArrow":{"buttonClass": "slick-prev","iconClass":"fa fa-chevron-left"},
+              "nextArrow":{"buttonClass": "slick-next","iconClass":"fa fa-chevron-right"},
+              "asNavFor": ".product-details-slider",
+              "focusOnSelect": true
+              }'>
+                    @if (Model.book.BookImages.Count() > 0)
+                    {
+                        <div class="single-slide">
+                            <img class="other-book-image" src="~/Team27StaticFiles/images/books/@Model.book.PrimaryImage" alt="@Model.book.DisplayName">
+                        </div>
+                        foreach (var image in Model.book.BookImages)
+                        {
+                            if (image.Primary != 1)
+                            {
+                                <div class="single-slide">
+                                    <img class="other-book-image" src="~/Team27StaticFiles/images/books/@image.Image" alt="@Model.book.DisplayName">
+                                </div>
+
+                            }
+                        }
+                    }
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="product-details-info pl-lg--30">
+
+                    <h3 itemprop="name" class="product-title p-name">@Model.book.DisplayName</h3>
+                    <ul class="list-unstyled">
+
+                        <li>Tác giả: <a href="/tac-gia/@Model.book.Author.Slug" class="list-value font-weight-bold"> @Model.book.Author.DisplayName</a></li>
+
+                        @if (Model.book.Translator != null)
+                        {
+                            <li>Dịch giả: <a href="/dich-gia/@Model.book.Translator.Slug" class="list-value font-weight-bold"> @Model.book.Translator.DisplayName</a></li>
+                        }
+
+                        <li>Nhà xuất bản: <a href="/nha-xuat-ban/@Model.book.Publisher.Slug" class="list-value"> @Model.book.Publisher.DisplayName</a></li>
+
+                        <li>Ngày xuất bản: <span class="list-value"> @Model.book.PublicationDate</span></li>
+
+                        @if (Model.book.Pages > 0 && Model.book.Pages != null)
+                        {
+                            <li>Số trang: <span class="list-value"> @Model.book.Pages trang</span></li>
+                        }
+                    </ul>
+                    <div class="price-block">
+                        <span class="price-new" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                            <span itemprop="price" class="p-price" data-proprice="@Model.book.Price">@Model.book.DisplayPrice</span>
+                        </span>
+
+                    </div>
+                    <div class="rating-widget">
+                        <div class="rating-block">
+                            <span itemprop="ratingValue" id="averageRating">@Model.averageRating</span>/5
+                            <!-- Rating stars -->
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                if (i <= Math.Floor(Model.averageRating))
+                                {
+                                    <span class="fas fa-star star_on"></span>
+                                }
+                                else
+                                {
+                                    <span class="fas fa-star"></span>
+                                }
+                            }
+                        </div>
+                        <div class="review-widget">
+                            <a href="#xem-them" style="text-decoration: underline; color: blue ">Nhận xét (<span class="count">@Model.numberOfComments</span>)</a> <span>|</span>
+                            <a href="#xem-them" style="text-decoration: underline; color: blue ">Viết nhận xét</a>
+                        </div>
+                    </div>
+                    <article class="product-details-article">
+                        <h4 class="">Tóm tắt</h4>
+                        <p>
+                            @if (Model.book.Description.Length >= 200)
+                            {
+                                @Model.book.Description.Replace("<br>", Environment.NewLine).Substring(0, 200);
+                            }
+                            else
+                            {
+                                @Model.book.Description.Replace("<br>", Environment.NewLine)
+                            } ...<a href="/sach/@Model.book.Slug" style="text-decoration: underline; color: blue "> xem thêm</a>
+                        </p>
+                    </article>
+                    <div class="add-to-cart-row">
+                        <div class="count-input-block">
+                            <span class="widget-label">Số lượng</span>
+                            <!--pattern: Chỉ được nhập số, không được bắt đầu bởi 0-->
+                            <input type="number" id="quantity" name="quantity" class="form-control text-center" value="1" min="1" pattern="[^0|\D]\d{0,}$" required>
+                        </div>
+                        <div class="add-cart-btn">
+                            <button id="pro-detail-atc" class="btn btn-outlined--primary addToCart" data-proid='@Model.book.Id'>
+                                <span class="plus-icon">+</span>Thêm vào giỏ hàng
+                            </button>
+                        </div>
+                    </div>
+                    <div class="compare-wishlist-row">
+                        @await Component.InvokeAsync("FavoriteBook", Model.book.Id)
+                        <span>Thêm vào danh sách yêu thích</span>
+                    </div>
+
+                    <!-- Facebook share area -->
+                    <!-- End Facebook share area -->
+                    <!-- Facebook comments area -->
+                    <!-- End Facebook comments area -->
+                </div>
+            </div>
+        </div>
+        <div class="sb-custom-tab review-tab section-padding">
+            <ul class="nav nav-tabs nav-style-2" id="xem-them" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="tab1" data-toggle="tab" href="#noi-dung" role="tab"
+                       aria-controls="tab-1" aria-selected="true">
+                        Tóm tắt nội dung
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tab2" data-toggle="tab" href="#nhan-xet" role="tab"
+                       aria-controls="tab-2" aria-selected="true">
+                        Nhận xét
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content space-db--20" id="myTabContent">
+                <div class="tab-pane fade show active" id="noi-dung" role="tabpanel" aria-labelledby="tab1">
+                    <article class="review-article">
+                        <h1 class="sr-only">Mô tả</h1>
+                        <p id="mota" class="e-description" itemprop="description" style="white-space: pre-line;">
+                            @Model.book.Description.Replace("<br>", Environment.NewLine)
+                        </p>
+                    </article>
+                </div>
+                <div class="tab-pane fade" id="nhan-xet" role="tabpanel" aria-labelledby="tab2" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" itemref="_ratingCount8">
+                    <div class="review-wrapper">
+
+                        @if (Model.numberOfComments > 0)
+                        {
+                            <h2 class="title-lg mb--20">
+                                Có <span id="_ratingCount8" itemprop="ratingCount">@Model.numberOfComments</span> nhận xét của khách hàng dành cho sản phẩm này:
+                                Đánh giá: <span itemprop="ratingValue">@Model.averageRating</span>/ 5
+                            </h2>
+                            <div class="reviews">
+                                @foreach (var comment in Model.comments)
+                                {
+                                    <div class="review-comment mb--20">
+                                        <div class="avatar">
+                                            <img src="~/Team27StaticFiles/images/banner/favicon.ico" alt="Tác giả của nhận xét" height="150" width="500">
+                                        </div>
+                                        <div class="text">
+                                            <div class="rating-block mb--15">
+                                                <!-- Vote -->
+                                                @for (int i = 1; i <= 5; i++)
+                                                {
+                                                    if (i <= comment.Vote)
+                                                    {
+                                                        <span class="ion-android-star-outline star_on"></span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="ion-android-star-outline"></span>
+                                                    }
+                                                }
+                                            </div>
+
+                                            <h6 class="author">
+                                                @comment.Name
+                                                @if (comment.Bought == 1)
+                                                {
+                                                    <span style="display:inline; color:limegreen"><i class="ion-android-star-outline star_on"></i>Đã mua sản phẩm</span>
+                                                }
+                                            </h6>
+                                            <span class="font-weight-400" id="comment-date">Nhận xét vào @String.Format("{0:dd/MM/yyyy}", comment.CreatedAt)</span>
+                                            <p>
+                                                @comment.Content
+                                            </p>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <h2 class="title-lg mb--20">
+                                Bạn hãy là người đầu tiên nhận xét cho sách này.
+                            </h2>
+                        }
+
+                        <h2 class="title-lg mb--20 pt--15">Thêm nhận xét</h2>
+                        @await Component.InvokeAsync("Comment", Model.book.Id)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--=================================
+        RELATED PRODUCTS BOOKS
+    ===================================== -->
+    @if (Model.relatedBooks.Count() > 0)
+    {
+        <section class="">
+            <div class="container lienquan">
+                <div class="section-title section-title--bordered">
+                    <h2>Các sản phẩm cùng loại</h2>
+                </div>
+                <div class="product-slider sb-slick-slider slider-border-single-row" data-slick-setting='{
+                            "autoplay": true,
+                            "autoplaySpeed": 8000,
+                            "slidesToShow": 4,
+                            "dots":true
+                        }' data-slick-responsive='[
+                            {"breakpoint":1200, "settings": {"slidesToShow": 4} },
+                            {"breakpoint":992, "settings": {"slidesToShow": 3} },
+                            {"breakpoint":768, "settings": {"slidesToShow": 2} },
+                            {"breakpoint":480, "settings": {"slidesToShow": 1} }
+                        ]'>
+
+                    <!-- Sách liên quan -->
+                    @foreach (var book in Model.relatedBooks)
+                    {
+                        <!--Gọi partial view hiển thị thông tin sách-->
+                        Html.RenderPartial("_ProductCard", book);
+                    }
+
+                </div>
+
+                <!-- Modal -->
+
+            </div>
+        </section>
+    }
+</main>
+    </div>
+
+@section script {
+    <script src="~/Team27StaticFiles/myjs/product-detail.js"></script>
+}

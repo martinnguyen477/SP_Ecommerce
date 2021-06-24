@@ -1,0 +1,105 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.AuthorTranslatorViewModel
+@{
+    ViewData["Title"] = "Tác giả - Dịch giả";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section style {
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/admin-tgdg.css" />
+}
+
+<div class="grey-background"></div>
+<div class="row">
+    <div class="col-md-12">
+        <!-- DATA TABLE -->
+        <h3 class="title-5 m-b-35">Danh sách các tác giả - dịch giả</h3>
+        <form method="get">
+            <div class="card searchfield">
+                <div class="card-header">Tìm kiếm</div>
+                <div class="card-body searchbox">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label for="search-text-input" class="form-control-label">Tìm kiếm theo: </label>
+                        </div>
+                        <div class="col-sm-7">
+                            <input type="text" id="search-text-input" name="Search" placeholder="Nhập tên tác giả/dịch giả cần tìm" class="form-control" value="@Model.Search">
+                        </div>
+                        <div>
+                            <button type="submit" id="btnSearch" class="btn btn-lg btn-info">TÌM KIẾM</button>
+                            <button id="btnReset" class="btn btn-lg btn-info">HỦY</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-data__tool">
+                <div class="table-data__tool-right">
+                    <div class="row filterbox">
+                        <div class="col-sm-2">
+                            <label for="selectLg" class="form-control-label">
+                                <i class="fa fa-filter">Lọc</i>
+                            </label>
+                        </div>
+                        <div class="col-sm-7">
+                            <select asp-for="Filter" name="Filter" id="selectLg" class="form-control" onchange="this.form.submit();">
+                                <option value="Default">Mặc định</option>
+                                <option value="Author">Tác giả</option>
+                                <option value="Translator">Dịch giả</option>
+                                <option value="Deleted">Đã xóa</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="table-responsive table-responsive-data3">
+            <table class="table table-data3">
+                <thead>
+                    <tr>
+                        <th>Mã tác giả - dịch giả</th>
+                        <th>Tên tác giả - dịch giả</th>
+                        <th>Tác giả</th>
+                        <th>Dịch giả</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody id="table-authors-translators">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <tr id="add-tgdg">
+                        <td colspan="2">
+                            <div class="table-data__info">
+                                <input type="text" id="name" name="Name" placeholder="Nhập họ tên tác giả/dịch giả..." class="form-control Name" value="" required>
+                                <input type="text" id="slug" name="Slug" placeholder="Slug" class="form-control Slug" value="" required readonly>
+                            </div>
+                        </td>
+                        <td>
+                            <label class="checkbox">
+                                <input type="checkbox" class="ckb_au Tacgia" name="Author">
+                            </label>
+                        </td>
+                        <td>
+                            <label class="checkbox">
+                                <input type="checkbox" class="ckb_trans Dichgia" name="Translator">
+                            </label>
+                        </td>
+                        <td align="center">
+                            <div class="table-data-feature">
+                                <button class="item btnThem" data-toggle="tooltip" data-placement="top" title="Thêm">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    @{ Html.RenderPartial("_AuTransView", Model); }
+
+                    
+
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
+
+@section script {
+    <script src="~/Team27StaticFiles/myjs/admin-tgdg.js"></script>
+}

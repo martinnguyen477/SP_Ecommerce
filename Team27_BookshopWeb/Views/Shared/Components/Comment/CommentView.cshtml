@@ -1,0 +1,63 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Team27_BookshopWeb.Models.CommentEditModel
+@{
+
+}
+
+<form asp-action="Comment" asp-controller="ProductDetails" id="comment-form" class="site-form" method="post" data-bookid="@Model.BookId">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="rating-row pt-2">
+        <input type="hidden" name="BookId" value="@Model.BookId"/>
+        <p class="d-block">Đánh giá</p>
+        <span class="rating-widget-block">
+            <input type="radio" name="Vote" id="star5" value="5">
+            <label for="star5"></label>
+            <input type="radio" name="Vote" id="star4" value="4">
+            <label for="star4"></label>
+            <input type="radio" name="Vote" id="star3" value="3">
+            <label for="star3"></label>
+            <input type="radio" name="Vote" id="star2" value="2">
+            <label for="star2"></label>
+            <input type="radio" name="Vote" id="star1" value="1">
+            <label for="star1"></label>
+        </span>
+        <span id="vote-validation" class="text-danger"></span>
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="message" name="">Ý kiến </label>
+                    <textarea id="message" cols="30" rows="10" class="form-control" asp-for="Content" required></textarea>
+                </div>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="name">Tên *</label>
+                    <input type="text" id="name" class="form-control" asp-for="Name" required>
+                </div>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="email">Email </label>
+                    <input type="email" id="email" asp-for="Email" class="form-control" pattern="^[\w]{1,}[\w.+-]{0,}@@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$">
+                </div>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="submit-btn">
+                    <button type="submit" class="btn btn-black btn-comment">Thêm ý kiến</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="~/Team27StaticFiles/myjs/product-detail.js"></script>

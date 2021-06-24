@@ -1,0 +1,17 @@
+﻿@{ 
+    var StatusId = ViewBag.StatusId;
+    var OrderId = ViewBag.OrderId;
+}
+    <select name="orderstatus" class="form-control-sm form-control orderstatus admin" data-orderid="@OrderId">
+        @foreach (var status in Model)
+        {
+            if (StatusId == status.Id)
+            {
+                <option value="@status.Id" selected>@status.Name</option>
+            }
+            else
+            {
+                <option value="@status.Id">@status.Name</option>
+            }
+        }
+    </select>

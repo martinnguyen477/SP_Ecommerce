@@ -1,0 +1,69 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.CustomerEditModel
+@{
+    ViewData["Title"] = "Tài khoản của tôi";
+    Layout = "~/Views/Shared/_MyAccountLayout.cshtml";
+}
+
+<!-- ALERT -->
+@{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+
+<h3>Thông tin khách hàng</h3>
+<div class="account-details-form">
+    <form asp-action="EditAccount" id="edit-account-form" method="post">
+        <div class="row">
+            <input type="hidden" asp-for="Id">
+            <div class="col-lg-6 col-12  mb--30">
+                <p>Họ tên:</p>
+                <input placeholder="Họ tên" type="text" asp-for="Name">
+            </div>
+            <div class="col-lg-6 col-12  mb--30">
+                <p>Tên tài khoản: </p>
+                <input placeholder="Username" type="text" asp-for="Username">
+            </div>
+            <div class="col-6  mb--30">
+                <p>Giới tính </p>
+                <div id="gender-field">
+                    <label><input type="radio" id="female" name="Gender" value="1" @(Model.Gender == 1 ? "checked" : "")> Nữ</label>
+                    <label><input type="radio" id="male" name="Gender" value="0" @(Model.Gender == 0 ? "checked" : "")>Nam</label>
+                </div>
+            </div>
+            <div class="col-6  mb--30">
+                <p>Số điện thoại: </p>
+                <input asp-for="Phone" placeholder="Số điện thoại" type="text" pattern="^0{1}\d{9}$">
+            </div>
+            <div class="col-12  mb--30">
+                <p>Email: </p>
+                <input placeholder="Email" type="email" asp-for="Email" pattern="^[\w]{1,}[\w.+-]{0,}@@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$">
+            </div>
+            <div class="col-12  mb--30">
+                <p>Địa chỉ: </p>
+                <input placeholder="Địa chỉ" type="text" asp-for="Address">
+            </div>
+            <div class="col-12">
+                <button class="btn btn--primary btnSave" type="submit">Lưu</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="account-details-form">
+    <form id="edit-password-form" method="post">
+        <div class="row">
+            <div class="col-12  mb--30">
+                <h4>Thay đổi mật khẩu</h4>
+            </div>
+            <input type="hidden" asp-for="Id">
+            <div class="col-12  mb--30">
+                <input id="CurrentPassword" placeholder="Mật khẩu hiện tại" type="password" name="CurrentPassword" value="">
+            </div>
+            <div class="col-lg-6 col-12  mb--30">
+                <input id="NewPassword" placeholder="Mật khẩu thay đổi" type="password" name="NewPassword" value="">
+            </div>
+            <div class="col-lg-6 col-12  mb--30">
+                <input id="PasswordConfirmation" placeholder="Xác nhận lại mật khẩu" type="password" name="PasswordConfirmation" value="">
+            </div>
+            <div class="col-12">
+                <button class="btn btn--primary btnEditPw">Lưu thay đổi</button>
+            </div>
+        </div>
+    </form>
+</div>

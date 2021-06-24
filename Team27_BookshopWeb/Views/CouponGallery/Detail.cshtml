@@ -1,0 +1,48 @@
+﻿@model Team27_BookshopWeb.Entities.Coupon
+
+@{
+    ViewData["Title"] = Model.Name;
+    Layout = "~/Views/Shared/_CouponLayout.cshtml";
+}
+
+<div class="blog-post post-details mb--50">
+    <div class="blog-gallery-slider">
+        <div class="single-image">
+            <img src="~/Team27StaticFiles/images/coupon/@Model.Image" alt="@Model.Name">
+        </div>
+    </div>
+    <div class="blog-content mt--30">
+        <header>
+            <h3 class="blog-title"> @Model.Name.ToUpper()</h3>
+            <div class="post-meta">
+                <span class="post-date">
+                    <i class="far fa-calendar-alt"></i>
+                    <span class="text-gray">Ngày : </span>
+                    @Model.CreatedAt.ToString("dd-MM-yyyy lúc HH:mm:ss")
+                </span>
+            </div>
+        </header>
+        <article>
+            <h3 class="d-none sr-only">blob-article</h3>
+            <p class="p-0">
+                @Model.Description.Replace("<br>", Environment.NewLine)
+            </p>
+            <blockquote>
+                <p>
+                    <strong>CODE:</strong>
+                <p id="code">@Model.Code</p>
+                </p>
+            </blockquote>
+            <p class="info">
+                <p>Ngày bắt đầu: @Model.StartsAt.ToString("dd/MM/yyyy")</p>
+                <p style="color:red">Ngày kết thúc: @Model.ExpiresAt.ToString("dd/MM/yyyy")</p>
+            </p>
+        </article>
+        <footer class="blog-meta">
+            <div>
+                TAGS: <a href="/ma-khuyen-mai/tags/@Model.Type.ToLower()">@Model.Type</a>, <a href="/ma-khuyen-mai">Khuyến mãi</a>
+            </div>
+        </footer>
+    </div>
+</div>
+

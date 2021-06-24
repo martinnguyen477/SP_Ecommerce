@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model Team27_BookshopWeb.Models.RSSViewModel
+}
+
+@if (Model != null)
+{
+    <div class="single-block rss-feeds">
+        <h4>
+            <a href="@Model.Image.Link">
+                <img style="vertical-align: middle;" src="@Model.Image.ImageUrl" /> @Model.Title
+            </a>
+        </h4>
+        <ul class="sidebar-menu--shop menu-type-2">
+            <!-- Chỉ lấy 10 tin tức -->
+            @foreach (var news in Model.Items)
+            {
+                <li>
+                    <p class="rss-time-fields">
+                        @news.PublicationDate
+                    </p>
+                    <a href="@news.Link">
+                        <h5>
+                            <span>
+                                <i class="fas fa-bullhorn" style="color: red"></i><b style="color: red"> News: @news.Title</b>
+                            </span>
+                        </h5>
+                    </a>
+                    <p>@Html.Raw(news.Description)</p>
+                </li>
+                <hr>
+            }
+
+            <li>
+                <a href="@Model.Image.Link">Xem thêm...</a>
+            </li>
+        </ul>
+    </div>
+}
+

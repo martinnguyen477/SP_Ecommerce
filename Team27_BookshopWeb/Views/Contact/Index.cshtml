@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewBag.title = "Liên hệ";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+<section class="breadcrumb-section">
+    <h2 class="sr-only">Site Breadcrumb</h2>
+    <div class="container">
+        <div class="breadcrumb-contents">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Liên hệ</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+<!-- contact area Start -->
+<main class="contact_area inner-page-sec-padding-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="contact_form">
+                    <h3 class="ct_title">Liên hệ</h3>
+                    <form id="contact-form" action="php/mail.php" method="post" class="contact-form">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>Họ tên <span class="required">*</span></label>
+                                    <input type="text" id="con_name" name="con_name" class="form-control"
+                                           required>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>Email <span class="required">*</span></label>
+                                    <input type="email" id="con_email" name="con_email" class="form-control"
+                                           required>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>Nội dung</label>
+                                    <textarea id="con_message" name="con_message"
+                                              class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-btn">
+                                    <button type="submit" value="submit" id="submit" class="btn btn-black w-100"
+                                            name="submit">
+                                        Gửi
+                                    </button>
+                                </div>
+                                <div class="form__output"></div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-output">
+                        <p class="form-messege"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div id="google-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.651036532005!2d106.68001951474413!3d10.761354662414472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b888ab357%3A0xc469f6e800231314!2zMjgwIEFuIEQuIFbGsMahbmcsIFBoxrDhu51uZyA0LCBRdeG6rW4gNSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1605942753845!5m2!1sen!2s" width="540" height="512" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- contact area End -->
+<div class="contact-bottom-info inner-page-sec-padding-bottom">
+    <div class="container">
+        <div class="row">
+            <!--Contact Information Start-->
+            <div class="col-lg-3 col-sm-6 col-12 mb-30">
+                <div class="contact-info">
+                    <span class="icon"><i class="fa fa-phone"></i></span>
+                    <div class="content">
+                        <h3 class="title">Liên hệ bằng điện thoại</h3>
+                        <p>1800.123.4569<br> 1800.123.7777</p>
+                    </div>
+                </div>
+            </div>
+            <!--Contact Information End-->
+            <!--Contact Information Start-->
+            <div class="col-lg-3 col-sm-6 col-12 mb-30">
+                <div class="contact-info">
+                    <span class="icon"><i class="fa fa-envelope"></i></span>
+                    <div class="content">
+                        <h3 class="title">Liên hệ bằng email</h3>
+                        <p>mercury.guardianstar11819@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <!--Contact Information End-->
+            <!--Contact Information Start-->
+            <div class="col-lg-3 col-sm-6 col-12 mb-30">
+                <div class="contact-info">
+                    <span class="icon"><i class="fa fa-map-marker"></i></span>
+                    <div class="content">
+                        <h3 class="title">Đến shop</h3>
+                        <p>280 An Dương Vương, P4, Q5</p>
+                    </div>
+                </div>
+            </div>
+            <!--Contact Information End-->
+            <!--Contact Information Start-->
+            <div class="col-lg-3 col-sm-6 col-12 mb-30">
+                <div class="contact-info">
+                    <span class="icon"><i class="fa fa-users"></i></span>
+                    <div class="content">
+                        <h3 class="title">Mạng xã hội của TwentySven</h3>
+                        <ul class="social-list list-inline">
+                            <li class="single-social facebook"><a href="https://www.facebook.com/Linhttk27"><i class="ion ion-social-facebook"></i></a></li>
+                            <li class="single-social youtube"><a href="https://www.youtube.com/playlist?list=PLGmKGWKhFAdjO1qyLEcITzS-DMf17ifFI"><i class="ion ion-social-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--Contact Information End-->
+        </div>
+    </div>
+</div>
+    </div>
+
+@section script
+{
+    <script src="~/Team27StaticFiles/js/plugins.js"></script>
+    <script src="~/Team27StaticFiles/js/ajax-mail.js"></script>
+    @*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2D8wrWMY3XZnuHO6C31uq90JiuaFzGws"></script>*@
+    <script src="~/Team27StaticFiles/js/custom.js"></script>
+}

@@ -1,0 +1,86 @@
+﻿@model Team27_BookshopWeb.Entities.Order
+@{
+    ViewData["Title"] = "Hoàn tất thanh toán";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+<section class="breadcrumb-section">
+    <h2 class="sr-only">Site Breadcrumb</h2>
+    <div class="container">
+        <div class="breadcrumb-contents">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="/thanh-toan">Thanh toán</a></li>
+                    <li class="breadcrumb-item active">Hoàn tất thanh toán</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+<!-- order complete Page Start -->
+<section class="order-complete inner-page-sec-padding-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="order-complete-message text-center">
+                    <h1>Cảm ơn quý khách!</h1>
+                    <p>Quý khách đã đặt hàng thành công</p>
+                </div>
+                <ul class="order-details-list">
+                    <li>Mã đơn hàng: <strong>@Model.Id</strong></li>
+                    <li>Tên khách hàng: <strong>@Model.Name</strong></li>
+                    <li>Phương thức thanh toán: <strong>@Model.PaymentMethod.Name</strong></li>
+                    <li>Tình trạng thanh toán: <strong>@Model.DisplayPaymentStatus</strong></li>
+                    <li>Tình trạng đơn hàng: <strong>@Model.OrderStatus.Name</strong></li>
+                    <li>Ngày đặt hàng: <strong>@Model.CreatedAt.ToString("dd/MM/yyyy lúc HH:mm:ss")</strong></li>
+                    @if (Model.CouponId != null && Model.CouponId != 0)
+                    {
+                        <li>Mã khuyến mãi: <strong>@Model.Coupon.Code</strong></li>
+                    }
+
+                    <li>Tổng tiền: <strong>@Model.DisplayTotal</strong></li>
+                </ul>
+                <h3 class="order-table-title">Chi tiết đơn hàng</h3>
+                <div class="table-responsive">
+                    @if (Model.OrderDetails.Count() > 0)
+                    {
+                        <table class="table order-details-table">
+                            <thead>
+                                <tr>
+                                    <th>Sản phẩm</th>
+                                    <th>Tổng tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.OrderDetails)
+                                {
+                                    <tr>
+                                        <td><a href="/sach/@item.Book.Slug">@item.Book.DisplayName</a> <strong>× @item.Quantity</strong></td>
+                                        <td><span>@item.DisplayTotal</span></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Tạm tính:</th>
+                                    <td><span>@Model.DisplaySubTotal</span></td>
+                                </tr>
+                                <tr>
+                                    <th>Tổng tiền:</th>
+                                    <td><span>@Model.DisplayTotal</span></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    }
+                </div>
+
+            </div>
+
+        </div>
+        <div>
+            <a class="btn btn--primary" id="back" href="/">Quay về trang chủ</a>
+        </div>
+    </div>
+</section>
+	</div>

@@ -1,0 +1,74 @@
+﻿@{
+    //ViewData["Title"] = "Tài khoản của tôi";
+    Layout = "~/Views/Shared/_Master.cshtml";
+
+    string pageUrl = Context.Request.Path.ToString();
+}
+
+
+@section style {
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/myaccount.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/chung.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/components.css" />
+}
+
+<section class="breadcrumb-section">
+    <h2 class="sr-only">Site Breadcrumb</h2>
+    <div class="container">
+        <div class="breadcrumb-contents">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Tài khoản của tôi</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+<div class="page-section inner-page-sec-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <!-- My Account Tab Menu Start -->
+                    <div class="col-lg-3 col-12">
+                        <div class="myaccount-tab-menu nav" role="tablist">
+                            <a class="@(pageUrl.Contains("dashboard") ? "active" : string.Empty)" asp-action="Dashboard"><i class="fas fa-tachometer-alt"></i>Bảng điều khiển</a>
+                            <a class="@(pageUrl.Contains("profile") ? "active" : string.Empty)" asp-action="Profile"><i class="fa fa-user"></i>Thông tin khách hàng</a>
+                            <a class="@(pageUrl.Contains("history") ? "active" : string.Empty)" asp-action="History"><i class="fa fa-cart-arrow-down"></i> Đơn hàng</a>
+                            <a class="@(pageUrl.Contains("wishlist") ? "active" : string.Empty)" asp-action="Wishlist"><i class="fa fa-cart-arrow-down"></i> Danh sách yêu thích</a>
+                            <a asp-action="Logout"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                        </div>
+                    </div>
+                    <!-- My Account Tab Menu End -->
+                    <!-- My Account Tab Content Start -->
+                    <div class="col-lg-9 col-12 mt--30 mt-lg--0">
+                        <div class="tab-content">
+                            <!-- Single Tab Content Start -->
+                            <div class="tab-pane" role="tabpanel">
+                                <!--ALERT-->
+                                <div class="myaccount-content">
+                                    @RenderBody()
+                                </div>
+                            </div>
+                            <!-- Single Tab Content End -->
+                        </div>
+                    </div>
+                    <!-- My Account Tab Content End -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+
+@section script {
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>
+
+    <script src="~/Team27StaticFiles/myjs/loadCTDH.js"></script>
+    <script src="~/Team27StaticFiles/myjs/huydh.js"></script>
+    <script src="~/Team27StaticFiles/myjs/validation-form.js"></script>
+    <script src="~/Team27StaticFiles/myjs/customerProfileEdit.js"></script>
+}

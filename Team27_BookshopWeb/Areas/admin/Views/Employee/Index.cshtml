@@ -1,0 +1,158 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.EmployeeViewModel
+@{
+    ViewData["Title"] = "Danh sách nhân viên";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section style {
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/admin.css" />
+}
+
+@{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+
+<div class="card searchfield">
+
+    <form method="GET" enctype="multipart/form-data">
+        <div class="card-body searchbox">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="select" class=" form-control-label">Nhập tên nhân viên: </label>
+                </div>
+
+                <span class="col-sm-5">
+                    <input type="text" id="text-input" asp-for="name" placeholder="Nhập chuỗi cần tìm" class="form-control">
+                </span>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="select" class=" form-control-label">Lọc theo chức vụ: </label>
+                </div>
+                <span class="col-sm-5">
+                    <select asp-for="position" class="form-control">
+                        <option value="All"></option>
+                        @foreach (var i in Model.ChucVu)
+                        {
+                            <option value="@i">@i</option>
+                        }
+
+                    </select>
+                </span>
+            </div>
+            <span class="col-sm-4">
+                <input type="submit" id="btnSearch" class="btn btn-lg btn-info" value="Tìm" name="function" />
+            </span>
+        </div>
+    </form>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- DATA TABLE -->
+
+        <h3 class="title-5 m-b-35 ds">Danh sách nhân viên</h3>
+        <div class="table-data__tool">
+
+            <div class="table-data__tool-right">
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                    <a asp-action="Create">
+                        <i class="zmdi zmdi-plus"></i>Thêm nhân viên
+                    </a>
+                </button>
+            </div>
+
+        </div>
+
+        @if (Model.employees.Count() > 0)
+        {
+            <div class="table-responsive table-responsive-data3">
+                <table class="table table-data3">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Họ tên</th>
+                            <th>Giới tính</th>
+                            <th>Số điện thoại</th>
+                            <th>Địa chỉ</th>
+                            <th>Email</th>
+                            <th>Username</th>
+                            <th>Ngày đăng ký</th>
+                            <th>Vị trí</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.employees)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelitem => item.DisplayGender)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Phone)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Address)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Username)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedAt)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Position)
+                                </td>
+                                <td>
+                                    <div class="table-data-feature">
+
+                                        <a class="item" asp-action="Edit" asp-route-id="@item.Id">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </a>
+                                        <button class="item xoa" data-id="@item.Id" @*onclick="confirmDelete('/admin/Customer/DeleteTmp?id=@item.Id', 'Bạn có muốn xóa không?')"*@>
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        }
+        else
+        {
+            <div class="sufee-alert alert with-close alert-warning alert-dismissible fade show">
+                <span class="badge badge-pill badge-warning">Warning</span>
+                Không có khách hàng cần tìm
+            </div>
+        }
+        <!-- END DATA TABLE -->
+        <div class="row pt--30">
+            <div class="col-md-12">
+                <div class="pagination-block">
+                    <!--PHÂN TRANG-->
+                    <!--Gọi partial view hiển thị phân trang-->
+                    @{ Html.RenderPartial("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section script {
+    <script src="~/Team27StaticFiles/myjs/admin-employee.js"></script>
+}
+

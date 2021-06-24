@@ -1,0 +1,39 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{ var book = Model; }
+        <div class='product-card'>
+            <div class="product-grid-content">
+                <div class='product-header'>
+                    <span class="author">
+                        <a href="/tac-gia/@book.Author.Slug">@book.Author.DisplayName</a>
+                    </span>
+                    <h3><a href="/sach/@book.Slug">@book.DisplayName</a></h3>
+                </div>
+                <div class='product-card--body'>
+                    <div class='card-image'>
+                        <img src='~/Team27StaticFiles/images/books/@book.PrimaryImage' style="width:180px; height:220px" alt='@book.DisplayName'>
+                        <div class='hover-contents'>
+                            <a href="/sach/@book.Slug" class="hover-image">
+                                <img src="~/Team27StaticFiles/images/books/@book.PrimaryImage" alt="@book.DisplayName" style="width:380px; height:240px">
+                            </a>
+                            <div class='hover-btns'>
+                                <button class='single-btn addToCart normal' data-proid='@book.Id' data-proqt='1'>
+                                    <i class='fas fa-shopping-basket'></i>
+                                </button>
+                                @await Component.InvokeAsync("FavoriteBook", book.Id)
+                                <button data-proid='@book.Id' class='single-btn quick-view-btn'>
+                                    <i class='fas fa-eye'></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='price-block'>
+                        <span class='price'>@book.DisplayPrice</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>

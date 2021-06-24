@@ -1,0 +1,91 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.TKSachBanChayViewModel
+
+@{
+    ViewData["Title"] = "TK Sách Bán Chạy";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section style {
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/admin.css" />
+    <link rel="stylesheet" type="text/css" href="~/Team27StaticFiles/mycss/thongke.css">
+}
+<div class="card searchfield">
+    <form method="GET" enctype="multipart/form-data">
+        <div class="card-body searchbox">
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="select" class=" form-control-label">Số liệu được tính theo: </label>
+                </div>
+                <span class="col-sm-5">
+                    <select asp-for="day" class="form-control" onchange="this.form.submit();">
+                        <option value=2>24H Qua</option>
+                        <option value=7>7 Ngày Trước</option>
+                        <option value=30>30 Ngày Trước</option>
+                    </select>
+                </span>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <div class="titleTK"><strong>Thống kê 10 sách bán chạy nhất theo @Model.tittle</strong></div>
+        <br>
+        <div id="barchart_div">
+
+        </div>
+        <br>
+        <br>
+
+        <div class="table-responsive table--no-card m-b-30">
+            @if (Model.listBookBestSell.Count() > 0)
+            {
+                <table class="table table-borderless table-striped table-earning">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Mã sách</th>
+                            <th>Tên sách</th>
+                            <th>Tác giả</th>
+                            <th>Loại sách</th>
+                            <th>Số lượng sách bán</th>
+                            <th>Tổng tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < 10; i++)
+                        {
+                            var item = Model.listBookBestSell.ElementAt(i);
+                            <tr>
+                                <td>@(i+1)</td>
+                                <td>@item.bestSeller.Id</td>
+                                <td>@item.bestSeller.Name</td>
+                                <td>@item.bestSeller.Author.Name</td>
+                                <td>@item.bestSeller.Category.Name</td>
+                                <td id="highlight">@item.numberOfBooks</td>
+                                <td>@item.DisplayTotalSell</td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div>Không có sách để hiển thị</div>
+            }
+
+        </div>
+    </div>
+</div>
+
+@section script {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="~/Team27StaticFiles/myjs/admin-bestsellerchart.js"></script>
+}
+
+

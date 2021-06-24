@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+    <select name="filter" id="filter" onchange="this.form.submit();" class="form-control-lg form-control">
+        <option value="0">Mặc định</option>
+        @foreach (var item in Model)
+        {
+            if (ViewBag.filter == item.Id)
+            {
+                <option value="@item.Id" selected>@item.Name</option>
+            }
+            else
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+        }
+    </select>
