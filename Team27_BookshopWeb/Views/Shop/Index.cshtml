@@ -116,7 +116,7 @@
                     {
                         <div class="col-lg-4 col-sm-6">
                             <!--Gọi partial view hiển thị thông tin sách-->
-                            @{ Html.RenderPartial("_ProductCard", book);}
+                            @{await Html.RenderPartialAsync("_ProductCard", book);}
                         </div>
                     }
                 </div>
@@ -126,7 +126,7 @@
                         <div class="pagination-block">
                             <!-- Phân trang link -->
                             <!--Gọi partial view hiển thị phân trang-->
-                            @{ Html.RenderPartial("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
+                            @{await Html.RenderPartialAsync("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
                         </div>
                     </div>
                 </div>
@@ -181,4 +181,3 @@
         </div>
     </div>
 </main>
-	</div>

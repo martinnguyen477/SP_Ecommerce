@@ -53,7 +53,7 @@
                             </a>
                         </div>
                         <!-- ALERT -->
-                        @{ Html.RenderPartial("_AdminAlert", (MessagesViewModel)ViewBag.MessagesView);}
+                        @{await Html.RenderPartialAsync("_AdminAlert", (MessagesViewModel)ViewBag.MessagesView);}
                         <!-- ALERT -->
                         <div class="login-form">
                             <form asp-action="Login" asp-controller="Employee" method="post"  asp-route-ReturnUrl="@ViewBag.ReturnUrl">

@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Team27_BookshopWeb.Areas.admin.Models;
 using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Extensions;
@@ -17,7 +16,6 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
     [Authorize(AuthenticationSchemes = "admin")]
     public class PublisherController : Controller
     {
-
         private readonly MyDbContext _context;
         private readonly IPublishersService _publishersService;
 
@@ -26,7 +24,8 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             _context = context;
             _publishersService = publishersService;
         }
-        public IActionResult Index(string name, int page=1)
+
+        public IActionResult Index(string name, int page = 1)
         {
             PublisherViewModel mdl = new PublisherViewModel();
             if (name != null)
@@ -50,14 +49,14 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             return View(mdl);
         }
 
-        public IActionResult ShowTmp(string name, int page=1)
+        public IActionResult ShowTmp(string name, int page = 1)
         {
             PublisherViewModel mdl = new PublisherViewModel();
             if (name != null)
             {
                 mdl.publishers = _publishersService.FindPublisherDeleteName(name);
                 mdl.timKiem = name;
-                mdl.thongBao = "Tìm kiếm trên danh sách NXB đã bị tạm xóa";              
+                mdl.thongBao = "Tìm kiếm trên danh sách NXB đã bị tạm xóa";
             }
             else
             {
@@ -76,7 +75,6 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             return View("Index", mdl);
         }
 
-
         public IActionResult Create()
         {
             PublisherEditModel publisherEditModel = new PublisherEditModel();
@@ -85,9 +83,9 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             {
                 publisherEditModel.MessagesView = TempData.Get<MessagesViewModel>("MessagesView");
             }
-            return View(publisherEditModel);         
-
+            return View(publisherEditModel);
         }
+
         [HttpPost]
         public IActionResult Create(PublisherEditModel publisherEditModel, IFormFile Image)
         {
@@ -104,7 +102,6 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
                 {
                     return RedirectToAction("Create");
                 }
-
             }
             //Gửi thông báo
             TempData.Put("MessagesView", new MessagesViewModel(false, "Thông tin không hợp lệ"));
@@ -143,9 +140,9 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             TempData.Put("MessagesView", new MessagesViewModel(false, "Thông tin không hợp lệ"));
             return RedirectToAction("Edit");
         }
+
         public IActionResult Delete(string id)
         {
-
             MessagesViewModel res = _publishersService.DeletePublisherTmp(id);
             TempData.Put("MessagesView", res);
             if (res.IsSuccess)
@@ -156,7 +153,6 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             {
                 return RedirectToAction("Create");
             }
-
         }
 
         public IActionResult Restore(string id)
@@ -175,7 +171,6 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
 
         public IActionResult DeleteForever(string id)
         {
-
             MessagesViewModel res = _publishersService.DeletePublisherForever(id);
             TempData.Put("MessagesView", res);
             if (res.IsSuccess)
@@ -186,7 +181,6 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             {
                 return RedirectToAction("Create");
             }
-
         }
 
         public string CheckSlug(string source, string id)
@@ -194,7 +188,8 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             return _publishersService.CreateSlug(source, id);
         }
 
-        const int PAGE_SIZE = 10;
+        private const int PAGE_SIZE = 10;
+
         public IEnumerable<Publisher> Paging(IEnumerable<Publisher> publishers, int page = 1)
         {
             int skipN = (page - 1) * PAGE_SIZE;

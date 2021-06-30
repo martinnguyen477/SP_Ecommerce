@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-@{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+@{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
 
     <div class="col">
         <div class="card">
@@ -87,7 +87,7 @@
         <div>
             <a asp-action="Index">Back to List</a>
         </div>
-
+</div>
         @section script {
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>

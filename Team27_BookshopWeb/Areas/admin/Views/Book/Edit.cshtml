@@ -15,7 +15,7 @@
             <strong>Cập nhật thông tin sách</strong>
         </div>
         <!-- ALERT -->
-        @{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+        @{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
 
         <div class="card-body card-block">
             <form asp-action="Edit" id="bookform" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -204,7 +204,6 @@
 
                 <div class="card-footer">
                     <input type="submit" class="btn btn-primary btn-sm" value="Cập nhật" style="background-color: red">
-                    </input>
                     <a asp-action="Index" class="btn btn-primary btn-sm" style="color:white;">Quay về</a>
                 </div>
             </form>

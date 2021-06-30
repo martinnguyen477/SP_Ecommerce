@@ -10,7 +10,7 @@
         <div class="card-header">
             <strong>Thông tin loại sách</strong>
         </div>
-        @{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+        @{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
         <div class="card-body card-block">
             <form action="Create" method="post" enctype="multipart/form-data" class="form-horizontal" id="createCategoryForm">
                 <div class="row form-group">
@@ -72,7 +72,7 @@
             </form>
         </div>
     </div>
-
+</div>
     @section script {
         <script>
             checkSlug("Name", "/admin/Category/CheckSlug");

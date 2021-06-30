@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Models;
 using Team27_BookshopWeb.Services;
@@ -18,7 +15,7 @@ namespace Team27_BookshopWeb.Controllers
         private readonly ICartsService _cartsService;
 
         public CartController(MyDbContext _myDbContext,
-                                IBooksService booksService, 
+                                IBooksService booksService,
                                 ICartsService cartsService,
                                 IHttpContextAccessor httpContextAccessor)
         {
@@ -122,6 +119,5 @@ namespace Team27_BookshopWeb.Controllers
 
             return cart;
         }
-
     }
 }

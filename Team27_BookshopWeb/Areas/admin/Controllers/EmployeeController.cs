@@ -17,7 +17,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
 {
     [Area("admin")]
     [Authorize(AuthenticationSchemes = "admin")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class EmployeeController : Controller
     {
         private readonly MyDbContext _context;
@@ -73,7 +73,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(EmployeeEditModel nvEM)
+        public IActionResult Create(EmployeeEditModel nvEM)
         {
             if (ModelState.IsValid)
             {
@@ -114,7 +114,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(EmployeeEditModel employeeEdit)
+        public IActionResult Edit(EmployeeEditModel employeeEdit)
         {
             if (ModelState.IsValid)
             {

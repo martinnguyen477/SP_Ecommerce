@@ -5,7 +5,7 @@
 }
 
 <!-- ALERT -->
-@{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+@{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
 
 <h3>Thông tin khách hàng</h3>
 <div class="account-details-form">

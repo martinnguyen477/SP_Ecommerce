@@ -51,7 +51,7 @@
                 <div class="pagination-block">
                     <!-- Phân trang link -->
                     <!--Gọi partial view hiển thị phân trang-->
-                    @{ Html.RenderPartial("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
+                    @{await Html.RenderPartialAsync("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
                 </div>
             </div>
         }

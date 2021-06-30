@@ -1,14 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Team27_BookshopWeb.Models;
-using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Areas.admin.Models;
-using Team27_BookshopWeb.Services;
+using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Extensions;
-using Microsoft.AspNetCore.Authorization;
+using Team27_BookshopWeb.Models;
+using Team27_BookshopWeb.Services;
 
 namespace Team27_BookshopWeb.Areas.admin.Controllers
 {
@@ -25,7 +25,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             _customerService = customerService;
         }
 
-        public IActionResult Index(string search, string function, string hiddenFunc, int page=1)
+        public IActionResult Index(string search, string function, string hiddenFunc, int page = 1)
         {
             CustomerViewModel mdl = new CustomerViewModel();
             mdl.search = search;
@@ -37,14 +37,14 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
                     mdl.customers = _customerService.FindDeletedCustomerName(search);
                     mdl.DeleteCustomer = "Danh sách đã xóa";
                 }
-                else 
+                else
                 {
                     mdl.customers = _customerService.FindCustomerName(search);
                 }
-                          }
+            }
             else // name == null -- không sử dụng tìm kiếm
             {
-                if(function == "Danh sách đã xóa")
+                if (function == "Danh sách đã xóa")
                 {
                     mdl.customers = _customerService.ListDeletedTmpCustomer();
                     mdl.DeleteCustomer = function;
@@ -53,7 +53,6 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
                 {
                     mdl.customers = _customerService.ListCustomer();
                 }
-                
             }
             mdl = PaginationInfo(mdl, page);
             mdl.customers = Paging(mdl.customers, page);
@@ -62,7 +61,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             {
                 mdl.MessagesView = TempData.Get<MessagesViewModel>("MessagesView");
             }
-            return View(mdl); 
+            return View(mdl);
         }
 
         public IActionResult Create()
@@ -77,7 +76,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CustomerEditModel khEM)
+        public IActionResult Create(CustomerEditModel khEM)
         {
             if (ModelState.IsValid)
             {
@@ -102,7 +101,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
         {
             CustomerEditModel khEM = new CustomerEditModel();
             Customer cs = _customerService.GetCustomer(id); // kiểu customer
-            if(cs == null)
+            if (cs == null)
             {
                 //Gửi thông báo thất bại
 
@@ -119,7 +118,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(CustomerEditModel customerEdit)
+        public IActionResult Edit(CustomerEditModel customerEdit)
         {
             if (ModelState.IsValid)
             {
@@ -142,7 +141,6 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
 
         public IActionResult DeleteTmp(string id)
         {
-
             MessagesViewModel res = _customerService.DeleteCustomerTmp(id);
             TempData.Put("MessagesView", res);
             if (res.IsSuccess)
@@ -153,7 +151,6 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             {
                 return RedirectToAction("Index");
             }
-            
         }
 
         public IActionResult Delete(string id)
@@ -168,7 +165,6 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             {
                 return RedirectToAction("Index");
             }
-
         }
 
         public IActionResult Restore(string id)
@@ -183,10 +179,10 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             {
                 return RedirectToAction("Index");
             }
-
         }
 
-        const int PAGE_SIZE = 10;
+        private const int PAGE_SIZE = 10;
+
         public IEnumerable<Customer> Paging(IEnumerable<Customer> customers, int page = 1)
         {
             int skipN = (page - 1) * PAGE_SIZE;
@@ -201,7 +197,5 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
 
             return mdl;
         }
-
     }
 }
-    

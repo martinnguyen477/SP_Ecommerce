@@ -10,8 +10,8 @@ using Team27_BookshopWeb.Entities;
 namespace Team27_BookshopWeb.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20201213194425_UpdateDB")]
-    partial class UpdateDB
+    [Migration("20210630031210_UpdateData")]
+    partial class UpdateData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -2219,7 +2219,7 @@ namespace Team27_BookshopWeb.Migrations
                     b.Property<string>("CustomerId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime?>("DeletedAt")
+                    b.Property<DateTime>("DeletedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("IsActive")
@@ -2241,6 +2241,7 @@ namespace Team27_BookshopWeb.Migrations
                             Id = 1,
                             CreatedAt = new DateTime(2020, 12, 4, 5, 50, 20, 0, DateTimeKind.Unspecified),
                             CustomerId = "KH003",
+                            DeletedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = 1
                         },
                         new
@@ -2248,6 +2249,7 @@ namespace Team27_BookshopWeb.Migrations
                             Id = 2,
                             CreatedAt = new DateTime(2020, 12, 4, 6, 27, 20, 0, DateTimeKind.Unspecified),
                             CustomerId = "KH021",
+                            DeletedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = 1
                         },
                         new
@@ -2255,6 +2257,7 @@ namespace Team27_BookshopWeb.Migrations
                             Id = 3,
                             CreatedAt = new DateTime(2020, 12, 4, 7, 7, 20, 0, DateTimeKind.Unspecified),
                             CustomerId = "KH002",
+                            DeletedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = 1
                         });
                 });
@@ -2270,7 +2273,7 @@ namespace Team27_BookshopWeb.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("DeletedAt")
+                    b.Property<DateTime>("DeletedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("IsSelected")
@@ -2289,35 +2292,6 @@ namespace Team27_BookshopWeb.Migrations
                     b.HasIndex("BookId");
 
                     b.ToTable("CartItems");
-
-                    b.HasData(
-                        new
-                        {
-                            CartId = 1,
-                            BookId = "S001",
-                            CreatedAt = new DateTime(2020, 12, 4, 7, 7, 20, 0, DateTimeKind.Unspecified),
-                            IsSelected = 0,
-                            Quantity = 1,
-                            UpdatedAt = new DateTime(2020, 12, 4, 7, 7, 20, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            CartId = 2,
-                            BookId = "S011",
-                            CreatedAt = new DateTime(2020, 12, 4, 7, 7, 20, 0, DateTimeKind.Unspecified),
-                            IsSelected = 0,
-                            Quantity = 1,
-                            UpdatedAt = new DateTime(2020, 12, 4, 7, 7, 20, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            CartId = 3,
-                            BookId = "S003",
-                            CreatedAt = new DateTime(2020, 12, 4, 7, 7, 20, 0, DateTimeKind.Unspecified),
-                            IsSelected = 0,
-                            Quantity = 1,
-                            UpdatedAt = new DateTime(2020, 12, 4, 7, 7, 20, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("Team27_BookshopWeb.Entities.Category", b =>
@@ -2682,7 +2656,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "cuongphuong78faker@yahoo.com",
                             Gender = 0,
                             Name = "ĐOÀN HỮU MINH",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0938189742",
                             UpdatedAt = new DateTime(2020, 6, 21, 8, 0, 13, 0, DateTimeKind.Unspecified),
                             Username = "minh123"
@@ -2695,7 +2669,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "thao.nguyenfaker@gazefi.com",
                             Gender = 1,
                             Name = "Nguyễn Phương Thảo",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0933335666",
                             UpdatedAt = new DateTime(2020, 6, 21, 10, 26, 25, 0, DateTimeKind.Unspecified),
                             Username = "lucky"
@@ -2708,7 +2682,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "aifaker@gmail.com",
                             Gender = 1,
                             Name = "Trần Thị Thúy Ái",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0908767358",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 19, 37, 0, DateTimeKind.Unspecified),
                             Username = "aii109"
@@ -2721,7 +2695,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "songfaker@gmail.com",
                             Gender = 0,
                             Name = "Nguyễn Văn Song",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0918608578",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 23, 15, 0, DateTimeKind.Unspecified),
                             Username = "song"
@@ -2734,7 +2708,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "quynhfaker@gmail.com",
                             Gender = 1,
                             Name = "Lê Thị Khánh Quỳnh",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0918637176",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 24, 41, 0, DateTimeKind.Unspecified),
                             Username = "quynh"
@@ -2747,7 +2721,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "hai2faker@gmail.com",
                             Gender = 0,
                             Name = "Trần Việt Hải",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0913652449",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 25, 39, 0, DateTimeKind.Unspecified),
                             Username = "hai002"
@@ -2760,7 +2734,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "sang001faker@gmail.com",
                             Gender = 0,
                             Name = "Phan Thanh Sang",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0903120175",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 26, 39, 0, DateTimeKind.Unspecified),
                             Username = "sang001"
@@ -2773,7 +2747,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "ngocnttfaker@gmail.com",
                             Gender = 1,
                             Name = "Nguyễn Thị Hồng Ngọc",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0908543869",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 28, 8, 0, DateTimeKind.Unspecified),
                             Username = "ngoc"
@@ -2786,7 +2760,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "namvinhfaker@gmail.com",
                             Gender = 0,
                             Name = "Nguyễn Vĩnh Nam",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0938100552",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 29, 10, 0, DateTimeKind.Unspecified),
                             Username = "vinhnam"
@@ -2799,7 +2773,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "thoafaker@gmail.com",
                             Gender = 1,
                             Name = "Ngô Thị Thoa",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0909252661",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 32, 27, 0, DateTimeKind.Unspecified),
                             Username = "thoa"
@@ -2812,7 +2786,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "chienfaker@gmail.com",
                             Gender = 0,
                             Name = "Trần Công Chiến",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0938993711",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 33, 22, 0, DateTimeKind.Unspecified),
                             Username = "chieen005"
@@ -2825,7 +2799,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "nganfaker@gmail.com",
                             Gender = 1,
                             Name = "Vũ Thị Ngọc Ngân",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0909987604",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 34, 20, 0, DateTimeKind.Unspecified),
                             Username = "nganvtn"
@@ -2838,7 +2812,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "thuyanhfaker@gmail.com",
                             Gender = 1,
                             Name = "Trần Thị Thùy Anh",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0913778801",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 35, 22, 0, DateTimeKind.Unspecified),
                             Username = "thuyanh"
@@ -2851,7 +2825,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "thuyfaker@gmail.com",
                             Gender = 1,
                             Name = "Nguyễn Đồng Diễm Thúy",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0908363660",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 36, 34, 0, DateTimeKind.Unspecified),
                             Username = "thuy"
@@ -2864,7 +2838,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "tribaofaker@gmail.com",
                             Gender = 0,
                             Name = "Nguyễn Hoang Bảo Trị",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0288888866",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 45, 8, 0, DateTimeKind.Unspecified),
                             Username = "tri"
@@ -2877,7 +2851,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "thaobichfaker@gmail.com",
                             Gender = 1,
                             Name = "Lương Thị Bích Thảo",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0888367211",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 48, 47, 0, DateTimeKind.Unspecified),
                             Username = "thao"
@@ -2890,7 +2864,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "cuongfaker@gmail.com",
                             Gender = 0,
                             Name = "Trịnh Quốc Cường",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0909952567",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 53, 40, 0, DateTimeKind.Unspecified),
                             Username = "cuong"
@@ -2903,7 +2877,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "thuytrangfaker@gmail.com",
                             Gender = 1,
                             Name = "Nguyễn Thị Thùy Trang",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0918265681",
                             UpdatedAt = new DateTime(2020, 4, 20, 11, 54, 23, 0, DateTimeKind.Unspecified),
                             Username = "trang11"
@@ -2916,7 +2890,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "longvuvfaker@gmail.com",
                             Gender = 0,
                             Name = "Tô Hữu Long Vũ",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0908606399",
                             UpdatedAt = new DateTime(2020, 6, 29, 11, 57, 16, 0, DateTimeKind.Unspecified),
                             Username = "longvu"
@@ -2929,7 +2903,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "vinhfaker@gmail.com",
                             Gender = 0,
                             Name = "Đỗ Thành Vĩnh",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0908110026",
                             UpdatedAt = new DateTime(2020, 6, 30, 13, 26, 5, 0, DateTimeKind.Unspecified),
                             Username = "vinh"
@@ -2942,7 +2916,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "trangfaker@gmail.com",
                             Gender = 1,
                             Name = "Nguyễn Thị Thùy Trang",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0925553672",
                             UpdatedAt = new DateTime(2020, 6, 30, 13, 27, 0, 0, DateTimeKind.Unspecified),
                             Username = "trang"
@@ -2955,7 +2929,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "phuongfaker@gmail.com",
                             Gender = 0,
                             Name = "Phạm Trường Phương",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0909952567",
                             UpdatedAt = new DateTime(2020, 6, 30, 13, 28, 5, 0, DateTimeKind.Unspecified),
                             Username = "phuong1"
@@ -2968,7 +2942,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "vanvanfaker@gmail.com",
                             Gender = 1,
                             Name = "Lương Bích Vân",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0955220676",
                             UpdatedAt = new DateTime(2020, 6, 30, 13, 29, 15, 0, DateTimeKind.Unspecified),
                             Username = "vanbl"
@@ -2981,7 +2955,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "thyfaker@gmail.com",
                             Gender = 1,
                             Name = "Thái Lê Ngọc Thy",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0918265699",
                             UpdatedAt = new DateTime(2020, 6, 30, 13, 32, 0, 0, DateTimeKind.Unspecified),
                             Username = "thythy"
@@ -2994,7 +2968,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "saufaker@gmail.com",
                             Gender = 1,
                             Name = "Nguyễn Thị Sáu",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0982515267",
                             UpdatedAt = new DateTime(2020, 6, 30, 13, 32, 45, 0, DateTimeKind.Unspecified),
                             Username = "sau"
@@ -3007,7 +2981,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "thaominhfaker@gmail.com",
                             Gender = 1,
                             Name = "Nguyễn Thị Minh Thảo",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0923312776",
                             UpdatedAt = new DateTime(2020, 6, 30, 13, 33, 54, 0, DateTimeKind.Unspecified),
                             Username = "thaominh"
@@ -3020,7 +2994,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "vanduyfaker@gmail.com",
                             Gender = 0,
                             Name = "Đỗ Duy Văn",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0915155495",
                             UpdatedAt = new DateTime(2020, 6, 30, 13, 34, 53, 0, DateTimeKind.Unspecified),
                             Username = "van"
@@ -3033,7 +3007,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "tamfaker@gmail.com",
                             Gender = 0,
                             Name = "Trần Thanh Tâm",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0945792644",
                             UpdatedAt = new DateTime(2020, 6, 30, 13, 35, 42, 0, DateTimeKind.Unspecified),
                             Username = "tam"
@@ -3046,7 +3020,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "kimcuongfaker@gmail.com",
                             Gender = 1,
                             Name = "Võ Thị Kim Cương",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0913757058",
                             UpdatedAt = new DateTime(2020, 6, 30, 13, 37, 5, 0, DateTimeKind.Unspecified),
                             Username = "kimcuong"
@@ -3059,7 +3033,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "binhfaker@gmail.com",
                             Gender = 0,
                             Name = "Cao Văn Bình",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0985990247",
                             UpdatedAt = new DateTime(2020, 6, 30, 13, 38, 10, 0, DateTimeKind.Unspecified),
                             Username = "binh"
@@ -3072,7 +3046,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "ducfaker@gmail.com",
                             Gender = 0,
                             Name = "Trương Minh Đức",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0368588866",
                             UpdatedAt = new DateTime(2020, 6, 30, 13, 39, 38, 0, DateTimeKind.Unspecified),
                             Username = "duc"
@@ -3085,7 +3059,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "duchuufaker@gmail.com",
                             Gender = 0,
                             Name = "Nguyễn Hữu Đức",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0902995022",
                             UpdatedAt = new DateTime(2020, 6, 30, 13, 45, 12, 0, DateTimeKind.Unspecified),
                             Username = "duchn"
@@ -3098,7 +3072,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "mai11faker@gmail.com",
                             Gender = 1,
                             Name = "Lê Trúc Mai",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0925532737",
                             UpdatedAt = new DateTime(2020, 6, 30, 13, 47, 48, 0, DateTimeKind.Unspecified),
                             Username = "maitruc"
@@ -3124,7 +3098,7 @@ namespace Team27_BookshopWeb.Migrations
                             Email = "leminhfaker@gmail.com",
                             Gender = 0,
                             Name = "Lê Minh",
-                            Password = "123",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0987896757",
                             UpdatedAt = new DateTime(2020, 10, 20, 22, 26, 51, 0, DateTimeKind.Unspecified),
                             Username = "minhle"
@@ -3194,10 +3168,10 @@ namespace Team27_BookshopWeb.Migrations
                             Address = "109 Tổ 2, Khu Bến Cát, Phường Phước Bình, Quận 9, TP.HCM",
                             Birthdate = new DateTime(1996, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedAt = new DateTime(2020, 5, 20, 6, 52, 55, 0, DateTimeKind.Unspecified),
-                            Email = "thao.nguyenfaker@gazefi.com",
-                            Gender = 1,
-                            Name = "Nguyễn Phương Thảo",
-                            Password = "123",
+                            Email = "nqcuong720@gmail.com",
+                            Gender = 0,
+                            Name = "Nguyễn Quốc Cường",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0123456754",
                             Position = "Admin",
                             UpdatedAt = new DateTime(2020, 7, 2, 23, 55, 1, 0, DateTimeKind.Unspecified),
@@ -3209,10 +3183,10 @@ namespace Team27_BookshopWeb.Migrations
                             Address = "Khu Phố 4, Phường Tân Tiến, TP. Biên Hòa, Tỉnh Đồng Nai",
                             Birthdate = new DateTime(1995, 12, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedAt = new DateTime(2020, 5, 20, 6, 59, 21, 0, DateTimeKind.Unspecified),
-                            Email = "anhtuanfaker@vanthai.com.vn158",
-                            Gender = 0,
-                            Name = "Đỗ Anh Tuấn",
-                            Password = "123",
+                            Email = "kimanhcntt@gmail.com",
+                            Gender = 1,
+                            Name = "Nguyễn Thị Kim Anh",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0918883862",
                             Position = "Nhân viên",
                             UpdatedAt = new DateTime(2020, 5, 20, 6, 59, 21, 0, DateTimeKind.Unspecified),
@@ -3224,10 +3198,10 @@ namespace Team27_BookshopWeb.Migrations
                             Address = "Căn B7 Khu Nhà ở Ngõ 535 Phố Kim Mã, P. Ngọc Khánh, Q. Ba Đình, Hà Nội",
                             Birthdate = new DateTime(1995, 12, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedAt = new DateTime(2020, 5, 20, 6, 59, 21, 0, DateTimeKind.Unspecified),
-                            Email = "tranmanhfakerchung@otoxemay.vn",
+                            Email = "duongthainhat@gmail.com",
                             Gender = 0,
-                            Name = "Trần Mạnh Chung",
-                            Password = "123",
+                            Name = "Dương Thái Nhật",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0983603517",
                             Position = "Nhân viên",
                             UpdatedAt = new DateTime(2020, 5, 20, 6, 59, 21, 0, DateTimeKind.Unspecified),
@@ -3239,10 +3213,10 @@ namespace Team27_BookshopWeb.Migrations
                             Address = "Tổ 4, Khu 5B, Bãy Cháy, TP. Hạ Long, Tỉnh Quảng Ninh",
                             Birthdate = new DateTime(1998, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedAt = new DateTime(2020, 5, 20, 6, 59, 21, 0, DateTimeKind.Unspecified),
-                            Email = "minhfakerthu9979@gmail.com",
-                            Gender = 1,
-                            Name = "Ngô Thị Minh Thư",
-                            Password = "123",
+                            Email = "duongtanthien@gmai.com",
+                            Gender = 0,
+                            Name = "Dương Tấn Thiên",
+                            Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e",
                             Phone = "0902797879",
                             Position = "Nhân viên",
                             UpdatedAt = new DateTime(2020, 5, 20, 6, 59, 21, 0, DateTimeKind.Unspecified),

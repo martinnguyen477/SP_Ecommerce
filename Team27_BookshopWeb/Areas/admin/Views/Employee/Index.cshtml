@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/admin.css" />
 }
 
-@{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+@{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
 
 <div class="card searchfield">
 
@@ -54,10 +54,8 @@
         <div class="table-data__tool">
 
             <div class="table-data__tool-right">
-                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                    <a asp-action="Create">
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small" asp-action="Create">
                         <i class="zmdi zmdi-plus"></i>Thêm nhân viên
-                    </a>
                 </button>
             </div>
 
@@ -144,7 +142,7 @@
                 <div class="pagination-block">
                     <!--PHÂN TRANG-->
                     <!--Gọi partial view hiển thị phân trang-->
-                    @{ Html.RenderPartial("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
+                    @{await Html.RenderPartialAsync("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@
         <!-- DATA TABLE -->
         <h3 class="title-5 m-b-35">Danh sách đơn hàng</h3>
         <!-- ALERT -->
-        @{ Html.RenderPartial("_AdminAlert", new MessagesViewModel()); }
+        @{await Html.RenderPartialAsync("_AdminAlert", new MessagesViewModel()); }
         <form method="get" id="search-form">
             <div class="card searchfield show">
                 <div class="card-header">Tìm kiếm</div>
@@ -122,7 +122,7 @@
                 <div class="pagination-block">
                     <!--PHÂN TRANG-->
                     <!--Gọi partial view hiển thị phân trang-->
-                    @{ Html.RenderPartial("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
+                    @{await Html.RenderPartialAsync("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
                 </div>
             </div>
         </div>

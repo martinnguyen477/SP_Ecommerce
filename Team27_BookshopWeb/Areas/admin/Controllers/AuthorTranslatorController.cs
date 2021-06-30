@@ -1,10 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Team27_BookshopWeb.Areas.admin.Models;
 using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Models;
@@ -25,7 +23,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             _authorTranslatorService = authorTranslatorService;
         }
 
-        public IActionResult Index(string Search, string Filter, int page=1)
+        public IActionResult Index(string Search, string Filter, int page = 1)
         {
             AuthorTranslatorViewModel mdl = new AuthorTranslatorViewModel();
             IQueryable<AuthorTranslator> res;
@@ -40,12 +38,12 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             }
             //Filter
             res = _authorTranslatorService.Filter(Filter, res);
-            
+
             mdl.AuthorTranslators = res.ToList();
             mdl = PaginationInfo(mdl, page);
             if (page == 0)
             {
-                IEnumerable<AuthorTranslator> list;
+                //IEnumerable<AuthorTranslator> list;
                 List<AuthorTranslator> tmpList = new List<AuthorTranslator>();
                 tmpList.Add(mdl.AuthorTranslators.Last());
                 mdl.AuthorTranslators = tmpList;
@@ -109,7 +107,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
         }
 
         [HttpDelete]
-        public JsonResult SoftDelete([FromForm]string Id)
+        public JsonResult SoftDelete([FromForm] string Id)
         {
             MessagesViewModel mdl = new MessagesViewModel();
             mdl = _authorTranslatorService.SoftDelete(Id);
@@ -132,7 +130,8 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             return Json(mdl);
         }
 
-        const int PAGE_SIZE = 10;
+        private const int PAGE_SIZE = 10;
+
         public IEnumerable<AuthorTranslator> Paging(IEnumerable<AuthorTranslator> authorTranslators, int page = 1)
         {
             int skipN = (page - 1) * PAGE_SIZE;

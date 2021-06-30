@@ -37,7 +37,7 @@
     </form>
 </div>
 
-@{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+@{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
 
 <div class="row">
     <div class="col-md-12">
@@ -52,10 +52,8 @@
             <div class="table-data__tool">
 
                 <div class="table-data__tool-right">
-                    <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                        <a asp-action="Create">
+                    <button class="au-btn au-btn-icon au-btn--green au-btn--small" asp-action="Create">
                             <i class="zmdi zmdi-plus"></i>Thêm khách hàng
-                        </a>
                     </button>
                 </div>
 
@@ -149,7 +147,7 @@
                 <div class="pagination-block">
                     <!--PHÂN TRANG-->
                     <!--Gọi partial view hiển thị phân trang-->
-                    @{ Html.RenderPartial("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
+                    @{await Html.RenderPartialAsync("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
                 </div>
             </div>
         </div>

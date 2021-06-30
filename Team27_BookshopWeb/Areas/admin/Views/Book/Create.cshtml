@@ -15,7 +15,7 @@
             <strong>Thêm Sách</strong>
         </div>
         <!-- ALERT -->
-        @{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+        @{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
 
         <div class="card-body card-block">
             <form asp-action="Create" id="bookform" method="post" enctype="multipart/form-data" class="form-horizontal">

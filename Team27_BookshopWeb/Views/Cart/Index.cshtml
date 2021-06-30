@@ -107,7 +107,7 @@
                         @foreach (var book in Model.ConsideredBooks.Take(7))
                         {
                             <!--Gọi partial view hiển thị thông tin sách-->
-                            Html.RenderPartial("_ProductCard", book);
+                            await Html.RenderPartialAsync("_ProductCard", book);
                         }
                     </div>
                 </div>

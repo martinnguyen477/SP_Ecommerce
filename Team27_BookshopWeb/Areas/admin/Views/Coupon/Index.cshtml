@@ -38,28 +38,20 @@
         </h3>
         <!-- ALERT -->
 
-        @{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+        @{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
         <div class="table-data__tool">
             <div class="table-data__tool-right">
-                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                    <a asp-action="Create">
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small" asp-action="Create">
                         <i class="zmdi zmdi-plus"></i>Thêm Coupon
-                    </a>
                 </button>
-                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                    <a asp-action="ShowTmp">
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small" asp-action="ShowTmp">
                         <i class="zmdi zmdi-plus"></i>Danh sách Coupon đã tạm xóa
-                    </a>
                 </button>
-                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                    <a asp-action="Index">
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small" asp-action="Index">
                         <i class="zmdi zmdi-plus"></i> Danh sách Coupon
-                    </a>
                 </button>
-                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                    <a asp-action="ShowHSD">
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small" asp-action="ShowHSD">
                         <i class="zmdi zmdi-plus"></i> Danh sách Coupon còn HSD
-                    </a>
                 </button>
             </div>
         </div>
@@ -156,7 +148,7 @@
                 <div class="pagination-block">
                     <!--PHÂN TRANG-->
                     <!--Gọi partial view hiển thị phân trang-->
-                    @{ Html.RenderPartial("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
+                    @{await Html.RenderPartialAsync("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
                 </div>
             </div>
         </div>

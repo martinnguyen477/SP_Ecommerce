@@ -128,7 +128,7 @@
                             var curBook = category.Books.ElementAt(j);
                             <div class='single-slide'>
                                 <!--Gọi partial view hiển thị thông tin sách-->
-                                @{ Html.RenderPartial("_ProductCard", curBook); }
+                                @{await Html.RenderPartialAsync("_ProductCard", curBook); }
                             </div>
 
                             if (Model.countBooks > 0 && j == (allBooks - 1))
@@ -262,7 +262,7 @@
                                 @{
                                     if (Model.bestSellerBooks != null)
                                     {
-                                        Html.RenderPartial("_BooksSliderMulti", Model.bestSellerBooks);
+                                        await Html.RenderPartialAsync("_BooksSliderMulti", Model.bestSellerBooks);
                                     }
                                     else
                                     {
@@ -276,7 +276,7 @@
                                 @{
                                     if (Model.newlyPublishedBooks != null)
                                     {
-                                        Html.RenderPartial("_BooksSliderMulti", Model.newlyPublishedBooks);
+                                        await Html.RenderPartialAsync("_BooksSliderMulti", Model.newlyPublishedBooks);
                                     }
                                     else
                                     {
@@ -291,7 +291,7 @@
                                 @{
                                     if (Model.topViewBooks != null)
                                     {
-                                        Html.RenderPartial("_BooksSliderMulti", Model.topViewBooks);
+                                       await Html.RenderPartialAsync("_BooksSliderMulti", Model.topViewBooks);
                                     }
                                     else
                                     {

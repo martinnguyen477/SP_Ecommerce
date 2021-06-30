@@ -9,7 +9,7 @@
 }
 
 <!-- ALERT -->
-@{ Html.RenderPartial("_AdminAlert", (MessagesViewModel)ViewBag.MessagesView); }
+@{await Html.RenderPartialAsync("_AdminAlert", (MessagesViewModel)ViewBag.MessagesView); }
 <h3>Đơn hàng</h3>
 <div class="myaccount-table table-responsive text-center">
     @if (Model.Orders.Count() > 0)

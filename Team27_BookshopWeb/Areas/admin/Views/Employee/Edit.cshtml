@@ -6,7 +6,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-@{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+@{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
 
 <div class="col">
     <div class="card">

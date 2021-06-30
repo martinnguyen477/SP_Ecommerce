@@ -63,11 +63,7 @@ namespace Team27_BookshopWeb.Services
         public IQueryable<OrderTypeViewModel> GetOrderType(int time)
         {
             var passNDays = DateTime.Now;
-            if (time == 0 || time == 1)
-            {
-                passNDays = passNDays;
-            }
-            else
+            if (time != 0 || time != 1)
             {
                 passNDays = DateTime.Now.AddDays(-30);
             }

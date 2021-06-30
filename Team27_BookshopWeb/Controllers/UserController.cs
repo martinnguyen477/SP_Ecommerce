@@ -1,26 +1,23 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Team27_BookshopWeb.Areas.admin.Models;
 using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Extensions;
 using Team27_BookshopWeb.Models;
 using Team27_BookshopWeb.Services;
-using BC = BCrypt.Net.BCrypt;
 
 namespace Team27_BookshopWeb.Controllers
 {
     [Authorize]
     public class UserController : Controller
     {
-
         private readonly MyDbContext _myDbContext;
         private readonly ICustomerService _customerService;
         private readonly IOrdersService _ordersService;
@@ -37,7 +34,7 @@ namespace Team27_BookshopWeb.Controllers
         {
             LoginRegisterViewModel loginRegister = new LoginRegisterViewModel();
             ViewBag.ReturnUrl = ReturnUrl;
-            //Nhận thông báo 
+            //Nhận thông báo
             if (TempData.Get<MessagesViewModel>("MessagesView") != null)
             {
                 loginRegister.MessagesView = TempData.Get<MessagesViewModel>("MessagesView");
@@ -103,7 +100,6 @@ namespace Team27_BookshopWeb.Controllers
             }
             TempData.Put("MessagesView", new MessagesViewModel(false, "Thông tin đăng nhập không hợp lệ"));
             return RedirectToAction("Register");
-
         }
 
         [AllowAnonymous]
@@ -171,6 +167,7 @@ namespace Team27_BookshopWeb.Controllers
             TempData.Put("MessagesView", new MessagesViewModel(false, "Thông tin không hợp lệ"));
             return RedirectToAction("Profile");
         }
+
         [HttpPost]
         public JsonResult EditPassword(string id, string newPassword)
         {
@@ -220,7 +217,6 @@ namespace Team27_BookshopWeb.Controllers
             return Json(new MessagesViewModel(false, "Người dùng chưa đăng nhập"));
         }
 
-
         [AllowAnonymous, HttpPost]
         public JsonResult EmailVerify(string email, string id)
         {
@@ -230,7 +226,6 @@ namespace Team27_BookshopWeb.Controllers
         }
 
         [AllowAnonymous, HttpPost]
-
         public JsonResult UsernameVerify(string username, string id)
         {
             if (_customerService.UsernameValidation(username, id) == false)
