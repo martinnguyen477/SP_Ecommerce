@@ -24,7 +24,9 @@ namespace Team27_BookshopWeb.Services
         public bool PasswordCheck(string id, string pass)
         {
             var employee = GetEmployee(id);
-            return BC.Verify(pass, employee.Password);
+            if (pass.Md5() == employee.Password)
+                return true;
+            return false;
         }
 
         //edit mật khẩu nhân viên
@@ -37,7 +39,7 @@ namespace Team27_BookshopWeb.Services
             var employee = GetEmployee(id);
             try
             {
-                employee.Password = BC.HashPassword(password);
+                employee.Password = password.Md5();
                 employee.UpdatedAt = DateTime.Now;
 
                 myDbContext.Update(employee);
@@ -84,7 +86,7 @@ namespace Team27_BookshopWeb.Services
             //Tìm khách hàng theo username
             Employee user = myDbContext.Employees.SingleOrDefault(u => u.Username == loginUser.Username);
             //Kiểm tra password
-            if (user == null || loginUser.Password  != user.Password)
+            if (user == null || loginUser.Password.Md5()  != user.Password)
             {
                 return new MessagesViewModel(false, "Tài khoản hoặc mật khẩu không đúng");
             }
@@ -242,7 +244,7 @@ namespace Team27_BookshopWeb.Services
                 nv.Id = CreateNewEmployeeId();
                 nv.CreatedAt = DateTime.Now;
                 nv = EditModelToEmployee(nvEM, nv);
-                string passwordHash = BC.HashPassword(nvEM.Password);
+                string passwordHash = nvEM.Password.Md5();
                 nv.Password = passwordHash;
 
                 myDbContext.Add(nv);

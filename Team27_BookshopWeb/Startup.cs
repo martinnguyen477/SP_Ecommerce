@@ -59,6 +59,7 @@ namespace Team27_BookshopWeb
             services.AddTransient<ICommentService, CommentService>();
             services.AddTransient<ICartsService, CartsService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient<IImportFileServices, ImportFileServices>();
             services.AddControllers();
         }
 

@@ -24,7 +24,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-05-20 06:52:55"),
                         UpdatedAt = DateTime.Parse("2020-07-02 23:55:01"),
                         Username = "NV001",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Employee
                     {
@@ -39,7 +39,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-05-20 06:59:21"),
                         UpdatedAt = DateTime.Parse("2020-05-20 06:59:21"),
                         Username = "NV002",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Employee
                     {
@@ -54,7 +54,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-05-20 06:59:21"),
                         UpdatedAt = DateTime.Parse("2020-05-20 06:59:21"),
                         Username = "NV003",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Employee
                     {
@@ -69,7 +69,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-05-20 06:59:21"),
                         UpdatedAt = DateTime.Parse("2020-05-20 06:59:21"),
                         Username = "NV004",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     }
             );
 
@@ -103,7 +103,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-06-21 08:00:13"),
                         UpdatedAt = DateTime.Parse("2020-06-21 08:00:13"),
                         Username = "minh123",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -116,7 +116,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-06-21 10:26:25"),
                         UpdatedAt = DateTime.Parse("2020-06-21 10:26:25"),
                         Username = "lucky",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -129,7 +129,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-06-29 11:19:37"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:19:37"),
                         Username = "aii109",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -142,7 +142,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-06-29 11:23:15"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:23:15"),
                         Username = "song",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -155,7 +155,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-04-16 11:24:41"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:24:41"),
                         Username = "quynh",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -168,7 +168,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-03-09 11:25:39"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:25:39"),
                         Username = "hai002",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -181,7 +181,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-03-18 11:26:39"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:26:39"),
                         Username = "sang001",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -194,7 +194,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-05-03 11:28:08"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:28:08"),
                         Username = "ngoc",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -207,7 +207,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-05-08 11:29:10"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:29:10"),
                         Username = "vinhnam",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -220,7 +220,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-05-17 11:32:27"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:32:27"),
                         Username = "thoa",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -233,7 +233,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-05-31 11:33:22"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:33:22"),
                         Username = "chieen005",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -246,7 +246,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-04-21 11:34:20"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:34:20"),
                         Username = "nganvtn",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -259,7 +259,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-05-07 11:35:22"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:35:22"),
                         Username = "thuyanh",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -272,7 +272,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-05-13 11:36:34"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:36:34"),
                         Username = "thuy",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -285,7 +285,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-02-12 11:45:08"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:45:08"),
                         Username = "tri",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -298,7 +298,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-05-18 11:48:47"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:48:47"),
                         Username = "thao",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -311,7 +311,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-04-28 11:53:40"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:53:40"),
                         Username = "cuong",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -324,7 +324,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-04-20 11:54:23"),
                         UpdatedAt = DateTime.Parse("2020-04-20 11:54:23"),
                         Username = "trang11",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -337,7 +337,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-03-17 11:57:16"),
                         UpdatedAt = DateTime.Parse("2020-06-29 11:57:16"),
                         Username = "longvu",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -350,7 +350,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2019-01-16 13:26:05"),
                         UpdatedAt = DateTime.Parse("2020-06-30 13:26:05"),
                         Username = "vinh",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -363,7 +363,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2019-11-28 13:27:00"),
                         UpdatedAt = DateTime.Parse("2020-06-30 13:27:00"),
                         Username = "trang",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -376,7 +376,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2019-09-09 13:28:05"),
                         UpdatedAt = DateTime.Parse("2020-06-30 13:28:05"),
                         Username = "phuong1",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -389,7 +389,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2019-08-21 13:29:15"),
                         UpdatedAt = DateTime.Parse("2020-06-30 13:29:15"),
                         Username = "vanbl",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -402,7 +402,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2019-12-10 13:32:00"),
                         UpdatedAt = DateTime.Parse("2020-06-30 13:32:00"),
                         Username = "thythy",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -415,7 +415,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-02-02 13:32:45"),
                         UpdatedAt = DateTime.Parse("2020-06-30 13:32:45"),
                         Username = "sau",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -428,7 +428,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2019-09-11 13:33:54"),
                         UpdatedAt = DateTime.Parse("2020-06-30 13:33:54"),
                         Username = "thaominh",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -441,7 +441,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2019-10-28 13:34:53"),
                         UpdatedAt = DateTime.Parse("2020-06-30 13:34:53"),
                         Username = "van",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -454,7 +454,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2019-09-13 13:35:42"),
                         UpdatedAt = DateTime.Parse("2020-06-30 13:35:42"),
                         Username = "tam",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -467,7 +467,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2019-11-24 13:37:05"),
                         UpdatedAt = DateTime.Parse("2020-06-30 13:37:05"),
                         Username = "kimcuong",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -480,7 +480,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2019-08-19 13:38:10"),
                         UpdatedAt = DateTime.Parse("2020-06-30 13:38:10"),
                         Username = "binh",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -493,7 +493,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2019-07-03 13:39:38"),
                         UpdatedAt = DateTime.Parse("2020-06-30 13:39:38"),
                         Username = "duc",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -506,7 +506,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-06-30 13:45:12"),
                         UpdatedAt = DateTime.Parse("2020-06-30 13:45:12"),
                         Username = "duchn",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -519,7 +519,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2019-02-20 13:47:48"),
                         UpdatedAt = DateTime.Parse("2020-06-30 13:47:48"),
                         Username = "maitruc",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     },
                     new Customer
                     {
@@ -545,7 +545,7 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-10-20 22:26:51"),
                         UpdatedAt = DateTime.Parse("2020-10-20 22:26:51"),
                         Username = "minhle",
-                        Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
+                        Password = "D57587B0F5BBB0C3FE9D8CB16E97B0FE"
                     }
                 );
 

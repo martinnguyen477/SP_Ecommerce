@@ -1618,7 +1618,6 @@ F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\ref
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.ObjectPool.dll
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.DataAnnotations.dll
-F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.WebEncoders.dll
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\refs\Microsoft.JSInterop.dll
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\refs\Microsoft.Net.Http.Headers.dll
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.Core.dll
@@ -1748,7 +1747,6 @@ F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\ref
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.CodePages.dll
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.dll
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.Extensions.dll
-F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\refs\System.Text.Encodings.Web.dll
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\refs\System.Text.RegularExpressions.dll
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\refs\System.Threading.Channels.dll
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\refs\System.Threading.dll
@@ -1900,7 +1898,6 @@ F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\run
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.csproj.AssemblyReference.cache
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.AssemblyInfoInputs.cache
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.AssemblyInfo.cs
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.csproj.CoreCompileInputs.cache
@@ -2001,3 +1998,7 @@ F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Tea
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.dll
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.pdb
 F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.genruntimeconfig.cache
+F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
+F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\Microsoft.Extensions.WebEncoders.dll
+F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+F:\Ecommerce\Project\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.csproj.AssemblyReference.cache

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using System.Threading.Tasks;
 using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -11,15 +10,25 @@ using Team27_BookshopWeb.Areas.admin.Models;
 using System.Globalization;
 using System.IO;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 
 namespace Team27_BookshopWeb.Services
 {
     public class BooksService : IBooksService
     {
-        private readonly MyDbContext myDbContext;
-        public BooksService(MyDbContext myDbContext)
+        private readonly MyDbContext myDbContext; 
+        private readonly IImportFileServices _importFileServices;
+        private readonly string _cloudName;
+        private readonly string _apiKey;
+        private readonly string _apiSecrect;
+
+        public BooksService(MyDbContext myDbContext, IImportFileServices importFileServices, IConfiguration configuration)
         {
             this.myDbContext = myDbContext;
+            _importFileServices = importFileServices;
+            _cloudName = configuration["CloudinanySettings:CloudName"];
+            _apiKey = configuration["CloudinanySettings:APIKey"];
+            _apiSecrect = configuration["CloudinanySettings:APISecret"];
         }
 
         //Thêm comment
@@ -407,15 +416,21 @@ namespace Team27_BookshopWeb.Services
         {
             string newImageName = HandleUploadedImages(PrimaryImage, newBook, imageFolder);
 
-            //Thêm ảnh vào db
-            BookImage bookPrimaryImage = new BookImage();
-            bookPrimaryImage.BookId = newBook.Id;
-            bookPrimaryImage.Image = newImageName;
-            bookPrimaryImage.Primary = primary;
-            bookPrimaryImage.CreatedAt = DateTime.Now;
+            if (PrimaryImage != null)
+            {
+                var resultPhoto = _importFileServices.AddPhotoCloudAsync(PrimaryImage, _cloudName, _apiKey, _apiSecrect);
 
-            myDbContext.Add(bookPrimaryImage);
-            myDbContext.SaveChanges();
+                //Thêm ảnh vào db
+                BookImage bookPrimaryImage = new BookImage();
+                bookPrimaryImage.BookId = newBook.Id;
+                bookPrimaryImage.Image = resultPhoto.Result.UrlImage;
+                bookPrimaryImage.PublicId = resultPhoto.Result.PublicId;
+                bookPrimaryImage.Primary = primary;
+                bookPrimaryImage.CreatedAt = DateTime.Now;
+
+                myDbContext.Add(bookPrimaryImage);
+                myDbContext.SaveChanges();
+            }
         }
 
         //Xử lý việc thêm hình ảnh vào folder và tạo tên hình ảnh
