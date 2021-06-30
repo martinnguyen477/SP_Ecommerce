@@ -8,7 +8,7 @@
 }
 
 <!-- ALERT -->
-@{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+@{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
 <div class="row">
     <div class="col-sm-6">
         <div class="card border border-success">

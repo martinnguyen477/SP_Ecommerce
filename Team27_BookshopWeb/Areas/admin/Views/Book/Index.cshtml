@@ -16,7 +16,7 @@
         <h3 class="title-5 m-b-35">Danh sách sách</h3>
         <!-- ALERT -->
     
-        @{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+        @{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
 
         <!-- TÌM KIẾM -->
         <form method="get" id="search-form">
@@ -134,7 +134,7 @@
                 <div class="pagination-block">
                     <!--PHÂN TRANG-->
                     <!--Gọi partial view hiển thị phân trang-->
-                    @{ Html.RenderPartial("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
+                    @{await Html.RenderPartialAsync("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
                 </div>
             </div>
         </div>

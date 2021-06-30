@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Diagnostics;
 using Team27_BookshopWeb.Entities;
+using Team27_BookshopWeb.Extensions;
 using Team27_BookshopWeb.Models;
 using Team27_BookshopWeb.Services;
-using Team27_BookshopWeb.Extensions;
 
 namespace Team27_BookshopWeb.Controllers
 {
@@ -27,7 +22,6 @@ namespace Team27_BookshopWeb.Controllers
             _categoryService = categoryService;
             _booksService = booksService;
         }
-
 
         public IActionResult Index()
         {

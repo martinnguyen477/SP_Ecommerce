@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Team27_BookshopWeb.Entities
 {
@@ -11,17 +8,18 @@ namespace Team27_BookshopWeb.Entities
         public static void Seed(this ModelBuilder modelBuilder)
         {
             #region Employee
+
             modelBuilder.Entity<Employee>()
                 .HasData(
                     new Employee
                     {
                         Id = "NV001",
-                        Name = "Nguyễn Phương Thảo",
-                        Gender = 1,
+                        Name = "Nguyễn Quốc Cường",
+                        Gender = 0,
                         Birthdate = DateTime.Parse("1996-10-21 00:00:00"),
                         Phone = "0123456754",
                         Address = "109 Tổ 2, Khu Bến Cát, Phường Phước Bình, Quận 9, TP.HCM",
-                        Email = "thao.nguyenfaker@gazefi.com",
+                        Email = "nqcuong720@gmail.com",
                         Position = "Admin",
                         CreatedAt = DateTime.Parse("2020-05-20 06:52:55"),
                         UpdatedAt = DateTime.Parse("2020-07-02 23:55:01"),
@@ -31,12 +29,12 @@ namespace Team27_BookshopWeb.Entities
                     new Employee
                     {
                         Id = "NV002",
-                        Name = "Đỗ Anh Tuấn",
-                        Gender = 0,
+                        Name = "Nguyễn Thị Kim Anh",
+                        Gender = 1,
                         Birthdate = DateTime.Parse("1995-12-21 00:00:00"),
                         Phone = "0918883862",
                         Address = "Khu Phố 4, Phường Tân Tiến, TP. Biên Hòa, Tỉnh Đồng Nai",
-                        Email = "anhtuanfaker@vanthai.com.vn158",
+                        Email = "kimanhcntt@gmail.com",
                         Position = "Nhân viên",
                         CreatedAt = DateTime.Parse("2020-05-20 06:59:21"),
                         UpdatedAt = DateTime.Parse("2020-05-20 06:59:21"),
@@ -46,12 +44,12 @@ namespace Team27_BookshopWeb.Entities
                     new Employee
                     {
                         Id = "NV003",
-                        Name = "Trần Mạnh Chung",
+                        Name = "Dương Thái Nhật",
                         Gender = 0,
                         Birthdate = DateTime.Parse("1995-12-21 00:00:00"),
                         Phone = "0983603517",
                         Address = "Căn B7 Khu Nhà ở Ngõ 535 Phố Kim Mã, P. Ngọc Khánh, Q. Ba Đình, Hà Nội",
-                        Email = "tranmanhfakerchung@otoxemay.vn",
+                        Email = "duongthainhat@gmail.com",
                         Position = "Nhân viên",
                         CreatedAt = DateTime.Parse("2020-05-20 06:59:21"),
                         UpdatedAt = DateTime.Parse("2020-05-20 06:59:21"),
@@ -61,12 +59,12 @@ namespace Team27_BookshopWeb.Entities
                     new Employee
                     {
                         Id = "NV004",
-                        Name = "Ngô Thị Minh Thư",
-                        Gender = 1,
+                        Name = "Dương Tấn Thiên",
+                        Gender = 0,
                         Birthdate = DateTime.Parse("1998-03-06 00:00:00"),
                         Phone = "0902797879",
                         Address = "Tổ 4, Khu 5B, Bãy Cháy, TP. Hạ Long, Tỉnh Quảng Ninh",
-                        Email = "minhfakerthu9979@gmail.com",
+                        Email = "duongtanthien@gmai.com",
                         Position = "Nhân viên",
                         CreatedAt = DateTime.Parse("2020-05-20 06:59:21"),
                         UpdatedAt = DateTime.Parse("2020-05-20 06:59:21"),
@@ -74,9 +72,11 @@ namespace Team27_BookshopWeb.Entities
                         Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
                     }
             );
-            #endregion
+
+            #endregion Employee
 
             #region Customer
+
             modelBuilder.Entity<Customer>()
                 .HasData(
                     new Customer
@@ -548,9 +548,11 @@ namespace Team27_BookshopWeb.Entities
                         Password = "$2a$11$PCobYotKpaey2Oqbwy9aEeUZ4iJzlfcR9005qeTyTNMJmVRS.BR0e"
                     }
                 );
-            #endregion
+
+            #endregion Customer
 
             #region Banner
+
             modelBuilder.Entity<Banner>()
                 .HasData(
                     new Banner
@@ -594,9 +596,11 @@ namespace Team27_BookshopWeb.Entities
                         UpdatedAt = DateTime.Parse("2020-12-04 00:00:00")
                     }
                 );
-            #endregion
+
+            #endregion Banner
 
             #region EmployeeAuthorization
+
             modelBuilder.Entity<EmployeeAuthorization>()
                 .HasData(
                     new EmployeeAuthorization
@@ -640,9 +644,11 @@ namespace Team27_BookshopWeb.Entities
                         UpdatedAt = DateTime.Parse("2020-07-04 06:46:13")
                     }
                 );
-            #endregion
+
+            #endregion EmployeeAuthorization
 
             #region AuthorTranslator
+
             modelBuilder.Entity<AuthorTranslator>()
                 .HasData(
                     new AuthorTranslator
@@ -1146,9 +1152,11 @@ namespace Team27_BookshopWeb.Entities
                         UpdatedAt = DateTime.Parse("2020-10-20 21:48:00")
                     }
                 );
-            #endregion
+
+            #endregion AuthorTranslator
 
             #region Category
+
             modelBuilder.Entity<Category>()
                 .HasData(
                             new Category
@@ -1230,9 +1238,11 @@ namespace Team27_BookshopWeb.Entities
                                 UpdatedAt = DateTime.Parse("2020-10-20 04:01:00")
                             }
                 );
-            #endregion
+
+            #endregion Category
 
             #region Publisher
+
             modelBuilder.Entity<Publisher>()
                 .HasData(
                         new Publisher
@@ -1326,9 +1336,11 @@ namespace Team27_BookshopWeb.Entities
                             UpdatedAt = DateTime.Parse("2020-10-20 09:14:00")
                         }
                 );
-            #endregion
+
+            #endregion Publisher
 
             #region OrderStatus
+
             modelBuilder.Entity<OrderStatus>()
                 .HasData(
                     new OrderStatus
@@ -1357,9 +1369,11 @@ namespace Team27_BookshopWeb.Entities
                         Name = "Hủy"
                     }
                 );
-            #endregion
+
+            #endregion OrderStatus
 
             #region PaymentMethod
+
             modelBuilder.Entity<PaymentMethod>()
                 .HasData(
                     new PaymentMethod
@@ -1381,9 +1395,11 @@ namespace Team27_BookshopWeb.Entities
                         IsSupported = 0
                     }
                 );
-            #endregion
+
+            #endregion PaymentMethod
 
             #region Book
+
             modelBuilder.Entity<Book>()
                 .HasData(
                     new Book
@@ -2316,9 +2332,11 @@ namespace Team27_BookshopWeb.Entities
                         UpdatedAt = DateTime.Parse("2020-10-20 21:41:00")
                     }
                 );
-            #endregion
+
+            #endregion Book
 
             #region BookImage
+
             modelBuilder.Entity<BookImage>()
                 .HasData(
                     new BookImage
@@ -2778,9 +2796,11 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-10-20 00:01:29")
                     }
                 );
-            #endregion
+
+            #endregion BookImage
 
             #region Comment
+
             modelBuilder.Entity<Comment>()
                 .HasData(
                     new Comment
@@ -2808,9 +2828,11 @@ namespace Team27_BookshopWeb.Entities
                         UpdatedAt = DateTime.Parse("2020-06-19 17:35:57")
                     }
                 );
-            #endregion
+
+            #endregion Comment
 
             #region Coupon
+
             modelBuilder.Entity<Coupon>()
                 .HasData(
                     new Coupon
@@ -2834,9 +2856,11 @@ namespace Team27_BookshopWeb.Entities
                         UpdatedAt = DateTime.Parse("2020-12-04 00:00:00")
                     }
                 );
-            #endregion
+
+            #endregion Coupon
 
             #region Order
+
             modelBuilder.Entity<Order>()
                 .HasData(
                     new Order
@@ -3315,9 +3339,11 @@ namespace Team27_BookshopWeb.Entities
                         UpdatedAt = DateTime.Parse("2020-10-20 22:38:15")
                     }
                 );
-            #endregion
+
+            #endregion Order
 
             #region OrderDetail
+
             modelBuilder.Entity<OrderDetail>()
                 .HasData(
                     new OrderDetail
@@ -3987,9 +4013,11 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-06-30 10:38:54")
                     }
                 );
-            #endregion
+
+            #endregion OrderDetail
 
             #region Cart
+
             modelBuilder.Entity<Cart>()
                 .HasData(
                     new Cart
@@ -4014,41 +4042,11 @@ namespace Team27_BookshopWeb.Entities
                         CreatedAt = DateTime.Parse("2020-12-04 07:07:20")
                     }
                 );
-            #endregion
 
-            #region CartItems
-            modelBuilder.Entity<CartItems>()
-                .HasData(
-                    new CartItems
-                    {
-                        CartId = 1,
-                        BookId = "S001",
-                        Quantity = 1,
-                        CreatedAt = DateTime.Parse("2020-12-04 07:07:20"),
-                        UpdatedAt = DateTime.Parse("2020-12-04 07:07:20"),
-                        IsSelected = 0
-                    },
-                    new CartItems
-                    {
-                        CartId = 2,
-                        BookId = "S011",
-                        Quantity = 1,
-                        CreatedAt = DateTime.Parse("2020-12-04 07:07:20"),
-                        UpdatedAt = DateTime.Parse("2020-12-04 07:07:20"),
-                        IsSelected = 0
-                    },
-                    new CartItems
-                    {
-                        CartId = 3,
-                        BookId = "S003",
-                        Quantity = 1,
-                        CreatedAt = DateTime.Parse("2020-12-04 07:07:20"),
-                        UpdatedAt = DateTime.Parse("2020-12-04 07:07:20"),
-                        IsSelected = 0
-                    }
-                );
-            #endregion
 
+            #endregion Cart
+
+            
         }
     }
 }

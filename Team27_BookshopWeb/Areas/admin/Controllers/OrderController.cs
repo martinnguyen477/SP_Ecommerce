@@ -1,9 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Team27_BookshopWeb.Areas.admin.Models;
 using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Models;
@@ -23,7 +22,8 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             _myDbContext = myDbContext;
             _ordersService = ordersService;
         }
-        public IActionResult Index(int searchtype, string search, DateTime fromdate, DateTime todate, string filtertype, int filter, int page=1)
+
+        public IActionResult Index(int searchtype, string search, DateTime fromdate, DateTime todate, string filtertype, int filter, int page = 1)
         {
             OrderViewModel mdl = new OrderViewModel();
             IQueryable<Order> orders = _ordersService.QueryAllOrders();
@@ -32,24 +32,29 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
                 case 1:
                     orders = _ordersService.WhereId(search, orders);
                     break;
+
                 case 2:
                     orders = _ordersService.WhereCustomerName(search, orders);
                     break;
+
                 case 3:
                     orders = _ordersService.WhereBetweenDate(fromdate, todate, orders);
                     break;
+
                 default:
                     break;
             }
             //Filter
-            switch(filtertype)
+            switch (filtertype)
             {
                 case "OrderStatus":
                     orders = _ordersService.WhereOrderStatus(filter, orders);
                     break;
+
                 case "PaymentMethod":
                     orders = _ordersService.WherePaymentMethod(filter, orders);
                     break;
+
                 default:
                     break;
             }
@@ -91,7 +96,8 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             return null;
         }
 
-        const int PAGE_SIZE = 10;
+        private const int PAGE_SIZE = 10;
+
         public IEnumerable<Order> Paging(IEnumerable<Order> orders, int page = 1)
         {
             int skipN = (page - 1) * PAGE_SIZE;

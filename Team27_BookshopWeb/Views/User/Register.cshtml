@@ -26,7 +26,7 @@
 <main class="page-section inner-page-sec-padding-bottom">
     <div class="container">
         <!-- ALERT -->
-        @{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+        @{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
         <div class="row">
             <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb--30 mb-lg--0">
                 <!-- Login Form s-->
@@ -112,7 +112,6 @@
         </div>
     </div>
 </main>
-	</div>
 
 @section script {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

@@ -26,7 +26,7 @@ namespace Team27_BookshopWeb.Services
         public MessagesViewModel Comment(CommentEditModel commentEditModel)
         {
             int isBought = 0;
-            if (commentEditModel.Vote == null || commentEditModel.Vote == 0)
+            if (commentEditModel.Vote == 0 || commentEditModel.Vote == 0)
             {
                 return new MessagesViewModel(false, "Vui lòng đánh giá cho sách này");
             }

@@ -1,20 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Security.Claims;
 using Team27_BookshopWeb.Areas.admin.Models;
 using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Models;
 using BC = BCrypt.Net.BCrypt;
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Team27_BookshopWeb.Entities;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Http;
-using System.Globalization;
 
 namespace Team27_BookshopWeb.Services
 {
@@ -22,6 +15,7 @@ namespace Team27_BookshopWeb.Services
     {
         private readonly MyDbContext myDbContext;
         private readonly IBooksService _booksService;
+
         public CustomerService(MyDbContext myDbContext, IBooksService booksService)
         {
             this.myDbContext = myDbContext;
@@ -34,9 +28,10 @@ namespace Team27_BookshopWeb.Services
             Wishlist wishlist = myDbContext.Wishlists.Where(w => w.CustomerId == customerId && w.BookId == bookId)
                                                 .FirstOrDefault();
             //Không có trong danh sách yêu thích
-            if (wishlist == null) {
+            if (wishlist == null)
+            {
                 Wishlist newWishlist = new Wishlist();
-                
+
                 try
                 {
                     newWishlist.BookId = bookId;
@@ -51,7 +46,6 @@ namespace Team27_BookshopWeb.Services
                 {
                     return new MessagesViewModel(false, "Không thể thêm sách vào danh sách yêu thích");
                 }
-
             }
             else
             {
@@ -107,7 +101,7 @@ namespace Team27_BookshopWeb.Services
             }
             return wishlists;
         }
-        
+
         //Kiểm tra password
         public bool PasswordCheck(string id, string pass)
         {
@@ -118,7 +112,8 @@ namespace Team27_BookshopWeb.Services
         //edit mật khẩu khách hàng
         public MessagesViewModel EditCustomerPassword(string id, string password)
         {
-            if (string.IsNullOrEmpty(id)) {
+            if (string.IsNullOrEmpty(id))
+            {
                 return new MessagesViewModel(false, "Id không được trống");
             }
             var customer = GetCustomer(id);
@@ -217,12 +212,11 @@ namespace Team27_BookshopWeb.Services
             return customers;
         }
 
-  
         public MessagesViewModel CreateCustomer(CustomerEditModel khEM)
         {
             var kh = new Customer();
 
-            if(!EmailValidation(khEM.Email, ""))
+            if (!EmailValidation(khEM.Email, ""))
             {
                 return new MessagesViewModel(false, "Email đã tồn tại");
             }
@@ -243,19 +237,18 @@ namespace Team27_BookshopWeb.Services
                 kh.Password = passwordHash;
 
                 myDbContext.Add(kh);
-                myDbContext.SaveChanges(); 
+                myDbContext.SaveChanges();
                 return new MessagesViewModel(true, "Đăng ký thành công");
             }
             catch (Exception)
             {
-
                 return new MessagesViewModel(false, "Đăng ký thất bại");
             }
         }
 
         public CustomerEditModel CustomerToEditModel(Customer cs)
         {
-            CustomerEditModel kh = new CustomerEditModel();          
+            CustomerEditModel kh = new CustomerEditModel();
             try
             {
                 kh.Id = cs.Id;
@@ -266,11 +259,9 @@ namespace Team27_BookshopWeb.Services
                 kh.Address = cs.Address;
                 kh.Username = cs.Username;
                 kh.Password = cs.Password;
-                
             }
             catch (Exception)
             {
-
                 return null;
             }
             return kh;
@@ -293,18 +284,16 @@ namespace Team27_BookshopWeb.Services
             }
             catch (Exception)
             {
-
                 return null;
             }
-
         }
 
         public MessagesViewModel EditCustomer(CustomerEditModel khEM)
         {
-            if (String.IsNullOrEmpty(khEM.Id)){
+            if (String.IsNullOrEmpty(khEM.Id))
+            {
                 return new MessagesViewModel(false, "Id không được trống");
             }
-            
 
             if (!EmailValidation(khEM.Email, khEM.Id))
             {
@@ -328,9 +317,8 @@ namespace Team27_BookshopWeb.Services
             {
                 return new MessagesViewModel(false, "Sửa thất bại");
             }
-            
         }
-        
+
         public MessagesViewModel DeleteCustomerTmp(string id)
         {
             //ktra khách hàng đã có trong database chưa
@@ -372,7 +360,7 @@ namespace Team27_BookshopWeb.Services
             return customer;
         }
 
-        //lấy ds khách hàng chưa bị xóa 
+        //lấy ds khách hàng chưa bị xóa
         public IQueryable<Customer> GetCustomersNotDelete()
         {
             return myDbContext.Customers.Where(p => p.DeletedAt == null).OrderBy(p => p.Id).AsQueryable();
@@ -410,11 +398,10 @@ namespace Team27_BookshopWeb.Services
             {
                 return new MessagesViewModel(false, "Xóa vĩnh viễn không thành công");
             }
-
         }
 
         public MessagesViewModel Restore(string id)
-        {  
+        {
             // ktra khách hàng đã có trong ds delete tạm chưa
             var checkCus = WhereId(id, GetCustomersDeleteTmp()).FirstOrDefault();
             try
@@ -428,7 +415,7 @@ namespace Team27_BookshopWeb.Services
             {
                 return new MessagesViewModel(false, "Không khôi phục thành công");
             }
-        } 
+        }
 
         //Kiểm tra username, nếu không tồn tại username thì trả về true
 
@@ -455,7 +442,7 @@ namespace Team27_BookshopWeb.Services
             {
                 customer = WhereEmail(usernameOrEmail, myDbContext.Customers);
             }
-            
+
             //Nếu có Id customer thì không count id đó
             if (!string.IsNullOrEmpty(customerId))
             {

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Globalization;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Extensions;
 using Team27_BookshopWeb.Models;
@@ -33,7 +30,6 @@ namespace Team27_BookshopWeb.Controllers
         public IActionResult Index()
         {
             CheckoutViewModel mdl = new CheckoutViewModel();
-            Cart cart;
             if (User.Identity.IsAuthenticated)
             {
                 var customerId = User.FindFirst("Id").Value;
@@ -50,7 +46,6 @@ namespace Team27_BookshopWeb.Controllers
                 {
                     var cartId = int.Parse(HttpContext.Request.Cookies["cart"]);
                     mdl.Cart = _cartsService.GetCart(cartId);
-                    
                 }
             }
 
@@ -100,7 +95,7 @@ namespace Team27_BookshopWeb.Controllers
                 if (cart == null) return RedirectToAction("Index");
                 MessagesViewModel mdl = new MessagesViewModel();
                 mdl = _ordersService.PlaceOrder(checkoutView, customerId, cart);
-                
+
                 if (mdl.IsSuccess)
                 {
                     return Redirect("/hoan-tat-thanh-toan/" + mdl.Data);

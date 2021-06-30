@@ -6,17 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20201203050730_DBInit.cs" />
-    <Compile Remove="Migrations\20201203050730_DBInit.Designer.cs" />
-    <Compile Remove="Migrations\20201203073608_DBInit.cs" />
-    <Compile Remove="Migrations\20201203073608_DBInit.Designer.cs" />
-    <Compile Remove="Migrations\20201203074124_DBInit.cs" />
-    <Compile Remove="Migrations\20201203074124_DBInit.Designer.cs" />
-    <Compile Remove="Migrations\20201203074653_DBInit.cs" />
-    <Compile Remove="Migrations\20201203074653_DBInit.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="Team27StaticFiles\js\jquery-validation\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
     <None Remove="Team27StaticFiles\js\jquery-validation\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
     <None Remove="Team27StaticFiles\js\jquery-validation\jquery-validation-unobtrusive\LICENSE.txt" />

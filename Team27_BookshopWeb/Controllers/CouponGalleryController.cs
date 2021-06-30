@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Models;
 using Team27_BookshopWeb.Services;
@@ -23,7 +22,7 @@ namespace Team27_BookshopWeb.Controllers
 
         [Route("/ma-khuyen-mai")]
         [Route("/ma-khuyen-mai/tags/{tag}")]
-        public IActionResult Index(string search, string tag, int page=1)
+        public IActionResult Index(string search, string tag, int page = 1)
         {
             CouponGalleryViewModel mdl = new CouponGalleryViewModel();
             var query = _couponService.GetNotDeletedCoupons().OrderByDescending(c => c.CreatedAt).AsQueryable();
@@ -53,7 +52,8 @@ namespace Team27_BookshopWeb.Controllers
             else return StatusCode(404);
         }
 
-        const int PAGE_SIZE = 5;
+        private const int PAGE_SIZE = 5;
+
         public IEnumerable<Coupon> Paging(IEnumerable<Coupon> coupons, int page = 1)
         {
             int skipN = (page - 1) * PAGE_SIZE;

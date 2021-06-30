@@ -284,7 +284,7 @@
                     @foreach (var book in Model.relatedBooks)
                     {
                         <!--Gọi partial view hiển thị thông tin sách-->
-                        Html.RenderPartial("_ProductCard", book);
+                        await Html.RenderPartialAsync("_ProductCard", book);
                     }
 
                 </div>
@@ -295,7 +295,6 @@
         </section>
     }
 </main>
-    </div>
 
 @section script {
     <script src="~/Team27StaticFiles/myjs/product-detail.js"></script>

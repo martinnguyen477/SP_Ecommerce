@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Team27_BookshopWeb.Areas.admin.Models;
 using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Extensions;
@@ -23,7 +22,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
         private readonly IPublishersService _publishersService;
         private readonly IAuthorTranslatorService _authorTranslatorService;
 
-        public BookController(MyDbContext myDbContext, IBooksService booksService, 
+        public BookController(MyDbContext myDbContext, IBooksService booksService,
                                 ICategoryService categoryService,
                                 IPublishersService publishersService,
                                 IAuthorTranslatorService authorTranslatorService)
@@ -36,7 +35,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index(string search, string filtertype, string filter, int page=1)
+        public IActionResult Index(string search, string filtertype, string filter, int page = 1)
         {
             BookViewModel mdl = new BookViewModel();
             IQueryable<Book> res;
@@ -84,8 +83,10 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             {
                 case "Author":
                     return _authorTranslatorService.GetAuthorTranslatorWithoutBooks();
+
                 case "Category":
                     return _categoryService.GetCategoriesWithoutBooks();
+
                 default:
                     return _publishersService.GetPublishersWithoutBooks();
             }
@@ -100,7 +101,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             mdl.Publishers = _publishersService.GetPublishersWithoutBooks();
             mdl.Authors = _authorTranslatorService.GetAuthorsNotDeleted();
             mdl.Translators = _authorTranslatorService.GetTranslatorsNotDeleted();
-            //Nhận thông báo 
+            //Nhận thông báo
             if (TempData.Get<MessagesViewModel>("MessagesView") != null)
             {
                 mdl.MessagesView = TempData.Get<MessagesViewModel>("MessagesView");
@@ -133,7 +134,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
         {
             BookEditModel mdl = new BookEditModel();
             Book book = _booksService.GetBookBySlugOrId(id, "id");
-            if(book == null)
+            if (book == null)
             {
                 //Gửi thông báo lỗi nếu sách không tồn tại
                 TempData.Put("MessagesView", new MessagesViewModel(false, "Sách yêu cầu không tồn tại"));
@@ -155,7 +156,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit (BookEditModel bookEdit, IFormFile NewPrimaryImage, List<IFormFile> Images)
+        public IActionResult Edit(BookEditModel bookEdit, IFormFile NewPrimaryImage, List<IFormFile> Images)
         {
             if (ModelState.IsValid)
             {
@@ -171,19 +172,19 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
         }
 
         [HttpGet]
-        public JsonResult Restore (string id)
+        public JsonResult Restore(string id)
         {
             return Json(_booksService.Restore(id));
         }
 
         [HttpGet]
-        public JsonResult SoftDelete (string id)
+        public JsonResult SoftDelete(string id)
         {
             return Json(_booksService.SoftDelete(id));
         }
 
         [HttpGet]
-        public JsonResult Delete (string id)
+        public JsonResult Delete(string id)
         {
             return Json(_booksService.Delete(id));
         }
@@ -193,7 +194,8 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             return _booksService.CreateSlug(source, id);
         }
 
-        const int PAGE_SIZE = 10;
+        private const int PAGE_SIZE = 10;
+
         public IEnumerable<Book> Paging(IEnumerable<Book> books, int page = 1)
         {
             int skipN = (page - 1) * PAGE_SIZE;

@@ -311,7 +311,7 @@ namespace Team27_BookshopWeb.Services
             MessagesViewModel messagesViewModel = new MessagesViewModel();
             messagesViewModel.Data = "";
             //Kiểm tra dữ liệu đầu vào
-            if (string.IsNullOrEmpty(orderId) || status == null)
+            if (string.IsNullOrEmpty(orderId) || status == 0)
             {
                 return new MessagesViewModel(false, "Cần nhập đủ dữ liệu mã và trạng thái đơn hàng");
             }

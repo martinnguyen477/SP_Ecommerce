@@ -10,7 +10,7 @@
             <div class="card-header">
                 <strong>Chỉnh sửa thông tin mã khuyến mãi</strong>
             </div>
-            @{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+            @{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
             <div class="card-body card-block">
                 <form asp-action="Edit" enctype="multipart/form-data" method="post" style="margin-left: 2em">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>

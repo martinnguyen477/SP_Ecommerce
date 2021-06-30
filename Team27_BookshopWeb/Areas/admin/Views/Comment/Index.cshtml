@@ -39,7 +39,7 @@
             @Html.DisplayFor(modelItem => Model.thongBao)
         </h3>
         <!-- ALERT -->
-        @{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+        @{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
         <div class="table-data__tool">
             <div class="table-data__tool-right">
                 <form method="get" asp-action="FilterVote">
@@ -74,10 +74,8 @@
                         </div>
                     </div>
                 </form>
-                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                    <a asp-action="Index">
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small" asp-action="Index">
                         <i class="zmdi zmdi-plus"></i> Danh sách comment
-                    </a>
                 </button>
             </div>
         </div>
@@ -157,7 +155,7 @@
                 <div class="pagination-block">
                     <!--PHÂN TRANG-->
                     <!--Gọi partial view hiển thị phân trang-->
-                    @{ Html.RenderPartial("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
+                    @{await Html.RenderPartialAsync("_Pagination", new PaginationViewModel(Model.AllPages, Model.CurrentPage));}
                 </div>
             </div>
         </div>

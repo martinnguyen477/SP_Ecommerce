@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Models;
 using Team27_BookshopWeb.Services;
@@ -23,7 +22,7 @@ namespace Team27_BookshopWeb.Controllers
         }
 
         // GET: /<controller>/
-        
+
         public IActionResult Index(string sort, int page = 1)
         {
             ShopViewModel mdl = new ShopViewModel();
@@ -95,7 +94,7 @@ namespace Team27_BookshopWeb.Controllers
         }
 
         [HttpGet]
-        public IActionResult Search(string name, string sort, int page=1)
+        public IActionResult Search(string name, string sort, int page = 1)
         {
             ShopViewModel mdl = new ShopViewModel();
             mdl.Type = "tim-kiem";
@@ -112,7 +111,8 @@ namespace Team27_BookshopWeb.Controllers
             return View("Index", mdl);
         }
 
-        const int PAGE_SIZE = 9;
+        private const int PAGE_SIZE = 9;
+
         public IEnumerable<Book> Paging(IEnumerable<Book> books, int page = 1)
         {
             int skipN = (page - 1) * PAGE_SIZE;

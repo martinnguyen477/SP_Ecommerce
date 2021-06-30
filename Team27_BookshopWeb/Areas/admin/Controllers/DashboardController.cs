@@ -40,7 +40,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
         }
 
         [Produces("application/json")]
-        public async Task<IActionResult> OrderTypeChart(int time)
+        public IActionResult OrderTypeChart(int time)
         {
 
             try

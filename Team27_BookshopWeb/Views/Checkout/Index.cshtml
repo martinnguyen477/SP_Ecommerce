@@ -24,9 +24,9 @@
     <div class="container">
         <!-- ALERT -->
 
-        @{ Html.RenderPartial("_AdminAlert", Model.MessagesView); }
+        @{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
         <div class="row">
-            <div class="col-12">
+            <div class="col-12">s
                 <!-- Checkout Form s-->
                 <div class="checkout-form">
                     <div class="row row-40">

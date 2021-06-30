@@ -52,7 +52,7 @@ namespace Team27_BookshopWeb.Services
             string slug = _booksService.GenerateNewSlug(source);
             IQueryable<Coupon> allCoupons = myDbContext.Coupons;
             //Không đếm slug từ id hiện tại (khi edit publisher)
-            if (id != null && id != 0)
+            if (id != 0)
             {
                 allCoupons = allCoupons.Where(c => c.Id != id).AsQueryable();
             }
@@ -238,7 +238,7 @@ namespace Team27_BookshopWeb.Services
         {
 
             //ktra khách hàng đã có trong database chưa
-            if (id == null || id == 0)
+            if (id == 0)
             {
                 return new MessagesViewModel(false, "id trống");
             }
@@ -269,7 +269,7 @@ namespace Team27_BookshopWeb.Services
 
         public MessagesViewModel RestoreCoupon(int id)
         {
-            if (id == null || id == 0)
+            if (id == 0)
             {
                 return new MessagesViewModel(false, "ID trống");
             }
@@ -302,7 +302,7 @@ namespace Team27_BookshopWeb.Services
 
         public MessagesViewModel DeleteCouponForever(int id)
         {
-            if (id == null || id == 0)
+            if (id == 0)
             {
                 return new MessagesViewModel(false, "id trống");
             }
