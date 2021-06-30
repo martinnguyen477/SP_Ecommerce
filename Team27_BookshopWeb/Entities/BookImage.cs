@@ -13,6 +13,8 @@ namespace Team27_BookshopWeb.Entities
         [Required]
         public string BookId { get; set; }
 
+        public string PublicId { get; set; }
+
         [Required]
         public string Image { get; set; }
         public int Primary { get; set; }
