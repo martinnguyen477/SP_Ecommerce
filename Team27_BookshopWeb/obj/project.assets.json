@@ -9617,11 +9617,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nguyen Quoc Cuong\\Desktop\\New folder (3)\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
+      "projectUniqueName": "F:\\Ecommerce\\Project\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
       "projectName": "Team27_BookshopWeb",
-      "projectPath": "C:\\Users\\Nguyen Quoc Cuong\\Desktop\\New folder (3)\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
+      "projectPath": "F:\\Ecommerce\\Project\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
       "packagesPath": "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nguyen Quoc Cuong\\Desktop\\New folder (3)\\SP_Ecommerce\\Team27_BookshopWeb\\obj\\",
+      "outputPath": "F:\\Ecommerce\\Project\\SP_Ecommerce\\Team27_BookshopWeb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nguyen Quoc Cuong\\AppData\\Roaming\\NuGet\\NuGet.Config",
