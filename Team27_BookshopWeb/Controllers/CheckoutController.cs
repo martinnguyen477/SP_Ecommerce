@@ -33,7 +33,6 @@ namespace Team27_BookshopWeb.Controllers
         public IActionResult Index()
         {
             CheckoutViewModel mdl = new CheckoutViewModel();
-            Cart cart;
             if (User.Identity.IsAuthenticated)
             {
                 var customerId = User.FindFirst("Id").Value;

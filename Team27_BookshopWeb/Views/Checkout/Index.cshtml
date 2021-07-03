@@ -114,7 +114,7 @@
                                                 <h4>Tổng tiền <span id="total">@Model.DisplaySubtotal</span></h4>
                                             }
                                             <button class="place-order w-100" id="normal" name="payment_method" value="normal" type="submit">Thanh toán</button>
-                                            <button class="place-order w-100" id="paypal" name="payment_method" value="paypal" type="submit">Thanh toán qua Paypal</button>
+                                            <button class="place-order w-100" id="paypal" name="payment_method" value="CheckoutPayPal" type="submit" asp-controller="cart" asp-action="CheckoutPayPal">Thanh toán qua Paypal</button>
                                             <button class="place-order w-100" id="vnpay" name="payment_method" value="vnpay" type="submit">Thanh toán qua VNPay</button>
                                         </div>
                                     </div>

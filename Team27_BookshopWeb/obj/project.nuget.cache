@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "H69KHkgZEj062BYh9aA/IWHoO8jlFcqkxTM2AhkLxo0tVjoSAvKJP5mrmGJZ73BJkxOhzIUQuHmW7hjOx5e8Ag==",
+  "dgSpecHash": "2us36z9kBM1Xc9D8Hgi9dtnIlOae1Ld3WQC9biHmYg0OOsKfJpl6601bLg9KwRBr6qXgyusglsZIQOmj97pC4w==",
   "success": true,
-  "projectFilePath": "G:\\Lưu Trữ\\File nộp (File responses)\\Nhom27_WebsiteBanSach - Phương Lê Thị Trúc\\Team27_BookshopWeb\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
+  "projectFilePath": "C:\\Users\\Nguyen Quoc Cuong\\OneDrive - Hochiminh City University of Education\\Desktop\\New folder\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\bcrypt.net-next\\3.1.3\\bcrypt.net-next.3.1.3.nupkg.sha512",
+    "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\braintreehttp-dotnet\\0.3.0\\braintreehttp-dotnet.0.3.0.nupkg.sha512",
     "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
@@ -85,6 +86,7 @@
     "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
+    "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\paypal\\2.0.0-rc2\\paypal.2.0.0-rc2.nupkg.sha512",
     "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",

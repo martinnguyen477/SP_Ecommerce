@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Lưu Trữ\\File nộp (File responses)\\Nhom27_WebsiteBanSach - Phương Lê Thị Trúc\\Team27_BookshopWeb\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj": {}
+    "C:\\Users\\Nguyen Quoc Cuong\\OneDrive - Hochiminh City University of Education\\Desktop\\New folder\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj": {}
   },
   "projects": {
-    "G:\\Lưu Trữ\\File nộp (File responses)\\Nhom27_WebsiteBanSach - Phương Lê Thị Trúc\\Team27_BookshopWeb\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj": {
+    "C:\\Users\\Nguyen Quoc Cuong\\OneDrive - Hochiminh City University of Education\\Desktop\\New folder\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Lưu Trữ\\File nộp (File responses)\\Nhom27_WebsiteBanSach - Phương Lê Thị Trúc\\Team27_BookshopWeb\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
+        "projectUniqueName": "C:\\Users\\Nguyen Quoc Cuong\\OneDrive - Hochiminh City University of Education\\Desktop\\New folder\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
         "projectName": "Team27_BookshopWeb",
-        "projectPath": "G:\\Lưu Trữ\\File nộp (File responses)\\Nhom27_WebsiteBanSach - Phương Lê Thị Trúc\\Team27_BookshopWeb\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
+        "projectPath": "C:\\Users\\Nguyen Quoc Cuong\\OneDrive - Hochiminh City University of Education\\Desktop\\New folder\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
         "packagesPath": "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\",
-        "outputPath": "G:\\Lưu Trữ\\File nộp (File responses)\\Nhom27_WebsiteBanSach - Phương Lê Thị Trúc\\Team27_BookshopWeb\\Team27_BookshopWeb\\obj\\",
+        "outputPath": "C:\\Users\\Nguyen Quoc Cuong\\OneDrive - Hochiminh City University of Education\\Desktop\\New folder\\SP_Ecommerce\\Team27_BookshopWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nguyen Quoc Cuong\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -77,6 +77,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.0-preview1-19509-03, )"
+            },
+            "PayPal": {
+              "target": "Package",
+              "version": "[2.0.0-rc2, )"
             },
             "Slugify.Core": {
               "target": "Package",
