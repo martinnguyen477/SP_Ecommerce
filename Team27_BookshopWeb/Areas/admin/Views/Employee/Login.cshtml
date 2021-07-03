@@ -56,7 +56,7 @@
                         @{await Html.RenderPartialAsync("_AdminAlert", (MessagesViewModel)ViewBag.MessagesView);}
                         <!-- ALERT -->
                         <div class="login-form">
-                            <form asp-action="Login" asp-controller="Employee" method="post"  asp-route-ReturnUrl="@ViewBag.ReturnUrl">
+                            <form asp-action="Login" asp-controller="Employee" method="post" asp-route-ReturnUrl="@ViewBag.ReturnUrl">
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                 <div class="form-group">
                                     <label asp-for="Username">Tên đăng nhập</label>
@@ -78,11 +78,11 @@
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" style="margin: 2em 0em !important;">Đăng nhập</button>
                                 <!--<div class="social-login-content">
-                   <div class="social-button">
-                       <button class="au-btn au-btn--block au-btn--blue m-b-20">Đăng nhập bằng Facebook</button>
-                       <button class="au-btn au-btn--block au-btn--blue2">Đăng nhập bằng Twitter</button>
-                   </div>
-            </div> -->
+                                       <div class="social-button">
+                                           <button class="au-btn au-btn--block au-btn--blue m-b-20">Đăng nhập bằng Facebook</button>
+                                           <button class="au-btn au-btn--block au-btn--blue2">Đăng nhập bằng Twitter</button>
+                                       </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
     <!-- Main JS-->
     <script src="~/Team27StaticFiles/Admins/js/main.js"></script>
     <script src="~/Team27StaticFiles/myjs/admin.js"></script>
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 
 </body>
 

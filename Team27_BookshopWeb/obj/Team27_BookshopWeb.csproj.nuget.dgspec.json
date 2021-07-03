@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Ecommerce\\Project\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj": {}
+    "G:\\Lưu Trữ\\File nộp (File responses)\\Nhom27_WebsiteBanSach - Phương Lê Thị Trúc\\Team27_BookshopWeb\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj": {}
   },
   "projects": {
-    "F:\\Ecommerce\\Project\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj": {
+    "G:\\Lưu Trữ\\File nộp (File responses)\\Nhom27_WebsiteBanSach - Phương Lê Thị Trúc\\Team27_BookshopWeb\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Ecommerce\\Project\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
+        "projectUniqueName": "G:\\Lưu Trữ\\File nộp (File responses)\\Nhom27_WebsiteBanSach - Phương Lê Thị Trúc\\Team27_BookshopWeb\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
         "projectName": "Team27_BookshopWeb",
-        "projectPath": "F:\\Ecommerce\\Project\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
+        "projectPath": "G:\\Lưu Trữ\\File nộp (File responses)\\Nhom27_WebsiteBanSach - Phương Lê Thị Trúc\\Team27_BookshopWeb\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
         "packagesPath": "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\",
-        "outputPath": "F:\\Ecommerce\\Project\\SP_Ecommerce\\Team27_BookshopWeb\\obj\\",
+        "outputPath": "G:\\Lưu Trữ\\File nộp (File responses)\\Nhom27_WebsiteBanSach - Phương Lê Thị Trúc\\Team27_BookshopWeb\\Team27_BookshopWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nguyen Quoc Cuong\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,10 +43,6 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[3.1.3, )"
-            },
-            "CloudinaryDotNet": {
-              "target": "Package",
-              "version": "[1.15.2, )"
             },
             "Microsoft.AspNetCore.Authentication.Cookies": {
               "target": "Package",

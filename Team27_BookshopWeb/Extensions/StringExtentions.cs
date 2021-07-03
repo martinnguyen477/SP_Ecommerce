@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Team27_BookshopWeb.Models
+namespace Team27_BookshopWeb.Extensions
 {
     public static class StringExtentions
     {

@@ -10,7 +10,7 @@
         <div class="card-header">
             <strong>Thêm mã khuyến mãi</strong>
         </div>
-        @{await Html.RenderPartialAsync("_AdminAlert", Model.MessagesView); }
+        @{ await Html.RenderPartialAsync ("_AdminAlert", Model.MessagesView); }
         <div class="card-body card-block">
             <form action="Create" method="post" enctype="multipart/form-data" class="form-horizontal" id="createCouponForm" style="margin-left: 2em;">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>

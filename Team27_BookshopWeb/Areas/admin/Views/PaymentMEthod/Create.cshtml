@@ -28,7 +28,7 @@
                         <label for="text-input" asp-for="IsSupported" class=" form-control-label">@Html.DisplayNameFor(model => Model.IsSupported):</label>
                     </div>
                     <div class="col-1 col-md-3">
-                     
+
                         <input type="checkbox" id="HT" name="IsSupported" value="1" @(Model.IsSupported == 1 ? "checked" : "")><span class="nu">Hỗ trợ</span>
                         <span asp-validation-for="IsSupported" class="text-danger"></span>
                     </div>

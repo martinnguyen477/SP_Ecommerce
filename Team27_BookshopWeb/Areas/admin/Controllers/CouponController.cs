@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Team27_BookshopWeb.Areas.admin.Models;
 using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Extensions;
@@ -24,9 +25,9 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             _context = context;
             _couponService = couponService;
         }
-
-        public IActionResult Index(string name, int page = 1)
+        public IActionResult Index(string name, int page=1)
         {
+
             CouponViewModel mdl = new CouponViewModel();
             if (name != null)
             {
@@ -48,7 +49,6 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             }
             return View(mdl);
         }
-
         public IActionResult ShowTmp(string name)
         {
             CouponViewModel mdl = new CouponViewModel();
@@ -100,10 +100,10 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             if (TempData.Get<MessagesViewModel>("MessagesView") != null)
             {
                 couponEditModel.MessagesView = TempData.Get<MessagesViewModel>("MessagesView");
-            }
+            }    
             return View(couponEditModel);
-        }
 
+        }
         [HttpPost]
         public IActionResult Create(CouponEditModel couponEditModel, IFormFile Image)
         {
@@ -120,6 +120,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
                 {
                     return RedirectToAction("Create");
                 }
+
             }
             //Gửi thông báo
             TempData.Put("MessagesView", new MessagesViewModel(false, "Thông tin không hợp lệ"));
@@ -167,9 +168,9 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             TempData.Put("MessagesView", new MessagesViewModel(false, "Thông tin không hợp lệ"));
             return RedirectToAction("Edit");
         }
-
         public IActionResult Delete(int id)
         {
+
             MessagesViewModel res = _couponService.DeleteCouponTmp(id);
             TempData.Put("MessagesView", res);
             if (res.IsSuccess)
@@ -180,6 +181,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             {
                 return RedirectToAction("Index");
             }
+
         }
 
         public IActionResult Restore(int id)
@@ -198,6 +200,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
 
         public IActionResult DeleteForever(int id)
         {
+
             MessagesViewModel res = _couponService.DeleteCouponForever(id);
             TempData.Put("MessagesView", res);
             if (res.IsSuccess)
@@ -208,6 +211,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             {
                 return RedirectToAction("ShowTmp");
             }
+
         }
 
         public string CheckSlug(string source, int id)
@@ -215,8 +219,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             return _couponService.CreateSlug(source, id);
         }
 
-        private const int PAGE_SIZE = 10;
-
+        const int PAGE_SIZE = 10;
         public IEnumerable<Coupon> Paging(IEnumerable<Coupon> coupons, int page = 1)
         {
             int skipN = (page - 1) * PAGE_SIZE;
@@ -231,5 +234,6 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
 
             return mdl;
         }
+
     }
 }

@@ -1,5 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using Team27_BookshopWeb.Entities;
 using Team27_BookshopWeb.Extensions;
 using Team27_BookshopWeb.Models;
@@ -47,7 +51,7 @@ namespace Team27_BookshopWeb.Controllers
         }
 
         [HttpPost]
-        public IActionResult QuickView([FromForm] string id)
+        public IActionResult QuickView([FromForm]string id)
         {
             ProductDetailsViewModel mdl = new ProductDetailsViewModel();
             //Hiển thị sách theo id
@@ -71,6 +75,7 @@ namespace Team27_BookshopWeb.Controllers
             {
                 return StatusCode(404);
             }
+            
         }
 
         public MessagesViewModel UpdateViews(string bookId)
@@ -87,7 +92,7 @@ namespace Team27_BookshopWeb.Controllers
         }
 
         [HttpPost]
-        public JsonResult Comment([FromForm] CommentEditModel comment)
+        public JsonResult Comment([FromForm]CommentEditModel comment)
         {
             if (User.Identity.IsAuthenticated)
             {

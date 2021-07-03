@@ -1709,9 +1709,6 @@ namespace Team27_BookshopWeb.Migrations
                         .HasColumnType("int")
                         .HasDefaultValue(0);
 
-                    b.Property<string>("PublicId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("BookId");
@@ -2235,32 +2232,6 @@ namespace Team27_BookshopWeb.Migrations
                         .HasFilter("[CustomerId] IS NOT NULL");
 
                     b.ToTable("Cart");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(2020, 12, 4, 5, 50, 20, 0, DateTimeKind.Unspecified),
-                            CustomerId = "KH003",
-                            DeletedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(2020, 12, 4, 6, 27, 20, 0, DateTimeKind.Unspecified),
-                            CustomerId = "KH021",
-                            DeletedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(2020, 12, 4, 7, 7, 20, 0, DateTimeKind.Unspecified),
-                            CustomerId = "KH002",
-                            DeletedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = 1
-                        });
                 });
 
             modelBuilder.Entity("Team27_BookshopWeb.Entities.CartItems", b =>

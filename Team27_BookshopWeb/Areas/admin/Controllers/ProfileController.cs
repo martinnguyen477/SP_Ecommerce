@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Team27_BookshopWeb.Areas.admin.Models;
 using Team27_BookshopWeb.Entities;
@@ -13,12 +17,10 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
     public class ProfileController : Controller
     {
         private IEmployeeService _employeeService;
-
         public ProfileController(IEmployeeService employeeService)
         {
             this._employeeService = employeeService;
         }
-
         public IActionResult Index()
         {
             if (User.Identity.IsAuthenticated)
@@ -34,6 +36,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
                 return View(mdl);
             }
             return RedirectToAction("Login", "Employee");
+            
         }
 
         [HttpPost]

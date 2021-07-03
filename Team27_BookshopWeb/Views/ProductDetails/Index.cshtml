@@ -5,6 +5,14 @@
     Layout = "~/Views/Shared/_Master.cshtml";
 }
 
+@section metasocials{
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:title" content="@Model.book.Name" />
+    <meta property="og:description" content="@Model.book.Description" />
+    <meta property="og:image" content="@Model.book.BookImages" />
+}
+
 @section style {
     <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/product-details.css" />
 }

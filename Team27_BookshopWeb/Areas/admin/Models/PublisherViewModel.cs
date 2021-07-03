@@ -6,6 +6,7 @@ namespace Team27_BookshopWeb.Areas.admin.Models
 {
     public class PublisherViewModel
     {
+
         public IEnumerable<Publisher> publishers { get; set; }
         public string timKiem { get; set; }
         public string thongBao { get; set; }

@@ -4016,37 +4016,8 @@ namespace Team27_BookshopWeb.Entities
 
             #endregion OrderDetail
 
-            #region Cart
-
-            modelBuilder.Entity<Cart>()
-                .HasData(
-                    new Cart
-                    {
-                        Id = 1,
-                        CustomerId = "KH003",
-                        IsActive = 1,
-                        CreatedAt = DateTime.Parse("2020-12-04 05:50:20")
-                    },
-                    new Cart
-                    {
-                        Id = 2,
-                        CustomerId = "KH021",
-                        IsActive = 1,
-                        CreatedAt = DateTime.Parse("2020-12-04 06:27:20")
-                    },
-                    new Cart
-                    {
-                        Id = 3,
-                        CustomerId = "KH002",
-                        IsActive = 1,
-                        CreatedAt = DateTime.Parse("2020-12-04 07:07:20")
-                    }
-                );
 
 
-            #endregion Cart
-
-            
         }
     }
 }

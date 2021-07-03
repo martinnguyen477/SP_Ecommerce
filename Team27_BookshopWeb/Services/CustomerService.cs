@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Claims;
 using Team27_BookshopWeb.Areas.admin.Models;
 using Team27_BookshopWeb.Entities;
+using Team27_BookshopWeb.Extensions;
 using Team27_BookshopWeb.Models;
 using BC = BCrypt.Net.BCrypt;
 
@@ -156,7 +157,7 @@ namespace Team27_BookshopWeb.Services
             //Tìm khách hàng theo username
             Customer user = myDbContext.Customers.SingleOrDefault(u => u.Username == loginUser.Username);
             //Kiểm tra password
-            if (user == null || loginUser.Password.Md5() != user.Password)
+            if (user == null || !BC.Verify(loginUser.Password, user.Password))
             {
                 return new MessagesViewModel(false, "Tài khoản hoặc mật khẩu không đúng");
             }
@@ -224,7 +225,6 @@ namespace Team27_BookshopWeb.Services
             }
 
             var checkUsername = myDbContext.Customers.Where(p => p.Username == khEM.Username).Count();
-
             if (checkUsername > 0)
             {
                 return new MessagesViewModel(false, "Username này đã tồn tại");

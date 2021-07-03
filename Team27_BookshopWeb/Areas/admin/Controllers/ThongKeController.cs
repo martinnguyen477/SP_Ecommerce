@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +16,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
     [Authorize(AuthenticationSchemes = "admin")]
     public class ThongKeController : Controller
     {
+
         private readonly MyDbContext _context;
         private readonly ITKDoanhThuService _doanhthuService;
         private readonly IBooksService _bookService;
@@ -27,8 +30,10 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             _bookService = booksService;
         }
 
+
         public IActionResult DTTheoKhoangTG()
         {
+
             return View();
         }
 
@@ -41,11 +46,9 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
                 case 180:
                     dt.title = "6 Tháng Trước";
                     break;
-
                 case 30:
                     dt.title = "1 Tháng Trước";
                     break;
-
                 default:
                     dt.title = "24H qua";
                     break;
@@ -57,6 +60,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
         [Produces("application/json")]
         public IActionResult RevenueChart(int day)
         {
+
             try
             {
                 IEnumerable<DoanhThuViewModel> dt = _doanhthuService.ListRevenue(day).ToList();
@@ -77,11 +81,9 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
                 case 7:
                     bookView.tittle = "1 Tuần";
                     break;
-
                 case 30:
                     bookView.tittle = "1 Tháng";
                     break;
-
                 default:
                     bookView.tittle = "24H Qua";
                     break;
@@ -90,11 +92,13 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             bookView.listBookBestViewed = topview.ToList();
 
             return View(bookView);
+
         }
 
         [Produces("application/json")]
         public IActionResult TopViewChart(int day)
         {
+
             try
             {
                 IEnumerable<TopViewModel> book = _thongKeService.TopViewInclude(day).Take(10).ToList();
@@ -115,11 +119,9 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
                 case 7:
                     bookSell.tittle = "7 Ngày Trước";
                     break;
-
                 case 30:
                     bookSell.tittle = "30 Ngày Trước";
                     break;
-
                 default:
                     bookSell.tittle = "24H Qua";
                     break;
@@ -130,11 +132,13 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             bookSell.listBookBestSell = res.ToList();
 
             return View(bookSell);
+
         }
 
         [Produces("application/json")]
         public IActionResult BestSellerChart(int day)
         {
+
             try
             {
                 IEnumerable<BestSellerBooksViewModel> book = _thongKeService.BestSellerStatistic(day).Take(10).ToList();
@@ -155,11 +159,9 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
                 case 180:
                     kh.title = "6 Tháng Trước";
                     break;
-
                 case 30:
                     kh.title = "1 Tháng Trước";
                     break;
-
                 default:
                     kh.title = "24H qua";
                     break;
@@ -171,6 +173,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
         [Produces("application/json")]
         public IActionResult CustomerChart(int day)
         {
+
             try
             {
                 IEnumerable<CustomerStatisticViewModel> kh = _thongKeService.ListCustomer(day).ToList();
@@ -181,5 +184,13 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
                 return BadRequest();
             }
         }
+
     }
 }
+
+
+
+
+
+
+

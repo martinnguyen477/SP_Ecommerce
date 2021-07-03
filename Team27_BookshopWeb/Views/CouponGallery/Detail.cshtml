@@ -28,15 +28,15 @@
                 @Model.Description.Replace("<br>", Environment.NewLine)
             </p>
             <blockquote>
-                <div>
+                <p>
                     <strong>CODE:</strong>
                 <p id="code">@Model.Code</p>
-                </div>
+                </p>
             </blockquote>
-            <div class="info">
+            <p class="info">
                 <p>Ngày bắt đầu: @Model.StartsAt.ToString("dd/MM/yyyy")</p>
                 <p style="color:red">Ngày kết thúc: @Model.ExpiresAt.ToString("dd/MM/yyyy")</p>
-            </div>
+            </p>
         </article>
         <footer class="blog-meta">
             <div>

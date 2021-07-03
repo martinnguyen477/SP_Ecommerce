@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Team27_BookshopWeb.Areas.admin.Models;
 using Team27_BookshopWeb.Entities;
@@ -22,7 +25,6 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             _context = context;
             _paymentService = paymentService;
         }
-
         public IActionResult Index(string filter)
         {
             PaymentMethodViewModel pm = new PaymentMethodViewModel();
@@ -36,7 +38,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             {
                 pm.MessagesView = TempData.Get<MessagesViewModel>("MessagesView");
             }
-            // pm.payments = _paymentService.ListPaymentMethod();
+           // pm.payments = _paymentService.ListPaymentMethod();
             return View(pm);
         }
 

@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Threading.Tasks;
 using Team27_BookshopWeb.Areas.admin.Models;
 using Team27_BookshopWeb.Entities;
+using Team27_BookshopWeb.Extensions;
 using Team27_BookshopWeb.Models;
 using BC = BCrypt.Net.BCrypt;
 
@@ -86,7 +88,7 @@ namespace Team27_BookshopWeb.Services
             //Tìm khách hàng theo username
             Employee user = myDbContext.Employees.SingleOrDefault(u => u.Username == loginUser.Username);
             //Kiểm tra password
-            if (user == null || loginUser.Password.Md5()  != user.Password)
+            if (user == null || loginUser.Password.Md5() != user.Password)
             {
                 return new MessagesViewModel(false, "Tài khoản hoặc mật khẩu không đúng");
             }
@@ -244,8 +246,7 @@ namespace Team27_BookshopWeb.Services
                 nv.Id = CreateNewEmployeeId();
                 nv.CreatedAt = DateTime.Now;
                 nv = EditModelToEmployee(nvEM, nv);
-                string passwordHash = nvEM.Password.Md5();
-                nv.Password = passwordHash;
+                nv.Password = nvEM.Password.Md5();
 
                 myDbContext.Add(nv);
                 myDbContext.SaveChanges();
@@ -292,7 +293,7 @@ namespace Team27_BookshopWeb.Services
 
         }
 
-        
+
         public MessagesViewModel Delete(string id)
         {
             // ktra nhân viên có  trong ds chưa
@@ -307,6 +308,7 @@ namespace Team27_BookshopWeb.Services
             {
                 return new MessagesViewModel(false, "Xóa vĩnh viễn không thành công");
             }
+
         }
 
         public IEnumerable<string> FilterByPosition()

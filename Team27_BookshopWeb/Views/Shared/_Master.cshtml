@@ -34,13 +34,14 @@
     <meta itemprop="description" content="">
     <meta itemprop="image" content="">
 
+    @RenderSection("metasocials", required: false)
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="">
+    <!--<meta property="og:url" content="">
     <meta property="og:locale" content="vi_VN">
     <meta property="og:type" content="">
     <meta property="og:title" content="">
     <meta property="og:description" content="">
-    <meta property="og:image" content="">
+    <meta property="og:image" content="">-->
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="">
@@ -533,7 +534,7 @@
     <!--Wishlist-->
     <script src="~/Team27StaticFiles/myjs/Wishlist.js"></script>
 
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     @RenderSection("script", false)
 </body>
 

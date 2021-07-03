@@ -9,8 +9,7 @@ namespace Team27_BookshopWeb.Entities
     public class MyDbContext:DbContext
     {
         public MyDbContext(DbContextOptions options) : base(options)
-        { 
-        }
+        { }
         #region DbSet
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Customer> Customers { get; set; }

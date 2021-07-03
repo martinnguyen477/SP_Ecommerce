@@ -114,10 +114,10 @@
                     <!-- Hiển thị sách -->
                     @foreach (var book in Model.Books)
                     {
-                        <div class="col-lg-4 col-sm-6">
-                            <!--Gọi partial view hiển thị thông tin sách-->
-                            @{await Html.RenderPartialAsync("_ProductCard", book);}
-                        </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <!--Gọi partial view hiển thị thông tin sách-->
+                        @{await Html.RenderPartialAsync("_ProductCard", book);}
+                    </div>
                     }
                 </div>
                 <!-- Pagination Block -->
