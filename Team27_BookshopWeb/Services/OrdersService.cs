@@ -42,9 +42,11 @@ namespace Team27_BookshopWeb.Services
         }
 
         //Place order
-        public MessagesViewModel PlaceOrder(CheckoutViewModel checkoutView, string customerId, Cart cart)
+        public MessagesViewModel PlaceOrder(CheckoutViewModel checkoutView, string customerId, Cart cart, int paymentMethod)
         {
             Coupon coupon = new Coupon();
+
+            //check customer
             if (!string.IsNullOrEmpty(customerId))
             {
                 Customer customer = _customerService.GetCustomer(customerId);
@@ -54,6 +56,7 @@ namespace Team27_BookshopWeb.Services
                 }
             }
 
+            //check coupo
             if (!string.IsNullOrEmpty(checkoutView.Coupon))
             {
                 MessagesViewModel messagesModel = ApplyCoupon(checkoutView.Coupon);
@@ -62,9 +65,11 @@ namespace Team27_BookshopWeb.Services
                 if (checkoutView.SubTotal < coupon.MinPrice) return new MessagesViewModel(false, "Đơn hàng phải tối thiểu " + coupon.MinPrice.ToString("N0") + " VND");
             }
 
+            //check cart
             if (cart == null) return new MessagesViewModel(false, "Giỏ hàng trống");
             IEnumerable<CartItems> cartItems = _cartsService.GetCheckoutItems(cart.Id);
             if (cartItems.Count() <= 0) return new MessagesViewModel(false, "Không có sản phẩm trong giỏ hàng");
+            
             //Tạo đơn hàng
             Order order = new Order();
             try
@@ -105,7 +110,7 @@ namespace Team27_BookshopWeb.Services
                     }
                 }
 
-                order.PaymentMethodId = 1;
+                order.PaymentMethodId = paymentMethod;
                 order.StatusId = 1;
                 order.PaymentStatus = 0;
                 order.CreatedAt = DateTime.Now;

@@ -25,7 +25,7 @@ namespace Team27_BookshopWeb.Services
         IQueryable<Order> WhereCustomerId(string id, IQueryable<Order> orders);
         IEnumerable<Order> GetOrdersByCustomerId(string id);
         MessagesViewModel ApplyCoupon(string code);
-        MessagesViewModel PlaceOrder(CheckoutViewModel checkoutView, string customerId, Cart cart);
+        MessagesViewModel PlaceOrder(CheckoutViewModel checkoutView, string customerId, Cart cart, int paymentMethod);
         Order GetOrderWithDetail(string orderId);
     }
 }

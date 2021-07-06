@@ -1401,7 +1401,6 @@ C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Des
 C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.csproj.AssemblyReference.cache
 C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.AssemblyInfoInputs.cache
 C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.AssemblyInfo.cs
 C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.csproj.CoreCompileInputs.cache
@@ -1453,6 +1452,7 @@ C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Des
 C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Index.cshtml.g.cs
 C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Razor\Views\Checkout\Index.cshtml.g.cs
 C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Razor\Views\Checkout\OrderComplete.cshtml.g.cs
+C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Razor\Views\Checkout\Success.cshtml.g.cs
 C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
 C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Razor\Views\CouponGallery\Detail.cshtml.g.cs
 C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Razor\Views\CouponGallery\Index.cshtml.g.cs
@@ -1502,3 +1502,4 @@ C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Des
 C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.dll
 C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.pdb
 C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.genruntimeconfig.cache
+C:\Users\Nguyen Quoc Cuong\OneDrive - Hochiminh City University of Education\Desktop\New folder\SP_Ecommerce\Team27_BookshopWeb\obj\Debug\netcoreapp3.1\Team27_BookshopWeb.csproj.AssemblyReference.cache
