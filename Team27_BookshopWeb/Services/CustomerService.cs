@@ -157,7 +157,7 @@ namespace Team27_BookshopWeb.Services
             //Tìm khách hàng theo username
             Customer user = myDbContext.Customers.SingleOrDefault(u => u.Username == loginUser.Username);
             //Kiểm tra password
-            if (user == null || !BC.Verify(loginUser.Password, user.Password))
+            if (user == null || loginUser.Password.Md5() == user.Password)
             {
                 return new MessagesViewModel(false, "Tài khoản hoặc mật khẩu không đúng");
             }

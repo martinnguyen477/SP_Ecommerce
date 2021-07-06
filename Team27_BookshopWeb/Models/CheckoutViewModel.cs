@@ -35,6 +35,9 @@ namespace Team27_BookshopWeb.Models
                 this._subtotal = value;
             }
         }
+        public int PaymentMethod { get; set; }
+
+        public int Total { get; set; }
         public Cart Cart { get; set; }
         public IEnumerable<CartItems> CartItems { get; set; }
         public MessagesViewModel MessagesView { get; set; }

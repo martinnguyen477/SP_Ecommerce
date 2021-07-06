@@ -81,6 +81,18 @@
                                             <input type="text" asp-for="Address" placeholder="Địa chỉ" required>
                                             <span asp-validation-for="Address" class="text-danger"></span>
                                         </div>
+                                        <div class="col-12 mb--20">
+
+                                            <select class="form-control" asp-for="PaymentMethod">
+                                                <option>Chọn phương thức thanh toán</option>
+
+                                                @foreach (var item in ViewBag.PaymentMethod)
+                                                {
+                                                    <option value="@item.Id">@item.Name</option>
+                                                }
+                                            </select>
+                                            <input type="text" asp-for="SubTotal"  data-subtotal="@Model.SubTotal" value="@Model.SubTotal" placeholder="Địa chỉ" required>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="order-note-block mt--30">
@@ -110,11 +122,13 @@
                                                     </ul>
                                                 }
                                                 <p>Tạm tính <span id="subtotal" data-subtotal="@Model.SubTotal">@Model.DisplaySubtotal</span></p>
+
                                                 <p>Mã giảm giá <span id="coupon-code">0 VND</span></p>
                                                 <h4>Tổng tiền <span id="total">@Model.DisplaySubtotal</span></h4>
+                                                
                                             }
                                             <button class="place-order w-100" id="normal" name="payment_method" value="normal" type="submit">Thanh toán</button>
-                                            <button class="place-order w-100" id="paypal" name="payment_method" value="paypal" type="submit">Thanh toán qua Paypal</button>
+                                            <button class="place-order w-100" id="paypal" name="payment_method" value="CheckoutPayPal" type="submit" asp-controller="cart" asp-action="CheckoutPayPal">Thanh toán qua Paypal</button>
                                             <button class="place-order w-100" id="vnpay" name="payment_method" value="vnpay" type="submit">Thanh toán qua VNPay</button>
                                         </div>
                                     </div>

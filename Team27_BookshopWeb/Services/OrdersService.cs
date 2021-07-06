@@ -42,9 +42,11 @@ namespace Team27_BookshopWeb.Services
         }
 
         //Place order
-        public MessagesViewModel PlaceOrder(CheckoutViewModel checkoutView, string customerId, Cart cart)
+        public MessagesViewModel PlaceOrder(CheckoutViewModel checkoutView, string customerId, Cart cart, int paymentMethod)
         {
             Coupon coupon = new Coupon();
+
+            //check customer
             if (!string.IsNullOrEmpty(customerId))
             {
                 Customer customer = _customerService.GetCustomer(customerId);
@@ -54,6 +56,7 @@ namespace Team27_BookshopWeb.Services
                 }
             }
 
+            //check coupo
             if (!string.IsNullOrEmpty(checkoutView.Coupon))
             {
                 MessagesViewModel messagesModel = ApplyCoupon(checkoutView.Coupon);
@@ -62,9 +65,11 @@ namespace Team27_BookshopWeb.Services
                 if (checkoutView.SubTotal < coupon.MinPrice) return new MessagesViewModel(false, "Đơn hàng phải tối thiểu " + coupon.MinPrice.ToString("N0") + " VND");
             }
 
+            //check cart
             if (cart == null) return new MessagesViewModel(false, "Giỏ hàng trống");
             IEnumerable<CartItems> cartItems = _cartsService.GetCheckoutItems(cart.Id);
             if (cartItems.Count() <= 0) return new MessagesViewModel(false, "Không có sản phẩm trong giỏ hàng");
+            
             //Tạo đơn hàng
             Order order = new Order();
             try
@@ -105,7 +110,7 @@ namespace Team27_BookshopWeb.Services
                     }
                 }
 
-                order.PaymentMethodId = 1;
+                order.PaymentMethodId = paymentMethod;
                 order.StatusId = 1;
                 order.PaymentStatus = 0;
                 order.CreatedAt = DateTime.Now;
@@ -309,6 +314,7 @@ namespace Team27_BookshopWeb.Services
         public MessagesViewModel UpdateOrder(string orderId, int status)
         {
             MessagesViewModel messagesViewModel = new MessagesViewModel();
+
             messagesViewModel.Data = "";
             //Kiểm tra dữ liệu đầu vào
             if (string.IsNullOrEmpty(orderId) || status == 0)
@@ -332,7 +338,7 @@ namespace Team27_BookshopWeb.Services
                 try
                 {
                     order.StatusId = status;
-
+                    
                     myDbContext.Update(order);
                     myDbContext.SaveChanges();
 
@@ -354,6 +360,40 @@ namespace Team27_BookshopWeb.Services
                         myDbContext.SaveChanges();
                     }
 
+                    
+
+                    return new MessagesViewModel(true, "Cập nhật trạng thái đơn hàng thành công");
+                }
+                catch (Exception)
+                {
+                    return new MessagesViewModel(false, "Cập nhật trạng thái đơn hàng thất bại");
+                }
+            }
+
+            return new MessagesViewModel(false, "Đơn hàng không tồn tại");
+        }
+
+        //Cập nhật tình trạng đơn hàng
+        public MessagesViewModel UpdateOrderByPayPal(string orderId,int paymentMethod)
+        {
+            MessagesViewModel messagesViewModel = new MessagesViewModel();
+
+            messagesViewModel.Data = "";
+
+            //Tìm đơn hàng theo id
+            var order = this.GetOrder(orderId);
+
+            if (order != null)
+            {
+                //Lưu lại trạng thái cũ
+                messagesViewModel.Data = order.StatusId;
+                try
+                {
+                    order.PaymentMethodId = paymentMethod;
+                    order.PaymentStatus = 1;
+
+                    myDbContext.Update(order);
+                    myDbContext.SaveChanges();
                     return new MessagesViewModel(true, "Cập nhật trạng thái đơn hàng thành công");
                 }
                 catch (Exception)
