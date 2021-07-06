@@ -112,6 +112,7 @@ namespace Team27_BookshopWeb.Controllers
                 MessagesViewModel mdl = new MessagesViewModel();
                 if(checkoutView.PaymentMethod == 2)
                 {
+                    _ordersService.PlaceOrder(checkoutView, customerId, cart, 1);
                     var paypalAPI = new PayPalAPI(_configuration);
                     string url = await paypalAPI.getRedirectURLtoPayPal(checkoutView.SubTotal, "USD");
                     return Redirect(url);
@@ -133,11 +134,14 @@ namespace Team27_BookshopWeb.Controllers
         }
 
        
-        public async Task<IActionResult> Success([FromQuery(Name = "PaymentId")] string paymentId, [FromQuery(Name = "PayerId")] string payerId)
+        public async Task<IActionResult> Success([FromQuery(Name = "PaymentId")] string paymentId, [FromQuery(Name = "PayerId")] string payerId, CheckoutViewModel checkoutViewModel)
         {
             var paypalAPI = new PayPalAPI(_configuration);
             PayPalPaymentExecutedResponse result = await paypalAPI.executedPayment(paymentId, payerId);
 
+            var order = _ordersService.GetAllOrders().LastOrDefault();
+            MessagesViewModel mdl = new MessagesViewModel();
+            _ordersService.UpdateOrderByPayPal(order.Id, 2);
             Debug.WriteLine("Transaction Details");
             Debug.WriteLine("Cart:" + result.cart);
             Debug.WriteLine("Create_time:" + result.create_time.ToString());
@@ -158,7 +162,7 @@ namespace Team27_BookshopWeb.Controllers
 
             return await Task.Run<ActionResult>(() =>
             {
-                return View("Success");
+                return Redirect("/hoan-tat-thanh-toan/" + order.Id);
             });
         }
 

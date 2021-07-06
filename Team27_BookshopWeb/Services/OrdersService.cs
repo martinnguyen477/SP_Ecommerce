@@ -314,6 +314,7 @@ namespace Team27_BookshopWeb.Services
         public MessagesViewModel UpdateOrder(string orderId, int status)
         {
             MessagesViewModel messagesViewModel = new MessagesViewModel();
+
             messagesViewModel.Data = "";
             //Kiểm tra dữ liệu đầu vào
             if (string.IsNullOrEmpty(orderId) || status == 0)
@@ -337,7 +338,7 @@ namespace Team27_BookshopWeb.Services
                 try
                 {
                     order.StatusId = status;
-
+                    
                     myDbContext.Update(order);
                     myDbContext.SaveChanges();
 
@@ -359,6 +360,40 @@ namespace Team27_BookshopWeb.Services
                         myDbContext.SaveChanges();
                     }
 
+                    
+
+                    return new MessagesViewModel(true, "Cập nhật trạng thái đơn hàng thành công");
+                }
+                catch (Exception)
+                {
+                    return new MessagesViewModel(false, "Cập nhật trạng thái đơn hàng thất bại");
+                }
+            }
+
+            return new MessagesViewModel(false, "Đơn hàng không tồn tại");
+        }
+
+        //Cập nhật tình trạng đơn hàng
+        public MessagesViewModel UpdateOrderByPayPal(string orderId,int paymentMethod)
+        {
+            MessagesViewModel messagesViewModel = new MessagesViewModel();
+
+            messagesViewModel.Data = "";
+
+            //Tìm đơn hàng theo id
+            var order = this.GetOrder(orderId);
+
+            if (order != null)
+            {
+                //Lưu lại trạng thái cũ
+                messagesViewModel.Data = order.StatusId;
+                try
+                {
+                    order.PaymentMethodId = paymentMethod;
+                    order.PaymentStatus = 1;
+
+                    myDbContext.Update(order);
+                    myDbContext.SaveChanges();
                     return new MessagesViewModel(true, "Cập nhật trạng thái đơn hàng thành công");
                 }
                 catch (Exception)

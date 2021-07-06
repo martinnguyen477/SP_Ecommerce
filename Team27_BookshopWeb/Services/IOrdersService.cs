@@ -12,6 +12,7 @@ namespace Team27_BookshopWeb.Services
         Order GetOrder(string Id);
         IEnumerable<OrderDetail> GetOrderDetails(string OrderId);
         MessagesViewModel UpdateOrder(string orderId, int status);
+        MessagesViewModel UpdateOrderByPayPal(string orderId, int paymentMethod);
         bool UpdatePaymentStatus(Order order, int status);
         IQueryable<Order> WhereId(string orderId, IQueryable<Order> orders);
         bool Valid(int statusId);
