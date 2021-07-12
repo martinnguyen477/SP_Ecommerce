@@ -125,10 +125,10 @@ namespace Team27_BookshopWeb
                     pattern: "cua-hang/{*article}",
                     defaults: new { controller = "Shop", action = "Index" });
 
-                //endpoints.MapControllerRoute(
-                //    name: "shop filter",
-                //    pattern: "{filterType}/{slugOrId}",
-                //    defaults: new { controller = "Shop", action = "Filter" });
+                endpoints.MapControllerRoute(
+                    name: "shop filter",
+                    pattern: "{filterType}/{slugOrId}",
+                    defaults: new { controller = "Shop", action = "Filter" });
 
                 endpoints.MapControllerRoute(
                     name: "shop search",

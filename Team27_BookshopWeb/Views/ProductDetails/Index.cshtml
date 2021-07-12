@@ -7,8 +7,11 @@
 
 
 @section metagg{
-    <meta name="description" content="@Model.book.Description">
-    <meta name="keywords" content="@Model.book.Description">
+    <meta name="description" content="@if (Model.book.Description.Length >= 200)
+                            {
+                                @Model.book.Description.Replace("<br>", Environment.NewLine).Substring(0, 200);
+                            }">
+    <meta name="keywords" content="Sách, Sách Mới, Sách Hay, Cửa hàng sách, Book">
 }
 
 @section metasocials{
