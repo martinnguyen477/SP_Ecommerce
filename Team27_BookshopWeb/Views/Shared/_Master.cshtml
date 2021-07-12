@@ -26,10 +26,11 @@
     <!-- HTML Meta Tags -->
     <title>TwentySven - @ViewBag.title</title>
     @RenderSection("head", false)
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    @RenderSection("metagg", required: false)
+    
 
     <!-- Google / Search Engine Tags -->
+
     <meta itemprop="name" content="">
     <meta itemprop="description" content="">
     <meta itemprop="image" content="">
@@ -42,7 +43,6 @@
     <meta property="og:title" content="">
     <meta property="og:description" content="">
     <meta property="og:image" content="">-->
-
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="">
     <meta name="twitter:title" content="">
@@ -64,8 +64,25 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/Team27StaticFiles/images/banner/favicon.ico">
     @RenderSection("bonushead", false)
     <!--Schema.org -->
+    <!--nhúng google Analytics-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y10Q844BWY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
+        gtag('config', 'G-Y10Q844BWY');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9Y8B8BMLB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
+        gtag('config', 'G-H9Y8B8BMLB');
+    </script>
 </head>
 
 <body>
@@ -395,7 +412,7 @@
         (function () {
             var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
             s1.async = true;
-            s1.src = 'https://embed.tawk.to/5f9920ac0ac0d3179f0e1d55/default';
+            s1.src = 'https://embed.tawk.to/60dad2147f4b000ac03a15ed/1f9bc98go';
             s1.charset = 'UTF-8';
             s1.setAttribute('crossorigin', '*');
             s0.parentNode.insertBefore(s1, s0);
@@ -536,6 +553,30 @@
 
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     @RenderSection("script", false)
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+    <!--ròi update lại lên web xem có hiện chatbox ko?. fb mess à. ukm, của ttrangfanpage uk-->
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "106141631741207");
+        chatbox.setAttribute("attribution", "biz_inbox");
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v11.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 </body>
 
 </html>

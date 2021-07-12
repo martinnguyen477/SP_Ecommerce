@@ -38,14 +38,17 @@ namespace Team27_BookshopWeb
             });
             services.AddMvc();
             services.AddSession();
-            services.AddAuthentication(options=>{
+            services.AddAuthentication(options =>
+            {
                 options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            }).AddCookie(options => {
+            }).AddCookie(options =>
+            {
                 options.LoginPath = "/login-register";
                 options.AccessDeniedPath = "/User/AccessDenied";
-            }).AddCookie("admin", options => {
+            }).AddCookie("admin", options =>
+            {
                 options.LoginPath = "/admin/login";
                 options.AccessDeniedPath = "/admin/AccessDenied";
             });
@@ -83,16 +86,17 @@ namespace Team27_BookshopWeb
             }
             app.UseHttpsRedirection();
             app.UseSession();
-            /*Change static files (js, css...) folder from "wwwroot" folder to "Team27StaticFiles"*/
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "Team27StaticFiles")),
-                RequestPath = "/Team27StaticFiles"
-            });
-
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+
+            /*Change static files (js, css...) folder from "wwwroot" folder to "Team27StaticFiles"*/
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                
+                FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "Team27StaticFiles")),
+                RequestPath = "/Team27StaticFiles"
+            }); ; ;
 
             app.UseEndpoints(endpoints =>
             {
@@ -109,7 +113,7 @@ namespace Team27_BookshopWeb
                 endpoints.MapControllerRoute(
                     name: "admin login",
                     pattern: "admin/login",
-                    defaults: new {area="admin", controller = "Employee", action = "Login" });
+                    defaults: new { area = "admin", controller = "Employee", action = "Login" });
 
                 endpoints.MapControllerRoute(
                     name: "logout",
@@ -121,10 +125,10 @@ namespace Team27_BookshopWeb
                     pattern: "cua-hang/{*article}",
                     defaults: new { controller = "Shop", action = "Index" });
 
-                endpoints.MapControllerRoute(
-                    name: "shop filter",
-                    pattern: "{filterType}/{slugOrId}",
-                    defaults: new { controller = "Shop", action = "Filter" });
+                //endpoints.MapControllerRoute(
+                //    name: "shop filter",
+                //    pattern: "{filterType}/{slugOrId}",
+                //    defaults: new { controller = "Shop", action = "Filter" });
 
                 endpoints.MapControllerRoute(
                     name: "shop search",

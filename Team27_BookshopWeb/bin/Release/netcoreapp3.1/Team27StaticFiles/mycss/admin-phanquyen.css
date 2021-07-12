@@ -1,0 +1,27 @@
+input[type=checkbox] {
+    width: 22px;
+    height: 33px;
+    opacity: 100 !important;
+}
+
+table.table th, tr, td {
+    font-size: 15px !important;
+    text-align: center;
+}
+
+table tfoot tr:last-child td:first-child {
+	text-align: left;
+}
+
+.sufee-alert.alert.with-close.alert-danger.alert-dismissible {
+    display: none;
+    font-size: 15px !important;
+}
+
+.sufee-alert.alert.with-close.alert-danger.alert-dismissible.show {
+    display: block;
+}
+
+tbody tr#empty.hide {
+	display: none;
+}

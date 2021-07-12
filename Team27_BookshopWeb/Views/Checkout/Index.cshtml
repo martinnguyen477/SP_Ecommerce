@@ -82,7 +82,7 @@
                                             <span asp-validation-for="Address" class="text-danger"></span>
                                         </div>
                                         <div class="col-12 mb--20">
-
+                                            <label>Phương Thức Thanh Toán*</label>
                                             <select class="form-control" asp-for="PaymentMethod">
                                                 <option>Chọn phương thức thanh toán</option>
 
@@ -91,7 +91,7 @@
                                                     <option value="@item.Id">@item.Name</option>
                                                 }
                                             </select>
-                                            <input type="text" asp-for="SubTotal"  data-subtotal="@Model.SubTotal" value="@Model.SubTotal" placeholder="Địa chỉ" required>
+                                            <input hidden asp-for="SubTotal" data-subtotal="@Model.SubTotal" value="@Model.SubTotal" required>
                                         </div>
                                     </div>
                                 </div>
@@ -128,8 +128,6 @@
                                                 
                                             }
                                             <button class="place-order w-100" id="normal" name="payment_method" value="normal" type="submit">Thanh toán</button>
-                                            <button class="place-order w-100" id="paypal" name="payment_method" value="CheckoutPayPal" type="submit" asp-controller="cart" asp-action="CheckoutPayPal">Thanh toán qua Paypal</button>
-                                            <button class="place-order w-100" id="vnpay" name="payment_method" value="vnpay" type="submit">Thanh toán qua VNPay</button>
                                         </div>
                                     </div>
                                 </div>

@@ -9663,11 +9663,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nguyen Quoc Cuong\\OneDrive - Hochiminh City University of Education\\Desktop\\New folder\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
+      "projectUniqueName": "F:\\Code\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
       "projectName": "Team27_BookshopWeb",
-      "projectPath": "C:\\Users\\Nguyen Quoc Cuong\\OneDrive - Hochiminh City University of Education\\Desktop\\New folder\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
+      "projectPath": "F:\\Code\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
       "packagesPath": "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nguyen Quoc Cuong\\OneDrive - Hochiminh City University of Education\\Desktop\\New folder\\SP_Ecommerce\\Team27_BookshopWeb\\obj\\",
+      "outputPath": "F:\\Code\\SP_Ecommerce\\Team27_BookshopWeb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nguyen Quoc Cuong\\AppData\\Roaming\\NuGet\\NuGet.Config",

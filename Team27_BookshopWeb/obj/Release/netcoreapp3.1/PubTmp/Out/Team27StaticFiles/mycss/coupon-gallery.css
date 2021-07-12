@@ -1,0 +1,22 @@
+﻿.blog-post .blog-content article p {
+    margin: 0;
+    padding-bottom: 5px !important;
+}
+
+blockquote p#code {
+    font-size: 3em !important;
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    color: crimson;
+}
+
+.sidebar-tag-list a.active {
+    background: #62ab00;
+    color: #fff;
+}
+
+.pagination {
+    margin-left: 43% !important;
+}
+

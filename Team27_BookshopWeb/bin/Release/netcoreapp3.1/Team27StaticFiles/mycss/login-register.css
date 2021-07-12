@@ -1,0 +1,17 @@
+span.nam {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+span.nu{
+	position: absolute;	
+	margin-left: 105px;
+    margin-top: 8px;
+}
+
+.inputNu{
+	position: absolute!important;	
+	margin-left: 70px!important;
+    margin-top: 0px!important;
+}

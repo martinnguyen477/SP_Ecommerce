@@ -1,0 +1,87 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.TKKhachHangViewModel
+
+@{
+    ViewData["Title"] = "TK Khách hàng";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section style {
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/admin.css" />
+    <link rel="stylesheet" type="text/css" href="~/Team27StaticFiles/mycss/thongke.css">
+}
+<div class="card searchfield">
+    <form method="GET" enctype="multipart/form-data">
+        <div class="card-body searchbox">
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="select" class=" form-control-label">Số liệu được tính theo: </label>
+                </div>
+                <span class="col-sm-5">
+                    <select asp-for="day" class="form-control" onchange="this.form.submit();">
+                        <option value=1>24H Qua</option>
+                        <option value=30>1 Tháng Trước</option>
+                        <option value=180>6 Tháng Trước</option>
+                    </select>
+                </span>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <div class="titleTK"><strong>Thống kê 10 sách bán chạy nhất theo @Model.title</strong></div>
+        <br>
+        <div id="piechart_div">
+
+        </div>
+        <br>
+        <br>
+
+        <div class="table-responsive table--no-card m-b-30">
+            @if (Model.listCustomer.Count() > 0)
+            {
+                <table class="table table-borderless table-striped table-earning">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Ngày đăng ký</th>
+                            <th>Số khách hàng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.listCustomer)
+                        {
+                            <tr>
+                                <td></td>
+                                <td>@item.DateCustomer.ToString("dd/MM/yyyy")</td>
+                                <td>@item.Count</td>
+                            </tr>
+                        }
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Tổng khách hàng</td>
+                            <td>@Model.listCustomer.Sum(c => c.Count)</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            }
+            else
+            {
+                <div>Không có khách hàng để hiển thị</div>
+            }
+
+        </div>
+    </div>
+</div>
+
+@section script {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="~/Team27StaticFiles/myjs/admin-customer.js"></script>
+}
+
+

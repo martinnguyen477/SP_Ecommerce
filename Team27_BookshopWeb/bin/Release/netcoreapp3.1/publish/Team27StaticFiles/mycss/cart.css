@@ -1,0 +1,51 @@
+a.checkout-btn.c-btn.btn--primary.continue {
+    font-size: 14px;
+    width: fit-content;
+}
+
+.cart-table td.pro-thumbnail a img {
+    width: 140px !important;
+}
+
+button.cart.quantity {
+    font-size: 18px;
+    border: 0.5px solid #a9999938;
+    padding: 0 8px;
+    margin: 4px 1px;
+}
+
+button.cart.quantity:hover {
+	background: #62ab00;
+	border: none;
+	color: white;
+}
+
+.cart-table .table tbody tr td {
+    padding: 10px 10px !important;
+}
+
+.cart-table td.pro-remove a i {
+    font-size: 21px !important;
+}
+
+input[type="checkbox"].cart-checkbox {
+    height: 15px !important;
+    width: 15px;
+}
+
+.product-card--body {
+    width: 92% !important;
+    padding: 0px 29px !important;
+    margin: 0px -9px !important;
+}
+
+.product-header {
+    margin: 3px 5px;
+    height: 86px !important;
+    padding: 2px 2px !important;
+}
+
+.product-card h3 a {
+    margin-bottom: 10px !important;
+    padding: 0px 35px !important;
+}

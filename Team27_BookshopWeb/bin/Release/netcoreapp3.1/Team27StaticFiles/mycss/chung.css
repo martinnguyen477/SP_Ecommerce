@@ -1,0 +1,243 @@
+
+/*CART BLOCK*/
+.cart-block .cart-product p.empty-cart {
+    text-align: center;
+    margin: 0em 8em !important;
+    font-style: italic;
+    color: #aba4a4db;
+    font-size: 15px !important;
+}
+
+.single-cart-block.list {
+    text-align: justify;
+    overflow-y: scroll;
+    min-height: 25px;
+    max-height: 450px !important;
+}
+
+.cart-product img {
+    max-width: 200px !important;
+    width: 130px;
+    height: 150px;
+}
+
+/*Cartblock style*/
+.single-cart-block.list p {
+    text-align: center;
+    color: gray;
+    font-style: italic;
+    font-size: 14px;
+}
+
+
+.cart-product .content {
+    padding-left: 32px !important;
+    padding-right: 18px !important;
+}
+
+
+/*MOBILE MENU BAR*/
+.off-canvas-wrapper .menu-block-2 > li {
+    margin-bottom: 2em;
+}
+
+/*PRODUCT CARD*/
+.product-header {
+    height: 100px;
+    justify-content: center;
+}
+
+.product-card .hover-contents .hover-btns {
+    left: 66%;
+}
+
+.product-card--body {
+    width: 180px !important;
+}
+
+.product-card img {
+    margin: 0em 2em;
+}
+
+.product-card .price-block {
+    margin-left: 4em;
+}
+
+.product-card span.price {
+    font-size: 18px;
+}
+
+/*Quickview other images*/
+img.qv-other-book-image {
+    width: 7em;
+    height: 7em;
+    margin-top: 0px !important;
+}
+
+/*BRAND SLIDER*/
+.brand-slider .single-slide img {
+    width: 200px !important;
+    height: 63px !important;
+    padding: 0px 7px !important;
+}
+
+section.bg-gray.section-padding-top.section-padding-bottom.section-margin {
+    margin-bottom: 0em !important;
+}
+
+.brand-slider.sb-slick-slider.border-top.border-bottom.slick-initialized.slick-slider {
+    width: 119% !important;
+    margin: 0em -7em !important;
+}
+
+.compare-wishlist-row {
+    margin: 3em 0em !important;
+}
+
+/*COVID MAP*/
+
+div#covid-map {
+    width: 67% !important;
+    margin: 4em 16% !important;
+}
+
+/*VISITOR COUNTER*/
+img.counterimg {
+    width: 10em !important;
+    height: 8.5em !important;
+    margin-left: 0.5em;
+    margin-top: -1em !important;
+}
+
+/*ALERT BOX*/
+
+.alert-box {
+    color: #555;
+    border-radius: 10px;
+    font-family: Tahoma, Geneva, Arial, sans-serif;
+    font-size: 14px;
+    padding: 10px 10px 10px 36px;
+    margin: 10px;
+}
+
+.alert-box span {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.error {
+    background: #ffecec /* url('assets/logo_thongbao/error.png') */ no-repeat 10px 50%;
+    border: 1px solid #f5aca6;
+}
+
+.success {
+    background: #e9ffd9 /* url("{{ asset('/assets/logo_thongbao/success.png') }}") */ no-repeat 10px 50%;
+    border: 1px solid #a6ca8a;
+}
+
+.warning {
+    background: #fff8c4 /* url("{{ asset('/assets/logo_thongbao/warning.jpg') }}") */ no-repeat 10px 50%;
+    border: 1px solid #f2c779;
+}
+
+
+.fas.fa-heart.loved {
+    color: red;
+}
+
+
+ul.dropdown-box {
+    width: max-content;
+}
+
+
+
+/*Tooltip*/
+/* Tooltip text */
+.tooltiptext {
+    /*visibility: hidden;*/
+    width: 200px;
+    background-color: grey;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+}
+
+
+.cat-item.active a {
+    font-weight: bold !important;
+}
+
+/*Subscribe and Unsubsribe*/
+input#mc-embedded-subscribe {
+    background-color: #0bc435 !important;
+    width: 25em !important;
+    height: 0em !important;
+    margin-top: 1em !important;
+    margin-bottom: 0em !important;
+    font-size: 13px !important;
+}
+
+input#mc-embedded-subscribe:hover {
+    background: #696666 !important;
+}
+
+input#mce-EMAIL {
+    width: 21.5em !important;
+    height: 2.5em !important;
+    margin: 0em 0em !important;
+}
+
+a.unsubscribe {
+    text-transform: capitalize !important;
+    font-size: 15px;
+    color: black;
+    margin: 0em 46%;
+}
+
+    a.unsubscribe:hover {
+        text-decoration: underline;
+        color: red;
+    }
+
+/*Button Favorite*/
+button.add-link.addToWishList {
+    font-size: 16px;
+    margin-bottom: 1em;
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
+button.add-link.addToWishList:hover {
+    color: red;
+}
+
+/*Loading*/
+#loading {
+    background-color: white;
+    position: fixed;
+    display: block;
+    top: 0;
+    bottom: 0;
+    z-index: 1000000;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#loading img {
+    margin: auto;
+    display: block;
+    top: 50%;
+    left: 33%;
+    position: absolute;
+    z-index: 999999;
+}

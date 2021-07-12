@@ -1,0 +1,37 @@
+/*Product card style*/
+.product-header {
+    height: 88px !important;
+}
+
+.product-card .hover-contents .hover-btns {
+    left: 66%;
+}
+
+.product-card--body {
+    width: 180px !important;
+}
+
+.product-card img {
+    margin: 0em 2em;
+}
+
+.product-card .price-block {
+    margin-left: 4em;
+}
+
+.product-card span.price {
+    font-size: 18px;
+}
+
+/*Category banner style*/
+/*Vertical Image*/
+.single-block.hr-large img {
+    height: 28.6em !important;
+    width: 100% !important;
+}
+
+/*Horizontal Image*/
+.single-image.small-image img {
+    width: 100% !important;
+    height: 13.22em !important;
+}
