@@ -41,6 +41,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Are
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Areas\admin\Models\TKSachBanChayViewModel.cs
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Areas\admin\Models\TKSachViewNhieuViewModel.cs
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Areas\admin\Models\TopViewModel.cs
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Views\Home\robots.txt
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27StaticFiles\Admins\css\bootstrap-datetimepicker.min.css
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27StaticFiles\Admins\css\font-face.css
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27StaticFiles\Admins\css\theme.css
@@ -833,8 +834,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Tea
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\sweetalert2.d.ts
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27StaticFiles\myjs\validation-form.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27StaticFiles\myjs\WishList.js
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\robots.txt
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\sitemap.xml
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Views\Home\sitemap.xml
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27_BookshopWeb.exe
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\css\site.css
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\favicon.ico

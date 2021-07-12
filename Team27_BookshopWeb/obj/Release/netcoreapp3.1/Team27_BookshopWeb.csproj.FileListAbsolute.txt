@@ -1377,8 +1377,6 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFi
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\sweetalert2.d.ts
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\validation-form.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\WishList.js
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\wwwroot\robots.txt
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\wwwroot\sitemap.xml
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27_BookshopWeb.deps.json
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27_BookshopWeb.runtimeconfig.json
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27_BookshopWeb.runtimeconfig.dev.json
@@ -1878,4 +1876,6 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Team27_Booksho
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Team27_BookshopWeb.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Team27_BookshopWeb.pdb
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Team27_BookshopWeb.genruntimeconfig.cache
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Views\Home\robots.txt
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Views\Home\sitemap.xml
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Team27_BookshopWeb.csproj.AssemblyReference.cache

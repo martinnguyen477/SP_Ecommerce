@@ -553,10 +553,13 @@
 
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     @RenderSection("script", false)
+    <!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
+
     <!-- Your Plugin chat code -->
     <div id="fb-customer-chat" class="fb-customerchat">
     </div>
-    <!--ròi update lại lên web xem có hiện chatbox ko?. fb mess à. ukm, của ttrangfanpage uk-->
+
     <script>
         var chatbox = document.getElementById('fb-customer-chat');
         chatbox.setAttribute("page_id", "106141631741207");
