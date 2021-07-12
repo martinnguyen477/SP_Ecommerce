@@ -87,7 +87,7 @@ namespace Team27_BookshopWeb.Services
         {
             //Tìm khách hàng theo username
             Employee user = myDbContext.Employees.SingleOrDefault(u => u.Username == loginUser.Username);
-            //Kiểm tra password
+            //Kiểm tra passwordA
             if (user == null || loginUser.Password.Md5() != user.Password)
             {
                 return new MessagesViewModel(false, "Tài khoản hoặc mật khẩu không đúng");
