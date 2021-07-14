@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2us36z9kBM1Xc9D8Hgi9dtnIlOae1Ld3WQC9biHmYg0OOsKfJpl6601bLg9KwRBr6qXgyusglsZIQOmj97pC4w==",
+  "dgSpecHash": "9c0nb/xWuQ1VNavqgiMY1SJvK4sBXun3I87yAj++lF1w3JuHOpbIYnT/XtAAXPqCmBbiwkVsFB8la0mZKv78bA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nguyen Quoc Cuong\\OneDrive - Hochiminh City University of Education\\Desktop\\New folder\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
+  "projectFilePath": "F:\\Code\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\aspnetcore.seohelper\\1.0.1\\aspnetcore.seohelper.1.0.1.nupkg.sha512",
     "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\bcrypt.net-next\\3.1.3\\bcrypt.net-next.3.1.3.nupkg.sha512",
     "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\braintreehttp-dotnet\\0.3.0\\braintreehttp-dotnet.0.3.0.nupkg.sha512",
     "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",

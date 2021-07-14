@@ -1,0 +1,98 @@
+/*search*/
+.searchbox input#text-input {
+    width: 46em !important;
+}
+
+/*Chỉnh kích thước hình ảnh trang danh sách*/
+.table-data3 td {
+    text-align: center !important;
+    vertical-align: middle;
+}
+
+.table.table-data3 img {
+    width: 29em !important;
+    height: 16em !important;
+    vertical-align: middle;
+}
+
+/*CREATE*/
+.col-12.col-md-9.publication-date-area{
+    display: inline-flex;
+}
+
+label.form-control-label {
+    margin-left: 9% !important;
+    vertical-align: middle !important;
+    margin-top: 2% !important;
+}
+
+input#Name, input#Slug, textarea#Description {
+    width: 90% !important;
+}
+
+select#PublicationMonth {
+    width: 20% !important;
+}
+
+input#PublicationYear {
+    width: 21% !important;
+    margin-left: 2% !important;
+}
+
+select#CategoryId, select#AuthorId, select#PublisherId, select#TranslatorId {
+    width: 60% !important;
+}
+
+input#Price {
+    width: 63% !important;
+}
+
+input#Pages {
+    width: 21% !important;
+}
+
+.card-footer {
+    margin-top: 5% !important;
+}
+
+/*EDIT*/
+input#CreatedAt {
+    width: 26% !important;
+}
+
+img.primary-image {
+    width: 30em !important;
+    height: 23em !important;
+}
+
+input#PrimaryImage {
+    width: 30em !important;
+}
+
+input#NewPrimaryImage {
+    width: 30em !important;
+}
+
+/*OTHER BOOK IMAGES AREA*/
+
+.col-12.col-md-9.other-images-area {
+    height: 16em !important;
+    overflow-y: scroll;
+}
+
+img.other-book-image {
+    width: 15em !important;
+    height: 13em !important;
+}
+
+input.form-control[type="checkbox"] {
+    width: 20px !important;
+    height: 20px !important;
+    display: block;
+    margin: 10px 7em !important;
+}
+
+.other-book-image-single {
+    width: fit-content !important;
+    display: inline-block;
+}

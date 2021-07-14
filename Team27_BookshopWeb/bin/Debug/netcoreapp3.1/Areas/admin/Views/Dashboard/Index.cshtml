@@ -1,0 +1,156 @@
+﻿@model Team27_BookshopWeb.Areas.admin.Models.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section style {
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Team27StaticFiles/mycss/admin.css" />
+}
+<section class="statistic">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="row m-t-25">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="overview-item overview-item--c1">
+                            <div class="overview__inner">
+                                <div class="overview-box clearfix">
+                                    <div class="icon">
+                                        <i class="zmdi zmdi-account-o"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h2>@Model.SoLuongKH</h2>
+                                        <span>Số lượng khách hàng</span>
+                                    </div>
+                                </div>
+                                <div class="overview-chart">
+                                    <canvas id="widgetChart1"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="overview-item overview-item--c2">
+                            <div class="overview__inner">
+                                <div class="overview-box clearfix">
+                                    <div class="icon">
+                                        <i class="zmdi zmdi-shopping-cart"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h2>@Model.SoSachDaBan</h2>
+                                        <span>Số sách bán được</span>
+                                    </div>
+                                </div>
+                                <div class="overview-chart">
+                                    <canvas id="widgetChart2"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="overview-item overview-item--c3">
+                            <div class="overview__inner">
+                                <div class="overview-box clearfix">
+                                    <div class="icon">
+                                        <i class="zmdi zmdi-calendar-note"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h2>@Model.DisplayDTTrong1Tuan<span class="fix"> VNĐ</span></h2>
+                                        <span class="fix">Doanh thu trong 7 ngày qua</span>
+                                    </div>
+                                </div>
+                                <div class="overview-chart">
+                                    <canvas id="widgetChart3"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="overview-item overview-item--c4">
+                            <div class="overview__inner">
+                                <div class="overview-box clearfix">
+                                    <div class="icon">
+                                        <i class="zmdi zmdi-money"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h2>@Model.DisplayDT1Nam<span class="fix">VNĐ</span></h2>
+                                        <span>Doanh thu năm nay</span>
+                                    </div>
+                                </div>
+                                <div class="overview-chart">
+                                    <canvas id="widgetChart4"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-8">
+                    <!-- RECENT REPORT 2-->
+                    <div class="recent-report2">
+                        <h3 class="title-3">Thống kê đơn hàng theo tình trạng đơn hàng</h3>
+                        <br />
+                        <div class="chart-info">
+                            <form method="GET" enctype="multipart/form-data">
+                                <div class="chart-info-right">
+                                    <div class="rs-select2--dark rs-select2--sm">
+                                        <select class="js-select2" asp-for="time" onchange="this.form.submit();">
+                                            <option>Thời gian</option>
+                                            <option value=1>Theo hôm nay</option>
+                                            <option value=30>Theo tháng</option>
+                                        </select>
+                                        <div class="dropDownSelect2"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="piechart_div"></div>
+                    </div>
+                    <!-- END RECENT REPORT 2             -->
+                </div>
+                <div class="col-xl-4">
+                    <div class="top-campaign" style="height: 38.4em !important;">
+                        <h3 class="title-3 m-b-30">ĐƠN HÀNG MỚI</h3>
+                        <div class="table-responsive">
+                            <table class="table table-top-campaign">
+                                <tbody>
+                                    @for (int i = 0; i < 4; i++)
+                                    {
+                                        var item = Model.listNewOrder.ElementAt(i);
+                                        <tr>
+                                            <td style="border-bottom:none;  "><strong>@item.Id</strong></td>
+                                            <td rowspan="2">@item.DisplayTotal</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="text-align:left;">@item.DisplayName</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+
+@section script {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="~/Team27StaticFiles/myjs/admin-dashbroad.js"></script>
+
+}
+
+

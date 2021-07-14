@@ -1,0 +1,45 @@
+/*Coupon field*/
+.checkout-slidedown-box {
+    display: block !important;
+}
+
+button.place-order.w-100 {
+    margin-top: 44px!important;
+}
+
+/*Order complete*/
+
+table th {
+	font-weight: bolder !important;
+}
+
+table.order-details-table tfoot {
+	font-weight: bolder !important;
+}
+
+ul.order-details-list {
+    margin: 34px 0px !important;
+    font-size: 16px !important;
+}
+
+h3.order-table-title {
+    margin-bottom: 26px;
+}
+
+button#back {
+    margin: 17px 39% !important;
+}
+
+button#paypal, button#vnpay {
+    margin-top: 1em !important;
+}
+
+button#paypal:hover {
+    background: yellow;
+    color: mediumblue;
+}
+
+button#vnpay:hover {
+    background: cornflowerblue;
+    color: darkred;
+}

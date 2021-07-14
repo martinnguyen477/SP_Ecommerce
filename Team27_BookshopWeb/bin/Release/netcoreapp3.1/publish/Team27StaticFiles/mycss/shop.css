@@ -1,0 +1,117 @@
+/*shop*/
+
+.col-lg-4.col-sm-6 {
+    margin: 1em 0em;
+    padding: 0em 2em;
+}
+
+.col-lg-4.col-md-4.col-sm-6.mt--10.mt-md--0 {
+    margin-left: 47% !important;
+}
+
+.product-header {
+    height: 100px;
+    justify-content: center;
+}
+
+.product-card img {
+    width: auto;
+    height: 17em !important;
+}
+
+.product-card span.price {
+    font-size: 20px !important;
+}
+
+.product-card h3 a {
+    font-size: 16px !important;
+}
+
+/*Grid-four class style*/
+
+.grid-four .product-card img {
+    width: 11em !important;
+    height: 17em !important;
+    margin: 0em 0em;
+    margin-top: 22px !important;
+}
+.grid-four .product-card .price-block {
+    margin-left: 1em !important;
+}
+
+.grid-four .hover-btns {
+    left: 50% !important;
+}
+
+/*Description page*/
+
+h3#shop-page-description {
+    font-size: 26px !important;
+}
+span#book-count {
+    font-size: 23px !important;
+    margin: 0em 8px !important;
+    color: #808080bf;
+}
+
+/*PAGINATION AREA*/
+.pagination-block {
+    margin: 0em 5em;
+}
+
+/*RSS - FEEDS*/
+.single-block.rss-feeds {
+    margin-top: 8em !important;
+}
+
+/*Title style*/
+.rss-feeds h4 {
+    font-weight: bold;
+    color: #62ab00;
+    margin-bottom: 1em;
+}
+
+.rss-feeds h5 {
+    font-size: 17px;
+}
+
+/*Link style*/
+.rss-feeds a {
+    border-bottom: 0em !important;
+    padding: 0em !important;
+}
+
+    .rss-feeds a:hover {
+        color: red;
+    }
+
+.rss-feeds h5:hover {
+    color: red;
+}
+
+/*Image style*/
+.rss-feeds li p a, li p a img {
+    float: left;
+    width: 10em;
+    height: 10em;
+}
+
+.rss-feeds li img {
+    padding-right: 1em !important;
+    padding-top: 1em !important;
+}
+
+.rss-feeds ul.sidebar-menu--shop.menu-type-2 {
+    overflow-y: scroll;
+    height: 30em !important;
+    padding-left: 0em !important;
+}
+
+.rss-feeds li img {
+    padding-top: 0.5em;
+}
+
+.rss-feeds ul li:last-child {
+    text-align: center;
+}
+

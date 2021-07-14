@@ -1,0 +1,71 @@
+﻿.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0.5rem!important;
+}
+
+.searchbox .row {
+	margin: 20px 20px !important;
+}
+
+.searchbox .col-5 {
+    margin-right: 15px;
+}
+
+.btn-block {
+    display: block;
+    width: 38% !important;
+    float: left !important;
+    margin-left: 305px !important;
+}
+
+.titleTK{
+	font-size: 25px; 
+	text-align: center!important;
+	padding: 16px;
+}
+
+.title-2{
+    font-size: 24px;
+    text-align: center;
+}
+.sumDT, .countDT, .countKH{
+    font-size: 16px!important;
+}
+.sumDT{
+    margin-left: 550px;
+}
+.countDT{
+    margin-left: 50px;
+}
+.soSumDT, .soCountDT, .soCountKH{
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 5px;
+}
+.btnTimNam{
+    width: 38% !important;
+    display: block;
+    margin-left: 140px !important;
+    margin-top: -10px;
+}
+.countKH{
+    margin-left: 700px;
+}
+
+/*THỐNG KÊ SÁCH*/
+div#piechart_div  {
+    margin-left: 348px!important;
+}
+
+div#barchart_div {
+    margin-left: 250px !important;
+}
+td#highlight {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+

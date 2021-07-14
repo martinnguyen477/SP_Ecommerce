@@ -86,6 +86,11 @@ namespace Team27_BookshopWeb.Controllers
         }
         #endregion
 
+        /// <summary>
+        /// đặt hàng.
+        /// </summary>
+        /// <param name="checkoutView"></param>
+        /// <returns></returns>
         [Route("PlaceOrder")]
         [HttpPost]
         public async Task<IActionResult> PlaceOrder(CheckoutViewModel checkoutView)

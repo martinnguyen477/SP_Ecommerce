@@ -5,12 +5,22 @@
     Layout = "~/Views/Shared/_Master.cshtml";
 }
 
+
+@section metagg{
+    <meta name="description" content="@if (Model.book.Description.Length >= 200)
+                            {
+                                @Model.book.Description.Replace("<br>", Environment.NewLine).Substring(0, 200);
+                            }">
+    <meta name="keywords" content="Sách, Sách Mới, Sách Hay, Cửa hàng sách, Book">
+}
+
 @section metasocials{
-    <meta property="og:url" content="" />
-    <meta property="og:type" content="" />
+    <meta property="og:price:currency" content="VND">
+    <meta property="og:url" content="https://team27bookshopweb.azurewebsites.net/sach/@Model.book.Slug" />
+    <meta property="og:type" content="book" />
     <meta property="og:title" content="@Model.book.Name" />
     <meta property="og:description" content="@Model.book.Description" />
-    <meta property="og:image" content="@Model.book.BookImages" />
+    <meta property="og:image" content="https://team27bookshopweb.azurewebsites.net/Team27StaticFiles/images/books/@Model.book.PrimaryImage" />
 }
 
 @section style {

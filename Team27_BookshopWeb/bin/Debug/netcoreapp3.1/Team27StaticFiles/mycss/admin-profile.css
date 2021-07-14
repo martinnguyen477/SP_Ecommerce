@@ -1,0 +1,30 @@
+button.btn.btn-primary.btn-sm {
+    font-size: 16px;
+}
+
+.card-footer {
+    text-align: right;
+}
+
+.card-text.text-sm-center {
+    margin: 14px 0px;
+    font-size: 25px;
+}
+
+h5.text-sm-center.mt-2.mb-1 {
+    font-size: 20px;
+    margin: 16px 0px !important;
+}
+
+.location.text-sm-center {
+    margin: 4px 0px;
+}
+
+.card-header {
+    font-family: sans-serif;
+}
+
+img.rounded-circle.mx-auto.d-block {
+    width: 10em;
+    height: 8em;
+}

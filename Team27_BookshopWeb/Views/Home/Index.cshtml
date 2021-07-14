@@ -126,10 +126,10 @@
                         {
                             Model.countBooks--;
                             var curBook = category.Books.ElementAt(j);
-                        <div class='single-slide'>
-                            <!--Gọi partial view hiển thị thông tin sách-->
-                            @{await Html.RenderPartialAsync("_ProductCard", curBook); }
-                        </div>
+                            <div class='single-slide'>
+                                <!--Gọi partial view hiển thị thông tin sách-->
+                                @{await Html.RenderPartialAsync("_ProductCard", curBook); }
+                            </div>
 
                             if (Model.countBooks > 0 && j == (allBooks - 1))
                             {
@@ -139,13 +139,13 @@
                     </div>
                 </div>
             </section>
-            }
-
-            if (Model.countCategories == 0)
-            {
-                break;
-            }
         }
+
+        if (Model.countCategories == 0)
+        {
+            break;
+        }
+    }
 }
 
 
@@ -306,5 +306,4 @@
         </div>
     </div>
 </section>
-
-    
+<script type="text/javascript" src="https://app.getresponse.com/view_webform_v2.js?u=yUqeV&webforms_id=SEZ6R" data-webform-id="SEZ6R"></script>
