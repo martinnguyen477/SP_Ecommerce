@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\HocKy2_2020-2021\\ThuongMaiĐT\\Source\\Source_host\\source\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj": {}
+    "F:\\Code\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj": {}
   },
   "projects": {
-    "D:\\HocKy2_2020-2021\\ThuongMaiĐT\\Source\\Source_host\\source\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj": {
+    "F:\\Code\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\HocKy2_2020-2021\\ThuongMaiĐT\\Source\\Source_host\\source\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
+        "projectUniqueName": "F:\\Code\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
         "projectName": "Team27_BookshopWeb",
-        "projectPath": "D:\\HocKy2_2020-2021\\ThuongMaiĐT\\Source\\Source_host\\source\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
-        "packagesPath": "C:\\Users\\anhng\\.nuget\\packages\\",
-        "outputPath": "D:\\HocKy2_2020-2021\\ThuongMaiĐT\\Source\\Source_host\\source\\SP_Ecommerce\\Team27_BookshopWeb\\obj\\",
+        "projectPath": "F:\\Code\\SP_Ecommerce\\Team27_BookshopWeb\\Team27_BookshopWeb.csproj",
+        "packagesPath": "C:\\Users\\Nguyen Quoc Cuong\\.nuget\\packages\\",
+        "outputPath": "F:\\Code\\SP_Ecommerce\\Team27_BookshopWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\anhng\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nguyen Quoc Cuong\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AspNetCore.SEOHelper": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[3.1.3, )"

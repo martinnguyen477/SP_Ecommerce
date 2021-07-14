@@ -872,6 +872,8 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\www
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\lib\jquery\dist\jquery.min.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\lib\jquery\dist\jquery.min.map
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\lib\jquery\LICENSE.txt
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\robots.txt
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\sitemap.xml
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Development.json
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.json
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\package.json
@@ -1149,6 +1151,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\ref
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27_BookshopWeb.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27_BookshopWeb.runtimeconfig.json
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27_BookshopWeb.pdb
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\AspNetCore.SEOHelper.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\BCrypt.Net-Next.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\BraintreeHttp-Dotnet.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Castle.Core.dll

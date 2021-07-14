@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCore.SEOHelper;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -91,6 +92,7 @@ namespace Team27_BookshopWeb
             app.UseAuthorization();
 
             /*Change static files (js, css...) folder from "wwwroot" folder to "Team27StaticFiles"*/
+            app.UseStaticFiles();
             app.UseStaticFiles(new StaticFileOptions
             {
                 
@@ -143,6 +145,11 @@ namespace Team27_BookshopWeb
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    "Sitemap",
+                    "sitemap.xml",
+                    new { controller = "Home", action = "SiteMap" }
+                    );
             });
         }
     }
