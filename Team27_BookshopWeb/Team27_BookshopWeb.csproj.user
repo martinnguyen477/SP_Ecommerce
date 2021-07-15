@@ -13,7 +13,7 @@
     <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
     <WebStackScaffolding_LayoutPageFile>~/Views/Shared/_AdminLayout.cshtml</WebStackScaffolding_LayoutPageFile>
     <WebStackScaffolding_DbContextTypeFullName>Team27_BookshopWeb.Entities.MyDbContext</WebStackScaffolding_DbContextTypeFullName>
-    <NameOfLastUsedPublishProfile>F:\Code\SP_Ecommerce\Team27_BookshopWeb\Properties\PublishProfiles\Team27BookshopWeb - Web Deploy4.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>F:\Code\SP_Ecommerce\Team27_BookshopWeb\Properties\PublishProfiles\Team27BookshopWeb - Web Deploy5.pubxml</NameOfLastUsedPublishProfile>
     <View_SelectedScaffolderID>RazorViewEmptyScaffolder</View_SelectedScaffolderID>
     <View_SelectedScaffolderCategoryPath>root/Common/MVC/View</View_SelectedScaffolderCategoryPath>
   </PropertyGroup>

@@ -960,19 +960,14 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\ref
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Data.SqlClient.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Configuration.CommandLine.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Configuration.FileExtensions.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Configuration.Ini.dll
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Configuration.Json.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Configuration.Xml.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.FileProviders.Composite.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.FileProviders.Embedded.dll
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.FileProviders.Physical.dll
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.FileSystemGlobbing.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Hosting.Abstractions.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Hosting.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Http.dll
@@ -1027,6 +1022,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\ref
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Diagnostics.TraceSource.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Diagnostics.Tracing.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Drawing.Common.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Drawing.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Drawing.Primitives.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Dynamic.Runtime.dll
@@ -1106,6 +1102,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\ref
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Security.Cryptography.Cng.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Security.Cryptography.Csp.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Security.Cryptography.Encoding.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Security.Cryptography.Pkcs.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Security.Cryptography.Primitives.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Security.Cryptography.X509Certificates.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Security.Cryptography.Xml.dll
@@ -1116,7 +1113,6 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\ref
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Security.SecureString.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.ServiceModel.Web.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.ServiceProcess.dll
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Text.Encoding.CodePages.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Text.Encoding.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Text.Encoding.Extensions.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Text.Encodings.Web.dll
@@ -1147,6 +1143,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\ref
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Xml.XmlSerializer.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Xml.XPath.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Xml.XPath.XDocument.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Xml.XPath.XmlDocument.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\refs\WindowsBase.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27_BookshopWeb.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27_BookshopWeb.runtimeconfig.json
@@ -1155,6 +1152,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Asp
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\BCrypt.Net-Next.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\BraintreeHttp-Dotnet.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Castle.Core.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\EPPlus.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Razor.Language.dll
@@ -1176,9 +1174,14 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Mic
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Configuration.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Configuration.Abstractions.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Configuration.Binder.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Configuration.FileExtensions.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Configuration.Json.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.DependencyInjection.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.DependencyModel.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.FileProviders.Abstractions.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.FileProviders.Physical.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.FileSystemGlobbing.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Logging.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Logging.Abstractions.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Options.dll
@@ -1189,6 +1192,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Mic
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.IdentityModel.Protocols.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.IO.RecyclableMemoryStream.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -1212,7 +1216,9 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Sys
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\System.Runtime.Caching.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\System.Text.Encoding.CodePages.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\System.Text.Json.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\System.Xml.XPath.XmlDocument.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\UoN.ExpressiveAnnotations.NetCore.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\cs\Microsoft.CodeAnalysis.resources.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\de\Microsoft.CodeAnalysis.resources.dll
@@ -1271,9 +1277,12 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\run
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win-arm64\native\sni.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win-x64\native\sni.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win-x86\native\sni.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27_BookshopWeb.Views.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27_BookshopWeb.Views.pdb
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\PubTmp\Out\Team27_BookshopWeb.deps.json

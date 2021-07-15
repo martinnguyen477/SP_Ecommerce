@@ -1879,19 +1879,6 @@ D:\HocKy2_2020-2021\ThuongMaiĐT\Source\Source_host\source\SP_Ecommerce\Team27_B
 D:\HocKy2_2020-2021\ThuongMaiĐT\Source\Source_host\source\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Team27_BookshopWeb.dll
 D:\HocKy2_2020-2021\ThuongMaiĐT\Source\Source_host\source\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Team27_BookshopWeb.pdb
 D:\HocKy2_2020-2021\ThuongMaiĐT\Source\Source_host\source\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Team27_BookshopWeb.genruntimeconfig.cache
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\fonts\poppins\poppins-v5-latin-500italic.woff2
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\vendor\countdown\jquery.countdown.min.js
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\categories\kt-hz.jpg
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\categories\vhnn-hz.jpg
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\bg-images\promo-banner-with-text-big.jpg
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\others\home-blog-2.jpg
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\products\product-3.jpg
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\publishers\publisher-20210109210253.png
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\mycss\admin-donhang.css
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\LoadQuickView.js
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\SweetAlert.js
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\utils\ieFix.js
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\appsettings.Development.json
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\appsettings.json
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\package.json
@@ -2018,6 +2005,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFi
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\fonts\poppins\poppins-v5-latin-500italic.svg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\fonts\poppins\poppins-v5-latin-500italic.ttf
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\fonts\poppins\poppins-v5-latin-500italic.woff
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\fonts\poppins\poppins-v5-latin-500italic.woff2
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\fonts\poppins\poppins-v5-latin-600.eot
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\fonts\poppins\poppins-v5-latin-600.svg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\fonts\poppins\poppins-v5-latin-600.ttf
@@ -2190,6 +2178,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFi
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\vendor\circle-progress\circle-progress.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\vendor\circle-progress\circle-progress.min.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\vendor\countdown\countdowntime.js
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\vendor\countdown\jquery.countdown.min.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\vendor\countdown\moment-timezone-with-data.min.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\vendor\countdown\moment-timezone.min.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\Admins\vendor\countdown\moment.min.js
@@ -2492,8 +2481,10 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFi
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\books\vutrutuhukhong.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\books\whostephenhawking.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\categories\khcn-hz.jpg
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\categories\kt-hz.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\categories\stn-vc.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\categories\tdkns-hz.jpg
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\categories\vhnn-hz.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\categories\vhvn-hz.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\coupon\bf.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\coupon\birthdaysale.jpg
@@ -2520,6 +2511,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFi
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\bg-images\promo-banner-small.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\bg-images\promo-banner-with-text-2--small.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\bg-images\promo-banner-with-text-2.jpg
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\bg-images\promo-banner-with-text-big.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\bg-images\promo-banner-with-text.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\favicon.ico
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\icon\author-logo.png
@@ -2568,6 +2560,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFi
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\others\client-4.png
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\others\client-5.png
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\others\home-blog-1.jpg
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\others\home-blog-2.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\others\home-side-promo.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\others\product-promo-3.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\others\product-promo-4.jpg
@@ -2587,6 +2580,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFi
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\products\product-17.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\products\product-2.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\products\product-2.png
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\products\product-3.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\products\product-4.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\products\product-5.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\image\products\product-6.jpg
@@ -2609,6 +2603,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFi
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\publishers\hnv.jpg
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\publishers\kd.png
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\publishers\nxbtre.png
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\publishers\publisher-20210109210253.png
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\publishers\thegioi.png
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\publishers\tn.png
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\images\publishers\tonghop.png
@@ -2631,6 +2626,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFi
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\js\jquery-validation\jquery.validate.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\js\jquery-validation\jquery.validate.min.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\js\plugins.js
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\mycss\admin-donhang.css
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\mycss\admin-phanquyen.css
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\mycss\admin-profile.css
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\mycss\admin-sach.css
@@ -2670,6 +2666,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFi
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\jQuery.print.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\load.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\loadCTDH.js
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\LoadQuickView.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\order.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\product-detail.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\CHANGELOG.md
@@ -2716,6 +2713,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFi
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\staticMethods\queue.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\staticMethods\showLoading.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\staticMethods\timer.js
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\SweetAlert.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\sweetalert2.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\sweetalert2.scss
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\utils\aria.js
@@ -2744,6 +2742,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFi
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\utils\dom\renderers\renderProgressSteps.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\utils\dom\renderers\renderTitle.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\utils\getTemplateParams.js
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\utils\ieFix.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\utils\iosFix.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\utils\isNodeEnv.js
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Team27StaticFiles\myjs\sweetalert2-10.12.4\package\src\utils\openPopup.js
@@ -2842,19 +2841,14 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.CSharp.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.CommandLine.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.FileExtensions.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Ini.dll
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Json.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Xml.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Composite.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Embedded.dll
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Physical.dll
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.FileSystemGlobbing.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.Abstractions.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\Microsoft.Extensions.Http.dll
@@ -2998,7 +2992,6 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\System.Se
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\System.Security.SecureString.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\System.ServiceModel.Web.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\System.ServiceProcess.dll
-F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\System.Text.Encoding.CodePages.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\System.Text.Encoding.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\System.Text.Encoding.Extensions.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\refs\System.Text.Encodings.Web.dll
@@ -3138,6 +3131,7 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\zh-Hant\Micros
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
@@ -3256,3 +3250,16 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Team27_Booksho
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Team27_BookshopWeb.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Team27_BookshopWeb.pdb
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Team27_BookshopWeb.genruntimeconfig.cache
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\EPPlus.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\Microsoft.IO.RecyclableMemoryStream.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\System.Text.Encoding.CodePages.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Team27_BookshopWeb.csproj.AssemblyReference.cache
