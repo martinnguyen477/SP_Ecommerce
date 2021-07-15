@@ -1,0 +1,14 @@
+﻿User-agent: *
+Disallow: /thanh-toan/
+User-agent: rogerbot
+Disallow:/
+User-agent: mj12bot
+Disallow:/
+User-agent: dotbot
+Disallow:/
+User-agent: exabot
+Disallow:/
+User-agent: gigabot
+Disallow:/
+User-agent: AhrefsBot
+Disallow: /

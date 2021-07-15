@@ -52,8 +52,15 @@
             <div class="table-data__tool">
 
                 <div class="table-data__tool-right">
-                    <button class="au-btn au-btn-icon au-btn--green au-btn--small" asp-action="Create">
+                    <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                        <a asp-action="Create">
                             <i class="zmdi zmdi-plus"></i>Thêm khách hàng
+                        </a>
+                    </button>
+                    <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                        <a asp-action="ExportFileExcel">
+                            <i class="zmdi zmdi-plus"></i>Export Thông Tin khách hàng
+                        </a>
                     </button>
                 </div>
 

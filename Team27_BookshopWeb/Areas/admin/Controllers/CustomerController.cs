@@ -9,6 +9,8 @@ using Team27_BookshopWeb.Areas.admin.Models;
 using Team27_BookshopWeb.Services;
 using Team27_BookshopWeb.Extensions;
 using Microsoft.AspNetCore.Authorization;
+using System.IO;
+using OfficeOpenXml;
 
 namespace Team27_BookshopWeb.Areas.admin.Controllers
 {
@@ -202,6 +204,29 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             return mdl;
         }
 
+        public IActionResult ExportFileExcel()
+        {
+            var data = _context.Customers.ToList();
+            var stream = new MemoryStream();
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            using (var package = new ExcelPackage(stream))
+            {
+                var sheet = package.Workbook.Worksheets.Add("Email");
+
+                int rowindex = 1;
+                foreach (var load in data)
+                {
+                    sheet.Cells[rowindex, 1].Value = load.Email;
+                    sheet.Cells[rowindex, 2].Value = load.Name;
+                    rowindex++;
+                }
+                package.Save();
+            }
+            stream.Position = 0;
+             var fileName = $"Email_{DateTime.Now.ToString("yyMMddHHmmss")}.xlsx";
+            return File(stream, "application/vnd.openxmlformats-" +
+                "officedocument.spreadsheetml.sheet", fileName);
+        }
     }
 }
     
