@@ -131,7 +131,7 @@ namespace Team27_BookshopWeb.Controllers
                 {
                     _ordersService.PlaceOrder(checkoutView, customerId, cart, 1);
                     var paypalAPI = new PayPalAPI(_configuration);
-                    string url = await paypalAPI.getRedirectURLtoPayPal(checkoutView.SubTotal, "USD");
+                    string url = await paypalAPI.getRedirectURLtoPayPal(Math.Round((checkoutView.SubTotal/23000),2), "USD");
                     return Redirect(url);
                 }   
                 if(checkoutView.PaymentMethod == 3)
