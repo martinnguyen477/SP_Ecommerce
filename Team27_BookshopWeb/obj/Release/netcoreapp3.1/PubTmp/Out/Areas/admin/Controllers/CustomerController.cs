@@ -213,7 +213,7 @@ namespace Team27_BookshopWeb.Areas.admin.Controllers
             {
                 var sheet = package.Workbook.Worksheets.Add("Email");
 
-                int rowindex = 2;
+                int rowindex = 1;
                 foreach (var load in data)
                 {
                     sheet.Cells[rowindex, 1].Value = load.Email;

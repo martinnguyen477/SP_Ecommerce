@@ -113,7 +113,7 @@
 
                         @if (Model.book.Translator != null)
                         {
-                            <li>Dịch giả: <a href="/dich-gia/@Model.book.Translator.Slug" class="list-value font-weight-bold"> @Model.book.Translator.DisplayName</a></li>
+                        <li>Dịch giả: <a href="/dich-gia/@Model.book.Translator.Slug" class="list-value font-weight-bold"> @Model.book.Translator.DisplayName</a></li>
                         }
 
                         <li>Nhà xuất bản: <a href="/nha-xuat-ban/@Model.book.Publisher.Slug" class="list-value"> @Model.book.Publisher.DisplayName</a></li>
@@ -122,7 +122,7 @@
 
                         @if (Model.book.Pages > 0 && Model.book.Pages != null)
                         {
-                            <li>Số trang: <span class="list-value"> @Model.book.Pages trang</span></li>
+                        <li>Số trang: <span class="list-value"> @Model.book.Pages trang</span></li>
                         }
                     </ul>
                     <div class="price-block">
@@ -139,11 +139,11 @@
                             {
                                 if (i <= Math.Floor(Model.averageRating))
                                 {
-                                    <span class="fas fa-star star_on"></span>
+                            <span class="fas fa-star star_on"></span>
                                 }
                                 else
                                 {
-                                    <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
                                 }
                             }
                         </div>
@@ -152,16 +152,17 @@
                             <a href="#xem-them" style="text-decoration: underline; color: blue ">Viết nhận xét</a>
                         </div>
                     </div>
+
                     <article class="product-details-article">
                         <h4 class="">Tóm tắt</h4>
                         <p>
                             @if (Model.book.Description.Length >= 200)
                             {
-                                @Model.book.Description.Replace("<br>", Environment.NewLine).Substring(0, 200);
+                            @Model.book.Description.Replace("<br>", Environment.NewLine).Substring(0, 200);
                             }
                             else
                             {
-                                @Model.book.Description.Replace("<br>", Environment.NewLine)
+                            @Model.book.Description.Replace("<br>", Environment.NewLine)
                             } ...<a href="/sach/@Model.book.Slug" style="text-decoration: underline; color: blue "> xem thêm</a>
                         </p>
                     </article>
@@ -181,6 +182,9 @@
                         @await Component.InvokeAsync("FavoriteBook", Model.book.Id)
                         <span>Thêm vào danh sách yêu thích</span>
                     </div>
+                    <div id="fb-root"></div>
+                    <div class="fb-share-button" data-href="https://team27bookshopweb.azurewebsites.net/sach/@Model.book.Slug" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fteam27bookshopweb.azurewebsites.net%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+                    
 
                     <!-- Facebook share area -->
                     <!-- End Facebook share area -->
@@ -316,4 +320,15 @@
 
 @section script {
     <script src="~/Team27StaticFiles/myjs/product-detail.js"></script>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=650089968889389&autoLogAppEvents=1" nonce="YLIjayfp"></script>
 }

@@ -29,17 +29,17 @@ namespace Team27_BookshopWeb.PayPalHelper
                 {
                     HttpClient http = GetPaypalHttpClient();
                     PayPalAccessToken accessToken = await GetPayPalAccessTokenAsync(http);
-                    PayPalPaymentCreatedResponse createdPayment = await CreatePaypalPaymentAsync(http, accessToken,total,currency);
+                    PayPalPaymentCreatedResponse createdPayment = await CreatePaypalPaymentAsync(http, accessToken, total, currency);
                     return createdPayment.links.First(x => x.rel == "approval_url").href;
                 }).Result;
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Fail to login PayPal step 1 (get redirect): " +ex.Message );
+                Debug.WriteLine("Fail to login PayPal step 1 (get redirect): " + ex.Message);
                 return await Task.FromResult<string>(null);
             }
         }
-        
+
         public async Task<PayPalPaymentExecutedResponse> executedPayment(string paymentId, string payerId)
         {
             try
