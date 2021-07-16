@@ -3263,3 +3263,5 @@ F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\runtimes\unix\
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll
 F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Team27_BookshopWeb.csproj.AssemblyReference.cache
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Razor\Views\Checkout\PaymentConfirm.cshtml.g.cs
+F:\Code\SP_Ecommerce\Team27_BookshopWeb\obj\Release\netcoreapp3.1\Razor\Views\Checkout\PaymentError.cshtml.g.cs

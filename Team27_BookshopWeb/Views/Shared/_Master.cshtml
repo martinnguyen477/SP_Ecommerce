@@ -45,19 +45,13 @@
 
 
     <!-- Google / Search Engine Tags -->
-
     <meta itemprop="name" content="">
     <meta itemprop="description" content="">
     <meta itemprop="image" content="">
 
-    @RenderSection("metasocials", required: false)
     <!-- Facebook Meta Tags -->
-    <!--<meta property="og:url" content="">
-    <meta property="og:locale" content="vi_VN">
-    <meta property="og:type" content="">
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="">-->
+    @RenderSection("metasocials", required: false)
+
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="">
     <meta name="twitter:title" content="">
@@ -79,6 +73,16 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/Team27StaticFiles/images/banner/favicon.ico">
     @RenderSection("bonushead", false)
     <!--Schema.org -->
+
+    <!--nhúng google Analytics-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y10Q844BWY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-Y10Q844BWY');
+    </script>
 
 
 </head>
@@ -165,8 +169,8 @@
                                     <div class="login-block">
                                         @if (!User.Identity.IsAuthenticated)
                                         {
-                                            <a href="/login-register" class="font-weight-bold">Đăng nhập</a> <br>
-                                            <span>hoặc</span><a href="/login-register">Đăng ký</a>
+                                        <a href="/login-register" class="font-weight-bold">Đăng nhập</a>  <br>
+                                        <span>hoặc</span><a href="/login-register">Đăng ký</a>
                                         }
                                     </div>
                                     <div class="cart-block">
@@ -413,6 +417,7 @@
             s1.src = 'https://embed.tawk.to/60dad2147f4b000ac03a15ed/1f9bc98go';
             s1.charset = 'UTF-8';
             s1.setAttribute('crossorigin', '*');
+            s1.setAttribute('crossorigin', '*');
             s0.parentNode.insertBefore(s1, s0);
         })();
     </script>
@@ -469,7 +474,7 @@
                     </div>
                     <div class="newsletter-form mb--30">
                         <!-- Begin Mailchimp Signup Form -->
-                        <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+                        <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
                         <style type="text/css">
                             #mc_embed_signup {
                                 background: #fff;
@@ -481,7 +486,7 @@
                                We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
                         </style>
                         <div id="mc_embed_signup">
-                            <form action="https://gmail.us2.list-manage.com/subscribe/post?u=f8aa8eaa8f90319065589a611&amp;id=9b0a40118d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <form action="http://eepurl.com/hDHN2z" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                                 <div id="mc_embed_signup_scroll">
 
                                     <input type="email" value="" name="EMAIL" class="email form-control" id="mce-EMAIL" placeholder="Nhập email tại đây..." required>
@@ -491,19 +496,20 @@
                                 </div>
                             </form>
                         </div>
-                        <a href="https://gmail.us2.list-manage.com/unsubscribe?u=f8aa8eaa8f90319065589a611&id=9b0a40118d" class="unsubscribe">Unsubscribe</a>
+                        <a href="https://facebook.us6.list-manage.com/unsubscribe?u=2fd42087229c29f3914960839&id=a5435a4359" class="unsubscribe" type="submit">Unsubscribe</a>
                     </div>
+                    <!--End Maily Chimp-->
+                </div>
                     <div class="social-block">
                         <h3 class="title">MẠNG XÃ HỘI</h3>
                         <ul class="social-list list-inline">
                             <li class="single-social facebook">
-                                <a href="https://www.facebook.com/Linhttk27"><i class="ion ion-social-facebook"></i></a>
+                                <a href="https://www.facebook.com/nqcuong20"><i class="ion ion-social-facebook"></i></a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
         <div class="footer-bottom">
             <div class="container">
                 <p class="copyright-heading">
@@ -578,6 +584,7 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+   
 </body>
 
 </html>

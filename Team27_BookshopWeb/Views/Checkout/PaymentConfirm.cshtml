@@ -1,0 +1,33 @@
+﻿@model Team27_BookshopWeb.Entities.Order
+@{
+    ViewData["Title"] = "Hoàn tất thanh toán";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+<section class="breadcrumb-section">
+    <h2 class="sr-only">Site Breadcrumb</h2>
+    <div class="container">
+        <div class="breadcrumb-contents">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="/thanh-toan">Thanh toán</a></li>
+                    <li class="breadcrumb-item active">Lỗi Thanh Toán</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+<!-- order complete Page Start --><section class="order-complete inner-page-sec-padding-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="order-complete-message text-center">
+                    <p>ViewBag.Message</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn--primary" id="back" href="/">Quay về trang chủ</a>
+        </div>
+    </div>
+</section>
