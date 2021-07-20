@@ -338,7 +338,8 @@ namespace Team27_BookshopWeb.Services
         {
             if (!string.IsNullOrEmpty(customerId))
             {
-                return WhereCustomerId(customerId, QueryNotDeletedCart()).FirstOrDefault();
+                var test = WhereCustomerId(customerId, QueryNotDeletedCart()).FirstOrDefault();
+                return test;
             }
             return null;
         }
@@ -376,7 +377,8 @@ namespace Team27_BookshopWeb.Services
         //Truy vấn giỏ hàng chưa được xóa
         public IQueryable<Cart> QueryNotDeletedCart()
         {
-            return myDbContext.Carts.Where(c => c.DeletedAt.Date > DateTime.Now.Date).AsQueryable();
+            var test = myDbContext.Carts.Where(c => c.DeletedAt.Date > DateTime.Now.Date).AsQueryable();
+            return test;
         }
     }
 }

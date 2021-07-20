@@ -112,12 +112,12 @@
                                             {
                                                 @if (Model.CartItems.Count() > 0)
                                                 {
-                                                    <ul>
+                                                    <ul >
                                                         @foreach (var item in Model.CartItems)
                                                         {
-                                                            <li>
-                                                                <span class="left">@item.Book.DisplayName x <b>@item.Quantity</b></span> <span class="right">@item.DisplayTotal</span>
-                                                            </li>
+                                                        <li>
+                                                            <span class="left">@item.Book.DisplayName x <b>@item.Quantity</b></span> <span class="right">@item.DisplayTotal</span>
+                                                        </li>
                                                         }
                                                     </ul>
                                                 }

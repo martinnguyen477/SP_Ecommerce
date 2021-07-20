@@ -442,7 +442,7 @@ namespace Team27_BookshopWeb.Services
         //Where id tình trạng đơn hàng trong bảng OrderStatus
         public IQueryable<OrderStatus> WhereStatusId(int statusId, IQueryable<OrderStatus> statuses)
         {
-            return statuses.Where(s => s.Id == statusId).OrderBy(s => s.Id).AsQueryable();
+            return statuses.Where(s => s.Id == statusId).OrderByDescending(s => s.Id).AsQueryable();
         }
 
         //Lấy chi tiết đơn hàng theo id đơn hàng
@@ -465,14 +465,14 @@ namespace Team27_BookshopWeb.Services
         //Lấy tất cả đơn hàng
         public IEnumerable<Order> GetAllOrders()
         {
-            return myDbContext.Orders.OrderBy(o => o.Id)
+            return myDbContext.Orders.OrderByDescending(o => o.Id)
                     .Include(o => o.PaymentMethod)
                     .Include(o => o.OrderStatus).ToList();
         }
         //Truy vấn tất cả đơn hàng
         public IQueryable<Order> QueryAllOrders()
         {
-            return myDbContext.Orders.OrderBy(o => o.Id)
+            return myDbContext.Orders.OrderByDescending(o => o.Id)
                     .Include(o => o.PaymentMethod)
                     .Include(o => o.OrderStatus).AsQueryable();
         }

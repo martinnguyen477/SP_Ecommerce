@@ -12,6 +12,7 @@ using Team27_BookshopWeb.PayPalHelper;
 using Team27_BookshopWeb.Services;
 using Team27_BookshopWeb.VNPayHelper;
 using System.Collections.Generic;
+using PayPal.v1.Payments;
 
 namespace Team27_BookshopWeb.Controllers
 {
@@ -68,7 +69,6 @@ namespace Team27_BookshopWeb.Controllers
                 {
                     var cartId = int.Parse(HttpContext.Request.Cookies["cart"]);
                     mdl.Cart = _cartsService.GetCart(cartId);
-                    
                 }
             }
 
@@ -124,19 +124,52 @@ namespace Team27_BookshopWeb.Controllers
                         cart = _cartsService.GetCart(cartId);
                     }
                 }
+                if (cart != null)
+                {
+                    CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+                    checkoutView.CartItems = _cartsService.GetCheckoutItems(cart.Id);
+                    if (checkoutView.CartItems.Count() > 0)
+                    {
+                        checkoutView.SubTotal = checkoutView.CartItems.Sum(ci => ci.Total);
+                    }
+                }
+
 
                 if (cart == null) return RedirectToAction("Index");
+                var itemList = new ItemList()
+                {
+                    Items = new List<Item>()
+                };
+                foreach (var item in checkoutView.CartItems)
+                {
+                    itemList.Items.Add(new Item()
+                    {
+                        Name = item.Book.DisplayName,
+                        Currency = "USD",
+                        Price = Math.Round(item.Book.Price / 23000, 2).ToString(),
+                        Quantity = item.Quantity.ToString(),
+                        Tax = "0"
+                    });
+                }
+                double tongTien = 0;
+                foreach (var item in itemList.Items)
+                {
+                    Debug.WriteLine(item.Name + " " + item.Quantity + " " + item.Price); // debug log
+                    tongTien = tongTien + Math.Round((double.Parse(item.Price) * double.Parse(item.Quantity)), 2);
+                }
                 MessagesViewModel mdl = new MessagesViewModel();
                 if(checkoutView.PaymentMethod == 2)
                 {
                     _ordersService.PlaceOrder(checkoutView, customerId, cart, 1);
                     var paypalAPI = new PayPalAPI(_configuration);
-                    string url = await paypalAPI.getRedirectURLtoPayPal(Math.Round((checkoutView.SubTotal/23000),2), "USD");
+                    string url = await paypalAPI.getRedirectURLtoPayPal(tongTien, "USD", itemList);
                     return Redirect(url);
-                }   
-                if(checkoutView.PaymentMethod == 3)
+                }
+                
+                if (checkoutView.PaymentMethod == 3)
                 {
                     _ordersService.PlaceOrder(checkoutView, customerId, cart, 3);
+                    var order = _ordersService.GetAllOrders().FirstOrDefault();
                     var paymentVNPay = new PayLib();
                     string money = (checkoutView.SubTotal * 100 ).ToString();
                     paymentVNPay.AddRequestData("vnp_Version", "2.0.0"); //Phiên bản api mà merchant kết nối. Phiên bản hiện tại là 2.0.0
@@ -148,7 +181,7 @@ namespace Team27_BookshopWeb.Controllers
                     paymentVNPay.AddRequestData("vnp_CurrCode", "VND"); //Đơn vị tiền tệ sử dụng thanh toán. Hiện tại chỉ hỗ trợ VND
                    // paymentVNPay.AddRequestData("vnp_IpAddr", Util.GetIpAddress()); //Địa chỉ IP của khách hàng thực hiện giao dịch
                     paymentVNPay.AddRequestData("vnp_Locale", "vn"); //Ngôn ngữ giao diện hiển thị - Tiếng Việt (vn), Tiếng Anh (en)
-                    paymentVNPay.AddRequestData("vnp_OrderInfo", "Thanh toan don hang"); //Thông tin mô tả nội dung thanh toán
+                    paymentVNPay.AddRequestData("vnp_OrderInfo", "Thanh toán cho đơn hàng" + "-" + order.Id + "-" + order.Customer.DisplayName + "-" + order.Customer.Phone); //Thông tin mô tả nội dung thanh toán
                     paymentVNPay.AddRequestData("vnp_OrderType", "other"); //topup: Nạp tiền điện thoại - billpayment: Thanh toán hóa đơn - fashion: Thời trang - other: Thanh toán trực tuyến
                     paymentVNPay.AddRequestData("vnp_ReturnUrl", _returnUrl); //URL thông báo kết quả giao dịch khi Khách hàng kết thúc thanh toán
                     paymentVNPay.AddRequestData("vnp_TxnRef", DateTime.Now.Ticks.ToString()); //mã hóa đơn
@@ -178,7 +211,7 @@ namespace Team27_BookshopWeb.Controllers
             var paypalAPI = new PayPalAPI(_configuration);
             PayPalPaymentExecutedResponse result = await paypalAPI.executedPayment(paymentId, payerId);
 
-            var order = _ordersService.GetAllOrders().LastOrDefault();
+            var order = _ordersService.GetAllOrders().FirstOrDefault();
             MessagesViewModel mdl = new MessagesViewModel();
             _ordersService.UpdateOrderByPayPal(order.Id, 2);
             Debug.WriteLine("Transaction Details");
@@ -206,7 +239,7 @@ namespace Team27_BookshopWeb.Controllers
         }
         public IActionResult PaymentError([FromQuery(Name = "PaymentId")] string paymentId, [FromQuery(Name = "PayerId")] string payerId, CheckoutViewModel checkoutViewModel)
         {
-            var order = _ordersService.GetAllOrders().LastOrDefault();
+            var order = _ordersService.GetAllOrders().FirstOrDefault();
             myDbContext.Orders.Remove(order);
             return View();
         }
@@ -224,7 +257,7 @@ namespace Team27_BookshopWeb.Controllers
             [FromQuery(Name = "vnp_SecureHashType")] string vnp_SecureHashType,
             [FromQuery(Name = "vnp_SecureHash")] string vnp_SecureHash, CheckoutViewModel checkoutViewModel)
             {
-                var order = _ordersService.GetAllOrders().LastOrDefault();
+                var order = _ordersService.GetAllOrders().FirstOrDefault();
                 var vnpayData = Request;
                 PayLib pay = new PayLib();
                 pay.AddResponseData("vnp_Amount", vnp_Amount);

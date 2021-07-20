@@ -21,7 +21,7 @@ namespace Team27_BookshopWeb.PayPalHelper
             configuration = _configuration;
         }
 
-        public async Task<string> getRedirectURLtoPayPal(double total, string currency)
+        public async Task<string> getRedirectURLtoPayPal(double total, string currency, ItemList itemList)
         {
             try
             {
@@ -29,7 +29,7 @@ namespace Team27_BookshopWeb.PayPalHelper
                 {
                     HttpClient http = GetPaypalHttpClient();
                     PayPalAccessToken accessToken = await GetPayPalAccessTokenAsync(http);
-                    PayPalPaymentCreatedResponse createdPayment = await CreatePaypalPaymentAsync(http, accessToken, total, currency);
+                    PayPalPaymentCreatedResponse createdPayment = await CreatePaypalPaymentAsync(http, accessToken, total, currency, itemList);
                     return createdPayment.links.First(x => x.rel == "approval_url").href;
                 }).Result;
             }
@@ -91,11 +91,11 @@ namespace Team27_BookshopWeb.PayPalHelper
             return accessToken;
         }
 
-        private async Task<PayPalPaymentCreatedResponse> CreatePaypalPaymentAsync(HttpClient http, PayPalAccessToken accessToken,double total, string currency)
+        private async Task<PayPalPaymentCreatedResponse> CreatePaypalPaymentAsync(HttpClient http, PayPalAccessToken accessToken,double total, string currency,ItemList itemList)
         {
             HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "v1/payments/payment");
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken.access_token);
-            
+
             var payment = new Payment()
             {
                 Intent = "sale",
@@ -107,7 +107,8 @@ namespace Team27_BookshopWeb.PayPalHelper
                         {
                             Total = total.ToString(),
                             Currency = currency
-                        }
+                        },
+                        ItemList = itemList
                     }
                 },
                 RedirectUrls = new RedirectUrls()
